@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en" class="dash-page">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bespoke — YouMind®</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=240">
+  <link rel="stylesheet" href="journey.css?v=13">
+</head>
+<body class="dash-page bespoke-page">
+  <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true">
+    <symbol id="icon-arrow-ne" viewBox="0 0 20 20">
+      <g transform="translate(10 10) rotate(-45) translate(-8.834 -7.226)">
+        <path fill="currentColor" d="M10.14 0.4C10.16 0.38 10.57 0.28 11.05 0.17C11.54 0.06 11.94 -0.02 11.95 0C11.96 0.02 12.01 0.36 12.06 0.76C12.17 1.54 12.44 2.47 12.73 3.04C13.62 4.84 15.23 6.03 17.17 6.34L17.67 6.41L17.67 7.21L17.67 8L17.22 8.08C14.28 8.57 12.36 10.77 12 14.06C11.98 14.28 11.95 14.45 11.94 14.45C11.84 14.45 10.2 14.05 10.16 14.02C10.14 14 10.16 13.8 10.2 13.58C10.68 11.1 12.04 9.09 13.81 8.25L14.23 8.04L5.51 8.03L0 8.02L0 6.41L5.53 6.4L14.22 6.39L13.69 6.12C12.3 5.41 11.2 4.03 10.55 2.18C10.37 1.65 10.09 0.45 10.14 0.4Z"/>
+      </g>
+    </symbol>
+  </svg>
+
+  <div class="drawer-backdrop" id="drawerBackdrop" hidden></div>
+  <aside class="mobile-drawer" id="mobileDrawer" aria-hidden="true" aria-label="Site menu">
+    <div class="mobile-drawer-head">
+      <a class="mobile-drawer-logo" href="https://youmind.org/" aria-label="YouMind">
+        <img src="assets/065c9eb59e0f98fd.png" alt="YouMind">
+      </a>
+      <button class="mobile-drawer-close" id="drawerClose" type="button" aria-label="Close menu">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 2l10 10M12 2L2 12" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div class="mobile-drawer-body">
+      <a class="mobile-drawer-link" href="https://youmind.org/offerings/">Offerings</a>
+      <div class="mobile-acc">
+        <button type="button" class="mobile-drawer-link mobile-acc-toggle" aria-expanded="false" aria-controls="mobileSciPanel">
+          <span>The Science</span>
+          <svg class="mobile-acc-chevron" width="14" height="14" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.2l3.5 3.6 3.5-3.6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="mobile-acc-panel" id="mobileSciPanel" hidden>
+          <a class="mobile-sub" href="https://youmind.org/personalized-brain-entrainment/"><span><span class="mega-title">Personal / Bespoke Science</span><span class="mega-desc">Personalized brain entrainment protocols built around your own biology.</span></span></a>
+          <a class="mobile-sub" href="https://youmind.org/healthcare-science/"><span><span class="mega-title">Healthcare Science</span><span class="mega-desc">Recovery and resilience science for clinicians facing chronic fatigue and burnout.</span></span></a>
+          <a class="mobile-sub" href="https://youmind.org/hospitality-science/"><span><span class="mega-title">Hospitality Science</span><span class="mega-desc">Energy and recovery science for demanding, always-on service teams.</span></span></a>
+          <a class="mobile-sub" href="https://youmind.org/defense-tactical-science/"><span><span class="mega-title">Defense &amp; Tactical Science</span><span class="mega-desc">Stress-regulation science for operators in high-stakes environments.</span></span></a>
+          <a class="mobile-sub" href="https://youmind.org/elite-athletics-science/"><span><span class="mega-title">Elite Athletics Science</span><span class="mega-desc">Recovery and sleep science to sharpen peak performance.</span></span></a>
+          <a class="mobile-sub" href="https://youmind.org/organizational-performance-science/"><span><span class="mega-title">Organizational Performance Science</span><span class="mega-desc">Science behind workforce resilience and executive capacity.</span></span></a>
+        </div>
+      </div>
+      <a class="mobile-drawer-link" href="https://youmind.org/insights/">Insights</a>
+      <a class="mobile-drawer-link" href="https://youmind.org/faqs/">Faqs</a>
+      <a class="mobile-drawer-link" href="https://youmind.org/testimonials/">Testimonials</a>
+      <a class="mobile-drawer-link" href="https://youmind.org/podcasts/">Podcasts</a>
+    </div>
+    <div class="mobile-drawer-foot">
+      <a class="btn-contact" href="https://youmind.org/contact-us/">
+        <span>Contact Us</span>
+        <span class="btn-contact-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+    </div>
+  </aside>
+
+  <div class="page">
+
+    <section class="hero dash-top">
+      <div class="hero-deco" aria-hidden="true"></div>
+      <header class="nav-wrap">
+        <nav class="nav" id="siteNav" aria-label="Primary">
+          <a class="nav-logo" href="https://youmind.org/" aria-label="YouMind">
+            <img src="assets/065c9eb59e0f98fd.png" alt="YouMind">
+          </a>
+          <button class="nav-menu-btn" id="navMenuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="siteNavLinks">
+            <svg width="18" height="14" viewBox="0 0 18 14" fill="none" aria-hidden="true">
+              <path d="M1 1h10" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+              <path d="M1 7h16" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+              <path d="M7 13h10" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <ul class="nav-links" id="siteNavLinks">
+            <li class="nav-item has-mega" id="offTrigger">
+              <button class="nav-link nav-link--btn" type="button" aria-expanded="false" aria-controls="offMenu">
+                Offerings
+                <svg class="nav-chevron" width="14" height="14" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.2l3.5 3.6 3.5-3.6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div class="mega-menu" id="offMenu" role="menu" hidden>
+                <a class="mega-item" href="https://youmind.org/personal-bespoke/" role="menuitem">
+                  <span class="mega-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 11a2 2 0 00-2 2c0 1.5-.15 3.4-.4 5"/><path d="M14 13c0 2.4-.15 5.6-1 8"/><path d="M9.2 13.2c-.25 2.2-.8 4.4-1.7 6.3"/><path d="M16.5 14.2c.2 1.8.15 4-.4 6"/><path d="M7.2 11.2a5 5 0 019.6 1.2"/><path d="M5 14.5a8 8 0 0114 1"/><path d="M4.5 18c-1 1.6-1.8 3-2.5 4"/><path d="M19.6 17.8c.7 1.5 1.2 2.8 1.4 4.2"/></svg></span>
+                  <span><span class="mega-title">Personal / Bespoke</span><span class="mega-desc">Personalized protocols. Smarter focus. Better recovery.</span></span>
+                </a>
+                <a class="mega-item" href="https://youmind.org/healthcare/" role="menuitem">
+                  <span class="mega-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v7a6 6 0 006 6 6 6 0 006-6V3"/><path d="M4 3h4M16 3h4"/><path d="M12 16v2a3 3 0 003 3"/><circle cx="18" cy="20" r="2"/></svg></span>
+                  <span><span class="mega-title">Healthcare</span><span class="mega-desc">Build resilience. Reduce burnout. Improve performance.</span></span>
+                </a>
+                <a class="mega-item" href="https://youmind.org/hospitality/" role="menuitem">
+                  <span class="mega-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7v14"/><path d="M3 11h16a2 2 0 012 2v8"/><path d="M3 18h18"/><path d="M7 11V8a2 2 0 012-2h6a2 2 0 012 2v3"/></svg></span>
+                  <span><span class="mega-title">Hospitality</span><span class="mega-desc">Enhance sleep. Elevate guest recovery.</span></span>
+                </a>
+                <a class="mega-item" href="https://youmind.org/defense-tactical/" role="menuitem">
+                  <span class="mega-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3.5v5.8c0 4.6-3.2 8.8-8 9.7-4.8-.9-8-5.1-8-9.7V6.5L12 3z"/></svg></span>
+                  <span><span class="mega-title">Defense &amp; Tactical</span><span class="mega-desc">Strengthen resilience. Support recovery under pressure.</span></span>
+                </a>
+                <a class="mega-item" href="https://youmind.org/elite-athletics/" role="menuitem">
+                  <span class="mega-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 7-4-14-3 7H2"/></svg></span>
+                  <span><span class="mega-title">Elite Athletics</span><span class="mega-desc">Optimize readiness. Accelerate recovery. Protect performance.</span></span>
+                </a>
+                <a class="mega-item" href="https://youmind.org/organizational-performance/" role="menuitem">
+                  <span class="mega-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/><path d="M3 12h18"/></svg></span>
+                  <span><span class="mega-title">Corporate / Organizational</span><span class="mega-desc">Build resilience. Reduce burnout. Improve performance.</span></span>
+                </a>
+              </div>
+            </li>
+            <li class="nav-item has-mega" id="sciTrigger">
+              <button class="nav-link nav-link--btn" type="button" aria-expanded="false" aria-controls="sciMenu">
+                The Science
+                <svg class="nav-chevron" width="14" height="14" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.2l3.5 3.6 3.5-3.6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div class="mega-menu" id="sciMenu" role="menu" hidden>
+                <a class="mega-item" href="https://youmind.org/personalized-brain-entrainment/" role="menuitem">
+                  <span class="mega-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3.5 3.5 0 00-3.4 4.2 4 4 0 00-2.1 6.6A3.5 3.5 0 009.5 21h5a3.5 3.5 0 002.9-5.2 4 4 0 00-2-6.6A3.5 3.5 0 0012 5z"/><path d="M12 5v16M9.5 10.5c.8.4 1.7.4 2.5 0M9.5 14c.8.4 1.7.4 2.5 0"/></svg></span>
+                  <span><span class="mega-title">Personal / Bespoke Science</span><span class="mega-desc">Personalized brain entrainment protocols built around your own biology.</span></span>
+                </a>
+                <a class="mega-item" href="https://youmind.org/healthcare-science/" role="menuitem">
+                  <span class="mega-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v7a6 6 0 006 6 6 6 0 006-6V3"/><path d="M4 3h4M16 3h4"/><path d="M12 16v2a3 3 0 003 3"/><circle cx="18" cy="20" r="2"/></svg></span>
+                  <span><span class="mega-title">Healthcare Science</span><span class="mega-desc">Recovery and resilience science for clinicians facing chronic fatigue and burnout.</span></span>
+                </a>
+                <a class="mega-item" href="https://youmind.org/hospitality-science/" role="menuitem">
+                  <span class="mega-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7v14"/><path d="M3 11h16a2 2 0 012 2v8"/><path d="M3 18h18"/><path d="M7 11V8a2 2 0 012-2h6a2 2 0 012 2v3"/></svg></span>
+                  <span><span class="mega-title">Hospitality Science</span><span class="mega-desc">Energy and recovery science for demanding, always-on service teams.</span></span>
+                </a>
+                <a class="mega-item" href="https://youmind.org/defense-tactical-science/" role="menuitem">
+                  <span class="mega-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3.5v5.8c0 4.6-3.2 8.8-8 9.7-4.8-.9-8-5.1-8-9.7V6.5L12 3z"/></svg></span>
+                  <span><span class="mega-title">Defense &amp; Tactical Science</span><span class="mega-desc">Stress-regulation science for operators in high-stakes environments.</span></span>
+                </a>
+                <a class="mega-item" href="https://youmind.org/elite-athletics-science/" role="menuitem">
+                  <span class="mega-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 7-4-14-3 7H2"/></svg></span>
+                  <span><span class="mega-title">Elite Athletics Science</span><span class="mega-desc">Recovery and sleep science to sharpen peak performance.</span></span>
+                </a>
+                <a class="mega-item" href="https://youmind.org/organizational-performance-science/" role="menuitem">
+                  <span class="mega-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="10" width="7" height="11"/><rect x="14" y="6" width="7" height="15"/><path d="M6.5 14v2M6.5 7V4M17.5 10V7"/></svg></span>
+                  <span><span class="mega-title">Organizational Performance Science</span><span class="mega-desc">Science behind workforce resilience and executive capacity.</span></span>
+                </a>
+              </div>
+            </li>
+            <li><a class="nav-link" href="https://youmind.org/insights/">Insights</a></li>
+            <li><a class="nav-link" href="https://youmind.org/faqs/">Faqs</a></li>
+            <li><a class="nav-link" href="https://youmind.org/testimonials/">Testimonials</a></li>
+            <li><a class="nav-link" href="https://youmind.org/podcasts/">Podcasts</a></li>
+          </ul>
+          <a class="btn-contact" href="https://youmind.org/contact-us/">
+            <span>Contact Us</span>
+            <span class="btn-contact-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+        </nav>
+      </header>
+
+      <div class="bespoke-intro">
+        <div class="bespoke-aside" id="nativeAside">
+          <p class="bespoke-aside-title">Use Your Native Language</p>
+          <p>Our system listens not only to what you say but also to how you say it. It analyzes the pacing and subtle tension in your voice to understand you more accurately. For the most accurate and personalized experience, please speak freely in your native language.</p>
+        </div>
+        <div id="bespokeWelcome">
+          <h1 class="listen-hero-title bespoke-hero-title">
+            <span>Welcome to Your</span>
+            <em>Wellness Journey</em>
+          </h1>
+          <p class="bespoke-sub">Let’s begin by understanding your unique patterns and creating a personalized wellness profile just for you. We'll ask 5 questions.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="dash-shell">
+      <div class="dash-inner bespoke-shell">
+
+        <div class="bespoke-card" id="emailCard">
+          <span class="bespoke-card-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3.5" y="5.5" width="17" height="13" rx="2.5" stroke="currentColor" stroke-width="1.6"/><path d="M4.5 7.5l7.5 5.5 7.5-5.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <h2>Enter Your Email</h2>
+          <p class="bespoke-card-lead">We’ll send your personalized wellness insights to this email address.</p>
+          <form class="bespoke-form" id="bespokeForm" novalidate>
+            <input type="text" id="youmind-name" name="name" placeholder="Enter your name..." autocomplete="name" aria-label="Your name">
+            <input type="email" id="youmind-email" name="email" placeholder="Enter your email..." autocomplete="email" aria-label="Your email">
+            <input type="text" id="youmind-partner" name="partner" placeholder="Partner Affiliation..." aria-label="Partner affiliation">
+            <button type="submit" class="btn-explore protocol-btn-sm" id="youmind-start">
+              <span>Continue to Assessment</span>
+              <span class="btn-explore-icon" aria-hidden="true"><svg class="icon-arrow-ne" width="18" height="18"><use href="#icon-arrow-ne"/></svg></span>
+            </button>
+          </form>
+        </div>
+
+        <!-- Assessment: five questions, one answer each, recorded, uploaded or typed -->
+        <div class="bespoke-card bespoke-card--assess" id="assessCard" hidden>
+          <ol class="assess-steps" id="assessSteps" aria-label="Assessment progress"></ol>
+
+          <h2 class="assess-title" id="assessTitle" tabindex="-1"></h2>
+          <p class="assess-question" id="assessQuestion"></p>
+
+          <div class="assess-guide" id="assessGuide"></div>
+
+          <p class="assess-label">Record your response or upload audio.</p>
+
+          <div class="assess-mic">
+            <span class="assess-mic-ico" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="9" y="3" width="6" height="11" rx="3" stroke="currentColor" stroke-width="1.7"/><path d="M5.5 11.5a6.5 6.5 0 0013 0M12 18v3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>
+            <span>Please make sure your microphone is <strong>enabled</strong> if not then <button type="button" class="assess-link" id="micHelpToggle">click here</button> for instructions</span>
+          </div>
+          <p class="assess-mic-help" id="micHelp" hidden>Click the lock icon at the left of your browser’s address bar, set Microphone to Allow, then reload this page.</p>
+
+          <button type="button" class="assess-record" id="recordBtn" aria-pressed="false">
+            <svg class="assess-record-ico" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3" stroke="currentColor" stroke-width="1.7"/><path d="M5.5 11.5a6.5 6.5 0 0013 0M12 18v3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+            <span id="recordLabel">Record Audio</span>
+          </button>
+
+          <p class="assess-label assess-label--type" id="typeToggleRow">If you prefer to type your response, please <button type="button" class="assess-link" id="typeToggle">click here</button>.</p>
+          <textarea class="assess-text" id="assessText" rows="5" placeholder="Type your response in your own words…" hidden></textarea>
+
+          <div class="assess-drop" id="assessDrop">
+            <label class="assess-file">
+              <input type="file" id="assessFile" accept="audio/*">
+              <span class="assess-file-btn">Choose file</span>
+              <span class="assess-file-name" id="assessFileName">No file chosen</span>
+            </label>
+            <audio class="assess-audio" id="assessAudio" controls hidden></audio>
+          </div>
+
+          <p class="assess-error" id="assessError" role="alert" hidden></p>
+
+          <div class="assess-actions">
+            <button type="button" class="link-read assess-back" id="assessBack" hidden>Back</button>
+            <button type="button" class="btn-explore protocol-btn-sm" id="assessNext" hidden>
+              <span id="assessNextLabel">Next</span>
+              <span class="btn-explore-icon" aria-hidden="true"><svg class="icon-arrow-ne" width="18" height="18"><use href="#icon-arrow-ne"/></svg></span>
+            </button>
+          </div>
+        </div>
+
+        <div class="thanks" id="doneCard" hidden>
+          <span class="thanks-check" aria-hidden="true">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <h1 class="listen-hero-title thanks-title" id="doneTitle" tabindex="-1">Thank You!</h1>
+          <p class="bespoke-sub">Your wellness assessment is complete. We’re now analyzing your responses to create your personalized wellness profile.</p>
+
+          <div class="thanks-card">
+            <h2>What happens next?</h2>
+            <div class="thanks-grid">
+              <div class="thanks-item">
+                <span class="thanks-ico" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3.5 3.5 0 00-3.4 4.2 4 4 0 00-2.1 6.6A3.5 3.5 0 009.5 21h5a3.5 3.5 0 002.9-5.2 4 4 0 00-2-6.6A3.5 3.5 0 0012 5z"/><path d="M12 5v16M9.5 10.5c.8.4 1.7.4 2.5 0M9.5 14c.8.4 1.7.4 2.5 0"/></svg>
+                </span>
+                <h3>Analysis</h3>
+                <p>Our AI analyzes your responses to identify patterns and wellness opportunities.</p>
+              </div>
+              <div class="thanks-item">
+                <span class="thanks-ico" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5M4 19h16M8 17V11M12 17V7M16 17v-4"/></svg>
+                </span>
+                <h3>Personalization</h3>
+                <p>We create a custom wellness plan tailored to your unique needs and goals.</p>
+              </div>
+              <div class="thanks-item">
+                <span class="thanks-ico" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="2.5"/><path d="M4.5 7.5l7.5 5.5 7.5-5.5"/></svg>
+                </span>
+                <h3>Delivery</h3>
+                <p>Your personalized insights will be sent to your email within 24 hours.</p>
+              </div>
+            </div>
+            <p class="thanks-note"><strong>Note:</strong> To ensure this analysis reaches you, please check your <strong>Spam</strong> or <strong>Promotions</strong> folder if you have not received your notification within this timeframe.</p>
+            <button type="button" class="btn-explore protocol-btn-sm thanks-again" id="assessAgain">
+              <span>Take Another Assessment</span>
+              <span class="btn-explore-icon" aria-hidden="true"><svg class="icon-arrow-ne" width="18" height="18"><use href="#icon-arrow-ne"/></svg></span>
+            </button>
+          </div>
+        </div>
+
+        <div class="bespoke-aside">
+          <p class="bespoke-aside-title">Strict and Secure Privacy</p>
+          <p>Your voice and personal insights are securely protected and are analyzed only to create your personalized protocol. Your data is treated with strict confidentiality.</p>
+          <p>Please review our <a href="https://youmind.org/terms-of-use-and-privacy-policy/">Terms of Use</a> and <a href="https://youmind.org/terms-of-use-and-privacy-policy/">Privacy Policy</a> for details.</p>
+          <p><a href="https://youmind.org/wp-content/uploads/2026/02/Our-Validation-Methodology.pdf">Learn how</a> our system engineers and audits accuracy at every level.</p>
+        </div>
+
+        <div class="bespoke-safety">
+          <h2>Critical Safety Notice</h2>
+          <p>DO NOT USE YouMind sessions, files, or programs while driving, operating machinery, or in any situation requiring full attention.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-main">
+          <div class="footer-brand">
+            <img class="footer-logo" src="assets/065c9eb59e0f98fd.png" alt="YouMind">
+            <p>YouMind delivers science-backed neuro-acoustic protocols that help organizations</p>
+          </div>
+          <div class="footer-col">
+            <h4>COMPANY</h4>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>RESOURCES</h4>
+            <ul>
+              <li><a href="#">Insights</a></li>
+              <li><a href="#">Science</a></li>
+              <li><a href="#">Frameworks</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Solution</h4>
+            <ul>
+              <li><a href="#">Personal</a></li>
+              <li><a href="#">Hospitality</a></li>
+              <li><a href="#">Healthcare</a></li>
+              <li><a href="#">Corporate</a></li>
+              <li><a href="#">Defense</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p class="footer-copy">&copy; 2026 YouMind&reg;. All rights reserved.</p>
+          <div class="footer-legal">
+            <a href="#">Terms of Service</a>
+            <a href="#">Privacy Policy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    /* Mega menus — one open at a time, hover on desktop */
+    (function () {
+      var nav = document.getElementById('siteNav');
+      var compact = function () { return window.matchMedia('(max-width: 900px)').matches; };
+      var megas = [];
+      function wire(triggerId, menuId) {
+        var trigger = document.getElementById(triggerId), menu = document.getElementById(menuId);
+        var btn = trigger && trigger.querySelector('.nav-link--btn');
+        if (!trigger || !menu || !btn) return;
+        var timer, api = {};
+        function place() {
+          if (compact()) { menu.style.top = ''; menu.style.left = ''; return; }
+          var n = nav.getBoundingClientRect(), t = trigger.getBoundingClientRect();
+          menu.style.top = (n.bottom - t.top + 16) + 'px';
+          menu.style.left = '50%';
+        }
+        api.close = function () {
+          clearTimeout(timer);
+          trigger.classList.remove('is-open'); btn.classList.remove('is-open');
+          btn.setAttribute('aria-expanded', 'false'); menu.classList.remove('is-open');
+        };
+        function open() {
+          if (compact()) return;
+          clearTimeout(timer);
+          megas.forEach(function (m) { if (m !== api) m.close(); });
+          place(); menu.hidden = false;
+          trigger.classList.add('is-open'); btn.classList.add('is-open');
+          btn.setAttribute('aria-expanded', 'true'); menu.classList.add('is-open');
+        }
+        function soon() { clearTimeout(timer); timer = setTimeout(api.close, 80); }
+        trigger.addEventListener('mouseenter', open);
+        trigger.addEventListener('mouseleave', soon);
+        menu.addEventListener('mouseenter', open);
+        menu.addEventListener('mouseleave', soon);
+        btn.addEventListener('click', function (e) {
+          e.preventDefault(); e.stopPropagation();
+          if (compact()) return;
+          trigger.classList.contains('is-open') ? api.close() : open();
+        });
+        window.addEventListener('resize', function () { if (compact()) api.close(); else if (trigger.classList.contains('is-open')) place(); });
+        megas.push(api);
+      }
+      wire('offTrigger', 'offMenu');
+      wire('sciTrigger', 'sciMenu');
+    })();
+
+    /* Mobile drawer */
+    (function () {
+      var openBtn = document.getElementById('navMenuBtn'), closeBtn = document.getElementById('drawerClose');
+      var drawer = document.getElementById('mobileDrawer'), backdrop = document.getElementById('drawerBackdrop');
+      if (!openBtn || !drawer || !backdrop) return;
+      var items = Array.prototype.slice.call(drawer.querySelectorAll('.mobile-acc'));
+      function setAcc(item, open) {
+        var b = item.querySelector('.mobile-acc-toggle'), p = item.querySelector('.mobile-acc-panel');
+        item.classList.toggle('is-open', open); b.setAttribute('aria-expanded', String(open)); p.hidden = !open;
+      }
+      items.forEach(function (item) {
+        item.querySelector('.mobile-acc-toggle').addEventListener('click', function (e) {
+          e.stopPropagation();
+          var will = !item.classList.contains('is-open');
+          items.forEach(function (o) { setAcc(o, o === item && will); });
+        });
+      });
+      function setOpen(open) {
+        document.body.classList.toggle('drawer-open', open);
+        drawer.classList.toggle('is-open', open);
+        drawer.setAttribute('aria-hidden', String(!open));
+        backdrop.hidden = !open;
+        openBtn.setAttribute('aria-expanded', String(open));
+        if (!open) items.forEach(function (i) { setAcc(i, false); });
+      }
+      openBtn.addEventListener('click', function (e) { e.stopPropagation(); setOpen(!drawer.classList.contains('is-open')); });
+      closeBtn.addEventListener('click', function () { setOpen(false); });
+      backdrop.addEventListener('click', function () { setOpen(false); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setOpen(false); });
+      window.addEventListener('resize', function () { if (window.matchMedia('(min-width: 901px)').matches) setOpen(false); });
+    })();
+
+    /* Assessment flow: details form -> 5 questions -> done.
+       Each question takes one answer: a live recording, an uploaded audio file,
+       or typed text. Answers are held in memory only. */
+    (function () {
+      var STEPS = [
+        { label: 'Sleep', title: 'Sleep and Recovery Profile',
+          q: 'Looking at the past few months, and especially the past few weeks, how would you describe your sleep overall?',
+          lead: 'You can describe whatever comes to mind. For example:',
+          items: ['Falling asleep easily or struggling to fall asleep', 'Sleeping deeply or lightly', 'Restless or broken sleep', 'Waking calm or waking with tension', 'Feeling restored, neutral, or drained in the morning', 'Morning energy and emotional tone'] },
+        { label: 'Emotional', title: 'Emotional Regulation',
+          q: 'How would you describe your emotional state recently? What tends to show up most often during your days?',
+          lead: 'You can share whatever feels relevant. For example:',
+          items: ['Generally calm, tense, anxious, irritated, heavy, or emotionally flat', 'Stable mood or noticeable emotional spikes during the day', 'Emotional tension that comes in waves or feels present most of the time', 'Body tension, mental pressure, or emotional fatigue', 'How long this has been present weeks, months, or longer'] },
+        { label: 'Cognitive', title: 'Cognitive Function and Mental Performance',
+          q: 'How does your mind feel when you are working or concentrating, across different types of tasks?',
+          lead: 'You can describe whatever feels most true for you. For example:',
+          items: ['Easy focus or difficulty getting started', 'Staying focused briefly or sustaining focus for long periods', 'Creative flow versus blocked or forced thinking', 'Clear and sharp focus that fades over time', 'Scattered, overloaded, or racing thoughts', 'Deep focus followed by mental fatigue or crashes', 'Feeling mentally present versus frequently distracted'] },
+        { label: 'Physical', title: 'Physical Energy Regulation',
+          q: 'How does your physical energy typically move throughout the day? Is it mostly sustained, or does it fluctuate at certain times?',
+          lead: 'You can describe whatever stands out. For example:',
+          items: ['Morning energy versus slow or heavy starts', 'Midday drops, afternoon slumps, or evening rebounds', 'Steady energy or noticeable peaks and crashes', 'Wired but tired, physically fatigued with a busy mind', 'Energy changes linked to work, stress, meals, or rest', 'Times of day when energy feels strongest or weakest'] },
+        { label: 'Intention', title: 'Intention',
+          q: 'Right now, what would you most like to shift, support, or improve in your inner experience or daily life?',
+          text: 'There is no right or wrong answer. You can speak about anything that feels relevant to you at this moment. This might relate to how you feel, how you think, how you move through your days, or how you relate to yourself and your environment. You can be specific or general. Simply describe it in your own words.' }
+      ];
+
+      var $ = function (id) { return document.getElementById(id); };
+      var el = {
+        form: $('bespokeForm'), welcome: $('bespokeWelcome'), email: $('emailCard'), assess: $('assessCard'), done: $('doneCard'),
+        steps: $('assessSteps'), title: $('assessTitle'), q: $('assessQuestion'), guide: $('assessGuide'),
+        rec: $('recordBtn'), recLabel: $('recordLabel'), file: $('assessFile'), fileName: $('assessFileName'),
+        audio: $('assessAudio'), text: $('assessText'), typeToggle: $('typeToggle'), error: $('assessError'),
+        next: $('assessNext'), nextLabel: $('assessNextLabel'), back: $('assessBack'),
+        micToggle: $('micHelpToggle'), micHelp: $('micHelp')
+      };
+
+      var answers = STEPS.map(function () { return null; }); /* { kind, blob|file, url, name } | { kind:'text', text } */
+      var current = 0;
+      var person = { name: '', email: '', partner: '' };
+      var rec = { recorder: null, stream: null, chunks: [], timer: null, secs: 0 };
+
+      function esc(s) { return String(s).replace(/[&<>]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]; }); }
+      function fmt(s) { return Math.floor(s / 60) + ':' + ('0' + (s % 60)).slice(-2); }
+      function showError(msg) { el.error.textContent = msg || ''; el.error.hidden = !msg; }
+      function hasAnswer(i) { var a = answers[i]; return !!a && (a.kind === 'text' ? a.text.trim().length > 0 : true); }
+
+      function renderStepper() {
+        el.steps.innerHTML = STEPS.map(function (s, i) {
+          var cls = i < current ? ' is-done' : i === current ? ' is-current' : '';
+          return '<li class="assess-step' + cls + '"' + (i === current ? ' aria-current="step"' : '') + '><span class="assess-dot">' + (i + 1) + '</span><span class="assess-step-label">' + s.label + '</span></li>';
+        }).join('');
+      }
+
+      function renderAnswer() {
+        var a = answers[current];
+        var audioBacked = a && a.kind !== 'text';
+        el.audio.hidden = !audioBacked;
+        if (audioBacked) { el.audio.src = a.url; } else { el.audio.removeAttribute('src'); el.audio.load(); }
+        el.fileName.textContent = a && a.kind === 'file' ? a.name : 'No file chosen';
+        el.file.value = '';
+        if (a && a.kind === 'text') { el.text.hidden = false; el.text.value = a.text; }
+        else { el.text.value = ''; el.text.hidden = true; }
+        el.typeToggle.textContent = el.text.hidden ? 'click here' : 'use audio instead';
+        updateNext();
+      }
+
+      function updateNext() {
+        el.next.hidden = !hasAnswer(current);
+        el.nextLabel.textContent = current === STEPS.length - 1 ? 'Complete assessment' : 'Next';
+        el.back.hidden = current === 0;
+      }
+
+      function renderStep() {
+        var s = STEPS[current];
+        stopRecording(true);
+        showError('');
+        renderStepper();
+        el.title.textContent = s.title;
+        el.q.textContent = s.q;
+        el.guide.innerHTML = '<p class="assess-guide-head">Guidance for the user</p>' +
+          (s.items
+            ? '<p>' + esc(s.lead) + '</p><ul>' + s.items.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') + '</ul>'
+            : '<p>' + esc(s.text) + '</p>');
+        renderAnswer();
+      }
+
+      function goTo(i) {
+        current = i;
+        renderStep();
+        el.title.focus({ preventScroll: true });
+        el.assess.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+      }
+
+      function setAnswer(a) {
+        var old = answers[current];
+        if (old && old.url) URL.revokeObjectURL(old.url);
+        answers[current] = a;
+        renderAnswer();
+      }
+
+      /* Recording */
+      function stopRecording(discard) {
+        if (rec.timer) { clearInterval(rec.timer); rec.timer = null; }
+        if (rec.recorder && rec.recorder.state !== 'inactive') {
+          rec.recorder.onstop = discard ? null : rec.recorder.onstop;
+          rec.recorder.stop();
+        }
+        if (rec.stream) { rec.stream.getTracks().forEach(function (t) { t.stop(); }); rec.stream = null; }
+        rec.recorder = null;
+        el.rec.classList.remove('is-recording');
+        el.rec.setAttribute('aria-pressed', 'false');
+        el.recLabel.textContent = answers[current] && answers[current].kind === 'recording' ? 'Record again' : 'Record Audio';
+      }
+
+      el.rec.addEventListener('click', function () {
+        showError('');
+        if (rec.recorder) { stopRecording(false); return; }
+        if (!navigator.mediaDevices || !window.MediaRecorder) {
+          showError('Recording isn’t supported in this browser. You can upload an audio file or type your response instead.');
+          return;
+        }
+        navigator.mediaDevices.getUserMedia({ audio: true }).then(function (stream) {
+          rec.stream = stream; rec.chunks = []; rec.secs = 0;
+          var r = new MediaRecorder(stream);
+          rec.recorder = r;
+          r.ondataavailable = function (e) { if (e.data && e.data.size) rec.chunks.push(e.data); };
+          r.onstop = function () {
+            var blob = new Blob(rec.chunks, { type: r.mimeType || 'audio/webm' });
+            setAnswer({ kind: 'recording', blob: blob, url: URL.createObjectURL(blob) });
+            el.recLabel.textContent = 'Record again';
+          };
+          r.start();
+          el.rec.classList.add('is-recording');
+          el.rec.setAttribute('aria-pressed', 'true');
+          el.recLabel.textContent = 'Stop recording · 0:00';
+          rec.timer = setInterval(function () { rec.secs += 1; el.recLabel.textContent = 'Stop recording · ' + fmt(rec.secs); }, 1000);
+        }).catch(function () {
+          showError('We couldn’t reach your microphone. Check the instructions above, or upload an audio file or type your response instead.');
+          el.micHelp.hidden = false;
+        });
+      });
+
+      /* Upload */
+      el.file.addEventListener('change', function () {
+        var f = el.file.files && el.file.files[0];
+        if (!f) return;
+        if (f.type && f.type.indexOf('audio/') !== 0) { showError('Please choose an audio file.'); el.file.value = ''; return; }
+        showError('');
+        setAnswer({ kind: 'file', file: f, name: f.name, url: URL.createObjectURL(f) });
+      });
+
+      /* Type instead */
+      el.typeToggle.addEventListener('click', function () {
+        if (el.text.hidden) {
+          stopRecording(true);
+          setAnswer(null);
+          el.text.hidden = false;
+          el.typeToggle.textContent = 'use audio instead';
+          el.text.focus();
+        } else {
+          el.text.hidden = true; el.text.value = '';
+          setAnswer(null);
+          el.typeToggle.textContent = 'click here';
+        }
+      });
+      el.text.addEventListener('input', function () {
+        answers[current] = el.text.value.trim() ? { kind: 'text', text: el.text.value } : null;
+        updateNext();
+      });
+
+      el.micToggle.addEventListener('click', function () { el.micHelp.hidden = !el.micHelp.hidden; });
+
+      /* Navigation */
+      el.next.addEventListener('click', function () {
+        stopRecording(false);
+        if (!hasAnswer(current)) return;
+        if (current < STEPS.length - 1) { goTo(current + 1); return; }
+        /* TODO: send person + answers to the assessment backend, then show this. */
+        el.assess.hidden = true;
+        $('nativeAside').hidden = true;
+        el.done.hidden = false;
+        $('doneTitle').focus({ preventScroll: true });
+        window.scrollTo({ top: 0, behavior: 'auto' });
+      });
+
+      /* Take another assessment: back to the details form, answers cleared. */
+      $('assessAgain').addEventListener('click', function () {
+        answers.forEach(function (a) { if (a && a.url) URL.revokeObjectURL(a.url); });
+        answers = STEPS.map(function () { return null; });
+        current = 0;
+        el.done.hidden = true;
+        $('nativeAside').hidden = false;
+        el.welcome.hidden = false;
+        el.email.hidden = false;
+        window.scrollTo({ top: 0, behavior: 'auto' });
+      });
+      el.back.addEventListener('click', function () { if (current > 0) goTo(current - 1); });
+
+      /* Details form -> first question */
+      el.form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var email = $('youmind-email');
+        if (!email.value || !email.checkValidity()) { email.focus(); return; }
+        person.name = $('youmind-name').value.trim();
+        person.email = email.value.trim();
+        person.partner = $('youmind-partner').value.trim();
+        el.welcome.hidden = true;
+        el.email.hidden = true;
+        el.assess.hidden = false;
+        current = 0;
+        renderStep();
+        window.scrollTo({ top: 0, behavior: 'auto' });
+      });
+    })();
+  </script>
+</body>
+</html>

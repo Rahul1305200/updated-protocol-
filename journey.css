@@ -1,0 +1,1145 @@
+/* ==========================================================================
+   Bespoke journey — additions on top of the protocol design system.
+   Everything here reuses tokens and components from styles.css (teal #199a91,
+   ink #021019, Poppins, .btn-explore, .dash-card, .protocol-modal, .proto-sheet).
+   Nothing in styles.css is changed.
+   ========================================================================== */
+
+/* -------------------------------------------------------------------------
+   1. Bespoke page (bespoke.html)
+   ------------------------------------------------------------------------- */
+.bespoke-intro {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: var(--content);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.bespoke-aside {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.bespoke-aside h2,
+.bespoke-aside .bespoke-aside-title {
+  margin: 0 0 10px;
+  font-family: var(--font);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--ink-2);
+}
+
+.bespoke-aside p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+.bespoke-aside p + p {
+  margin-top: 12px;
+}
+
+.bespoke-aside a {
+  color: #199a91;
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-color: rgba(25, 154, 145, 0.35);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.2s ease;
+}
+
+.bespoke-aside a:hover {
+  text-decoration-color: #199a91;
+}
+
+.bespoke-hero-title {
+  margin: 40px auto 14px;
+}
+
+.bespoke-sub {
+  max-width: 560px;
+  margin: 0 auto;
+  font-family: var(--font);
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.6;
+  color: #8d99a6;
+}
+
+body.dash-page .bespoke-shell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 64px;
+}
+
+.bespoke-aside {
+  text-align: center;
+}
+
+.bespoke-card {
+  width: min(100%, 520px);
+  padding: 32px;
+  border-radius: 24px;
+  background: #fff;
+  border: 1px solid var(--line);
+  box-shadow: 0 24px 60px rgba(2, 16, 25, 0.08);
+  text-align: center;
+}
+
+.bespoke-card-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background: #f4fbfa;
+  color: #199a91;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bespoke-card h2 {
+  margin: 0 0 8px;
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--ink-2);
+}
+
+.bespoke-card-lead {
+  margin: 0 0 24px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.bespoke-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.bespoke-form input {
+  width: 100%;
+  height: 56px;
+  padding: 0 20px;
+  border-radius: 14px;
+  border: 1px solid #e3e9ea;
+  background: #fff;
+  font-family: var(--font);
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--ink-2);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bespoke-form input::placeholder {
+  color: #93a3aa;
+}
+
+.bespoke-form input:hover {
+  border-color: #cfdadc;
+}
+
+.bespoke-form input:focus {
+  outline: none;
+  border-color: rgba(25, 154, 145, 0.6);
+  box-shadow: 0 0 0 4px rgba(25, 154, 145, 0.12);
+}
+
+.bespoke-form .btn-explore {
+  width: 100%;
+  margin-top: 8px;
+  cursor: pointer;
+  border: 0;
+  font-family: var(--font);
+}
+
+.bespoke-safety {
+  width: min(100%, 760px);
+  padding-top: 40px;
+  border-top: 1px solid rgba(2, 16, 25, 0.08);
+  text-align: center;
+}
+
+.bespoke-safety h2 {
+  margin: 0 0 10px;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--ink-2);
+}
+
+.bespoke-safety p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+@media (max-width: 768px) {
+  .bespoke-hero-title { margin-top: 28px; }
+  .bespoke-sub { font-size: 17px; }
+  body.dash-page .bespoke-shell { gap: 44px; }
+  .bespoke-card { padding: 24px 20px; }
+  .bespoke-card h2 { font-size: 22px; }
+}
+
+/* -------------------------------------------------------------------------
+   2. Profile sheet (protocol.html)
+   Built from the dashboard's own parts: .dash-card surfaces, 24px card
+   titles, .dash-meta-chip pills, 0.02em tracking, gray support text.
+   ------------------------------------------------------------------------- */
+.proto-sheet-body:has(.profile-head) {
+  gap: 14px;
+}
+
+.profile-head {
+  padding: 8px 4px 10px;
+}
+
+.profile-head h1 {
+  margin: 0 0 14px;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--ink-4);
+  text-transform: uppercase;
+}
+
+.profile-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+}
+
+.profile-chips .dash-meta-chip {
+  gap: 6px;
+  height: 30px;
+  color: var(--gray-text);
+  font-weight: 400;
+}
+
+.profile-chips .dash-meta-chip b {
+  font-weight: 500;
+  color: var(--ink-2);
+}
+
+.profile-chips .dash-meta-chip--ok b { color: #199a91; }
+
+.profile-resolution {
+  margin: 12px 0 0;
+  font-size: 14px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--gray-text);
+}
+
+.profile-card {
+  padding: 26px 26px 28px;
+}
+
+.profile-card .dash-card-head { margin-bottom: 16px; }
+
+.profile-card p,
+.profile-cta p {
+  margin: 0 0 12px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.7;
+  letter-spacing: 0.02em;
+  color: var(--ink-3);
+}
+
+.profile-card p:last-child { margin-bottom: 0; }
+
+.profile-card p b {
+  font-weight: 500;
+  color: var(--ink-2);
+}
+
+.profile-domain {
+  padding-top: 22px;
+  margin-top: 22px;
+  border-top: 1px solid var(--line);
+}
+
+.profile-card .dash-card-head + .profile-domain,
+.profile-card .dash-card-head + p + .profile-domain:first-of-type {
+  margin-top: 0;
+}
+
+.profile-card .dash-card-head + .profile-domain { padding-top: 0; border-top: 0; }
+
+.profile-kicker {
+  margin: 0 0 4px !important;
+  font-size: 13px !important;
+  font-weight: 500;
+  line-height: 1.35 !important;
+  letter-spacing: 0.04em !important;
+  color: var(--gray-text) !important;
+}
+
+.profile-card h3 {
+  margin: 0 0 12px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  color: var(--ink-2);
+}
+
+/* Payment: the one dark surface in the sheet, same teal as the footer and the
+   primary button, so it reads as the next step and nothing else does. */
+.profile-cta {
+  margin-top: 10px;
+  padding: 30px 28px 28px;
+  border-radius: 20px;
+  background: linear-gradient(180deg, #0f4e4a 0%, #082725 100%);
+  color: #fff;
+}
+
+.profile-cta p {
+  color: rgba(255, 255, 255, 0.82);
+  margin-bottom: 22px;
+}
+
+.profile-pay {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  min-height: 60px;
+  padding: 10px 10px 10px 28px;
+  border-radius: 100px;
+  background: #fff;
+  color: var(--ink-2);
+  font-family: var(--font);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  text-align: left;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.profile-pay:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
+}
+
+.profile-pay .btn-explore-icon {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(180deg, #199a91 0%, #082725 100%);
+  color: #fff;
+}
+
+.profile-paid {
+  display: none;
+  margin: 0 !important;
+  font-weight: 500;
+  color: #3fd9cf !important;
+}
+
+body.is-paid .profile-pay { display: none; }
+body.is-paid .profile-paid { display: block; }
+body.is-paid .profile-cta p:not(.profile-paid) { display: none; }
+
+.profile-disclaimer {
+  margin: 6px 4px 8px;
+  font-size: 13px;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+  color: var(--gray-text);
+}
+
+@media (max-width: 560px) {
+  .profile-head h1 { font-size: 22px; }
+  .profile-card { padding: 22px 18px 24px; }
+  .profile-cta { padding: 24px 18px; }
+}
+
+/* -------------------------------------------------------------------------
+   3. Paywall popup
+   ------------------------------------------------------------------------- */
+.paywall-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 16px;
+  border-radius: 50%;
+  background: #f4fbfa;
+  color: #199a91;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.paywall-actions {
+  flex-direction: column-reverse;
+  align-items: stretch;
+  gap: 14px;
+}
+
+.paywall-actions .btn-explore {
+  width: 100%;
+  cursor: pointer;
+}
+
+.paywall-actions .link-read {
+  justify-content: center;
+}
+
+body.is-paid .paywall-only { display: none !important; }
+
+/* Profile sheet: a reading column, not the 90vw overlay the dashboard uses. */
+.proto-sheet--profile {
+  width: min(90vw, 760px);
+  max-width: 100%;
+}
+
+@media (max-width: 900px) {
+  .proto-sheet--profile { width: 100%; }
+}
+
+/* -------------------------------------------------------------------------
+   4. Assessment (bespoke.html) — five questions
+   ------------------------------------------------------------------------- */
+.bespoke-card[hidden],
+#bespokeWelcome[hidden],
+.assess-actions [hidden],
+.assess-card [hidden],
+.bespoke-card--assess [hidden] {
+  display: none !important;
+}
+
+.bespoke-card--assess {
+  width: min(100%, 680px);
+  text-align: left;
+}
+
+.assess-steps {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  margin: 0 0 28px;
+  padding: 0;
+  list-style: none;
+}
+
+.assess-step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.assess-step::before {
+  content: "";
+  position: absolute;
+  top: 19px;
+  right: 50%;
+  width: 100%;
+  height: 2px;
+  background: #e3e9ea;
+}
+
+.assess-step:first-child::before { display: none; }
+.assess-step.is-done::before,
+.assess-step.is-current::before { background: #199a91; }
+
+.assess-dot {
+  position: relative;
+  z-index: 1;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #e3e9ea;
+  background: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--gray-text);
+  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+}
+
+.assess-step.is-current .assess-dot {
+  border-color: #199a91;
+  color: #199a91;
+  box-shadow: 0 0 0 5px rgba(25, 154, 145, 0.14);
+}
+
+.assess-step.is-done .assess-dot {
+  border-color: #199a91;
+  background: linear-gradient(180deg, #199a91 0%, #082725 100%);
+  color: #fff;
+}
+
+.assess-step-label {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--gray-text);
+}
+
+.assess-step.is-current .assess-step-label {
+  font-weight: 500;
+  color: var(--ink-2);
+}
+
+.assess-title {
+  margin: 0 0 8px;
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--ink-2);
+  outline: none;
+}
+
+.assess-question {
+  margin: 0 0 20px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--muted-2);
+}
+
+.assess-guide {
+  margin: 0 0 28px;
+  padding: 20px 22px;
+  border-radius: 16px;
+  background: #f4fbfa;
+}
+
+.assess-guide p {
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--ink-3);
+}
+
+.assess-guide p:last-child { margin-bottom: 0; }
+
+.assess-guide .assess-guide-head {
+  margin-bottom: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #199a91;
+}
+
+.assess-guide ul {
+  margin: 4px 0 0;
+  padding: 0 0 0 18px;
+  list-style: disc;
+}
+
+.assess-guide li {
+  margin: 0 0 4px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink-3);
+}
+
+.assess-guide li::marker { color: #199a91; }
+
+.assess-label {
+  margin: 0 0 12px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ink-2);
+}
+
+.assess-label--type { margin-top: 24px; }
+
+.assess-mic {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 12px;
+  padding: 14px 16px;
+  border-left: 3px solid #199a91;
+  border-radius: 4px 14px 14px 4px;
+  background: #f4fbfa;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--ink-3);
+}
+
+.assess-mic svg { flex-shrink: 0; margin-top: 3px; color: #199a91; }
+.assess-mic strong { font-weight: 600; color: var(--ink-2); }
+
+.assess-mic-help {
+  margin: 0 0 12px;
+  padding: 0 4px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.assess-link {
+  padding: 0;
+  font: inherit;
+  font-weight: 500;
+  color: #199a91;
+  text-decoration: underline;
+  text-decoration-color: rgba(25, 154, 145, 0.35);
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.assess-link:hover { text-decoration-color: #199a91; }
+
+.assess-record {
+  width: 100%;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 100px;
+  border: 1.5px solid rgba(25, 154, 145, 0.4);
+  background: #fff;
+  font-family: var(--font);
+  font-size: 16px;
+  font-weight: 500;
+  color: #199a91;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.assess-record:hover { background: #f4fbfa; border-color: #199a91; }
+
+.assess-record.is-recording {
+  background: #f4fbfa;
+  border-color: #199a91;
+}
+
+.assess-record.is-recording .assess-record-ico {
+  animation: assessPulse 1.4s ease-in-out infinite;
+}
+
+@keyframes assessPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.45; transform: scale(1.18); }
+}
+
+.assess-text {
+  width: 100%;
+  min-height: 120px;
+  padding: 16px 20px;
+  border-radius: 14px;
+  border: 1px solid #e3e9ea;
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink-2);
+  resize: vertical;
+}
+
+.assess-text:focus {
+  outline: none;
+  border-color: rgba(25, 154, 145, 0.6);
+  box-shadow: 0 0 0 4px rgba(25, 154, 145, 0.12);
+}
+
+.assess-drop {
+  margin-top: 16px;
+  padding: 20px;
+  border-radius: 16px;
+  border: 1.5px dashed #cfe3e1;
+  background: #fbfefe;
+}
+
+.assess-file {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+}
+
+.assess-file input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.assess-file-btn {
+  flex-shrink: 0;
+  padding: 10px 18px;
+  border-radius: 100px;
+  border: 1px solid var(--line);
+  background: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink-2);
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.assess-file:hover .assess-file-btn,
+.assess-file input:focus-visible + .assess-file-btn { border-color: #199a91; color: #199a91; }
+
+.assess-file-name {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 14px;
+  color: var(--gray-text);
+}
+
+.assess-audio {
+  display: block;
+  width: 100%;
+  margin-top: 16px;
+}
+
+.assess-error {
+  margin: 16px 0 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #8a5a1f;
+}
+
+.assess-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.assess-actions .btn-explore { margin-left: auto; cursor: pointer; border: 0; font-family: var(--font); }
+.assess-back { cursor: pointer; }
+
+@media (max-width: 560px) {
+  .assess-title { font-size: 22px; }
+  .assess-steps { margin-bottom: 22px; }
+  .assess-dot { width: 34px; height: 34px; font-size: 14px; }
+  .assess-step::before { top: 16px; }
+  .assess-step-label { font-size: 11px; }
+  .assess-actions .btn-explore { width: 100%; }
+}
+
+/* Assessment buttons — explicit colors so they read as part of the system */
+.assess-file-btn {
+  border: 1.5px solid rgba(25, 154, 145, 0.4);
+  background: #fff;
+  color: #199a91;
+}
+
+.assess-file:hover .assess-file-btn,
+.assess-file input:focus-visible + .assess-file-btn {
+  border-color: #199a91;
+  background: #f4fbfa;
+  color: #199a91;
+}
+
+.assess-actions .assess-back {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 22px;
+  margin-top: 0;
+  border: 1.5px solid #dfe6e7;
+  border-radius: 100px;
+  background: #fff;
+  font-family: var(--font);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1;
+  color: #021019;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.assess-actions .assess-back:hover {
+  border-color: #199a91;
+  color: #199a91;
+}
+
+/* -------------------------------------------------------------------------
+   5. Thank-you screen (after the five questions)
+   ------------------------------------------------------------------------- */
+.thanks[hidden],
+#nativeAside[hidden] { display: none !important; }
+
+.thanks {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.thanks-check {
+  width: 72px;
+  height: 72px;
+  margin-bottom: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #199a91 0%, #082725 100%);
+  color: #fff;
+  box-shadow: 0 0 0 8px rgba(25, 154, 145, 0.12);
+}
+
+.thanks-title { margin: 0 0 14px; outline: none; }
+
+.thanks .bespoke-sub { margin-bottom: 56px; }
+
+.thanks-card {
+  width: min(100%, 1080px);
+  padding: 44px 40px 40px;
+  border-radius: 24px;
+  background: #fff;
+  border: 1px solid var(--line);
+  box-shadow: 0 24px 60px rgba(2, 16, 25, 0.08);
+}
+
+.thanks-card h2 {
+  margin: 0 0 32px;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--ink-2);
+}
+
+.thanks-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  text-align: left;
+}
+
+.thanks-item {
+  padding: 24px;
+  border-radius: 18px;
+  background: #f4fbfa;
+}
+
+.thanks-ico {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 18px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  color: #199a91;
+}
+
+.thanks-item h3 {
+  margin: 0 0 8px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.25;
+  color: var(--ink-2);
+}
+
+.thanks-item p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+.thanks-note {
+  max-width: 760px;
+  margin: 32px auto 28px;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+.thanks-note strong { font-weight: 500; color: var(--ink-2); }
+
+.thanks-again { cursor: pointer; border: 0; font-family: var(--font); }
+
+@media (max-width: 860px) {
+  .thanks-grid { grid-template-columns: 1fr; }
+  .thanks-card { padding: 32px 20px 28px; }
+  .thanks .bespoke-sub { margin-bottom: 36px; }
+}
+
+/* Mic notice — a calm card like the rest of the system: no side stripe,
+   icon in a small circle, even radius. */
+.assess-mic {
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border: 0;
+  border-radius: 16px;
+  background: #f4fbfa;
+}
+
+.assess-mic-ico {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  color: #199a91;
+}
+
+.assess-mic svg { margin-top: 0; }
+
+/* -------------------------------------------------------------------------
+   Paywall popup — layout and entrance
+   ------------------------------------------------------------------------- */
+#paywallModal .protocol-modal {
+  width: min(440px, 100%);
+  padding: 36px 32px 28px;
+  border-radius: 28px;
+  text-align: center;
+}
+
+#paywallModal .paywall-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 20px;
+}
+
+#paywallModal h2 {
+  margin: 0 0 10px;
+  font-size: 26px;
+}
+
+#paywallModal .protocol-modal > p {
+  max-width: 32ch;
+  margin: 0 auto 28px;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+#paywallModal .paywall-actions {
+  flex-direction: column-reverse;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 8px;
+}
+
+#paywallModal .paywall-actions .btn-explore {
+  width: 100%;
+  justify-content: space-between;
+}
+
+#paywallModal .paywall-actions .link-read {
+  align-self: center;
+  padding: 12px 20px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--gray-text);
+  transition: color 0.2s ease;
+}
+
+#paywallModal .paywall-actions .link-read:hover { color: #199a91; }
+
+/* Entrance: backdrop fades in, the card rises and settles. Quick enough not to
+   make anyone wait, slow enough to read as a gentle arrival. */
+#paywallModal:not([hidden]) {
+  animation: paywallFade 0.24s ease-out both;
+}
+
+#paywallModal:not([hidden]) .protocol-modal {
+  animation: paywallRise 0.38s cubic-bezier(0.22, 0.8, 0.3, 1) 0.04s both;
+}
+
+#paywallModal:not([hidden]) .paywall-icon {
+  animation: paywallPop 0.45s cubic-bezier(0.22, 1.2, 0.36, 1) 0.18s both;
+}
+
+@keyframes paywallFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes paywallRise {
+  from { opacity: 0; transform: translateY(14px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes paywallPop {
+  from { opacity: 0; transform: scale(0.7); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #paywallModal:not([hidden]),
+  #paywallModal:not([hidden]) .protocol-modal,
+  #paywallModal:not([hidden]) .paywall-icon { animation: none; }
+}
+
+/* Paywall — centered button label, premium lock badge (same gradient as the
+   system's primary button, with a soft halo like the thank-you check). */
+#paywallModal .paywall-actions .btn-explore {
+  position: relative;
+  justify-content: center;
+  padding: 8px 64px;
+}
+
+#paywallModal .paywall-actions .btn-explore .btn-explore-icon {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+}
+
+#paywallModal .paywall-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 22px;
+  background: linear-gradient(180deg, #199a91 0%, #082725 100%);
+  color: #fff;
+  box-shadow: 0 0 0 8px rgba(25, 154, 145, 0.12), 0 10px 24px rgba(8, 39, 37, 0.22);
+}
+
+/* Profile — phone sizing. The shared card title scales up on narrow screens;
+   inside a long reading sheet it has to stay one step above the body text. */
+.profile-card .dash-card-head h2 {
+  font-size: 24px;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+@media (max-width: 600px) {
+  .proto-sheet-body:has(.profile-head) { padding: 16px; gap: 12px; }
+  .profile-head { padding: 4px 2px 6px; }
+  .profile-head h1 { font-size: 19px; line-height: 1.35; margin-bottom: 12px; }
+  .profile-chips .dash-meta-chip { height: 28px; font-size: 12.5px; padding: 0 11px; }
+  .profile-resolution { font-size: 13px; }
+  .profile-card { padding: 20px 18px 22px; border-radius: 16px; }
+  .profile-card .dash-card-head { margin-bottom: 12px; }
+  .profile-card .dash-card-head h2 { font-size: 20px; }
+  .profile-card h3 { font-size: 16.5px; }
+  .profile-card p, .profile-cta p { font-size: 14.5px; line-height: 1.65; }
+  .profile-domain { padding-top: 18px; margin-top: 18px; }
+  .profile-cta { padding: 22px 18px 18px; border-radius: 18px; }
+  .profile-pay { min-height: 56px; padding: 8px 8px 8px 22px; font-size: 15px; }
+  .profile-pay .btn-explore-icon { width: 38px; height: 38px; }
+  .profile-disclaimer { font-size: 12.5px; margin: 4px 2px 12px; }
+}
+
+/* -------------------------------------------------------------------------
+   6. Bespoke page typography — taken from youmind.org/bespoke itself.
+   Inter for the page content (nav, footer and buttons stay in the system's
+   Poppins). Sizes/weights/colors are the live site's h2, h3, p and strong.
+   ------------------------------------------------------------------------- */
+body.bespoke-page .bespoke-intro,
+body.bespoke-page .bespoke-shell {
+  font-family: Inter, Arial, sans-serif;
+}
+
+body.bespoke-page .bespoke-shell button:not(.btn-explore):not(.assess-record),
+body.bespoke-page .bespoke-shell input,
+body.bespoke-page .bespoke-shell textarea {
+  font-family: Inter, Arial, sans-serif;
+}
+
+body.bespoke-page .btn-explore,
+body.bespoke-page .btn-explore span { font-family: var(--font); }
+
+/* h2 — 48 / 53, -0.96px, 500, #0a0a0a */
+body.bespoke-page .bespoke-hero-title,
+body.bespoke-page .thanks-title,
+body.bespoke-page .thanks-card h2,
+body.bespoke-page .bespoke-safety h2 {
+  font-family: Inter, Arial, sans-serif;
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 53px;
+  letter-spacing: -0.96px;
+  color: #0a0a0a;
+}
+
+body.bespoke-page .bespoke-hero-title em,
+body.bespoke-page .thanks-title em { color: #199a91; }
+
+/* h3 — 24 / 34, 500, #0a0a0a */
+body.bespoke-page .bespoke-aside-title,
+body.bespoke-page .bespoke-card h2,
+body.bespoke-page .assess-title,
+body.bespoke-page .thanks-item h3 {
+  font-family: Inter, Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 34px;
+  letter-spacing: 0;
+  color: #0a0a0a;
+}
+
+/* p — 20 / 32, 400, #565656 (page-level paragraphs) */
+body.bespoke-page .bespoke-sub,
+body.bespoke-page .bespoke-aside p:not(.bespoke-aside-title),
+body.bespoke-page .bespoke-safety p {
+  font-family: Inter, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: 0;
+  color: #565656;
+}
+
+body.bespoke-page .bespoke-sub { max-width: 640px; }
+
+/* Text inside cards — same family and color, one step down so forms stay compact */
+body.bespoke-page .bespoke-card-lead,
+body.bespoke-page .assess-question,
+body.bespoke-page .assess-guide p,
+body.bespoke-page .assess-guide li,
+body.bespoke-page .assess-mic,
+body.bespoke-page .assess-mic-help,
+body.bespoke-page .thanks-item p,
+body.bespoke-page .thanks-note {
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0;
+  color: #565656;
+}
+
+body.bespoke-page .assess-label { font-size: 16px; line-height: 26px; color: #0a0a0a; }
+
+/* strong — 16 / 26, 700, rgba(3,23,40,.6) */
+body.bespoke-page .assess-mic strong,
+body.bespoke-page .thanks-note strong {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 26px;
+  color: #03172899;
+}
+
+@media (max-width: 768px) {
+  body.bespoke-page .bespoke-hero-title,
+  body.bespoke-page .thanks-title,
+  body.bespoke-page .thanks-card h2,
+  body.bespoke-page .bespoke-safety h2 { font-size: 34px; line-height: 38px; letter-spacing: -0.68px; }
+
+  body.bespoke-page .bespoke-aside-title,
+  body.bespoke-page .bespoke-card h2,
+  body.bespoke-page .assess-title,
+  body.bespoke-page .thanks-item h3 { font-size: 22px; line-height: 30px; }
+
+  body.bespoke-page .bespoke-sub,
+  body.bespoke-page .bespoke-aside p:not(.bespoke-aside-title),
+  body.bespoke-page .bespoke-safety p { font-size: 17px; line-height: 28px; }
+}

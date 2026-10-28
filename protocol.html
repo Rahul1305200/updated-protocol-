@@ -1,0 +1,2679 @@
+<!DOCTYPE html>
+<html lang="en" class="dash-page">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>YouMind — Your Protocol Journey</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=240">
+  <link rel="stylesheet" href="journey.css?v=13">
+</head>
+<body class="is-loading dash-page">
+  <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true">
+    <symbol id="icon-arrow-ne" viewBox="0 0 20 20">
+      <g transform="translate(10 10) rotate(-45) translate(-8.834 -7.226)">
+        <path fill="currentColor" d="M10.14 0.4C10.16 0.38 10.57 0.28 11.05 0.17C11.54 0.06 11.94 -0.02 11.95 0C11.96 0.02 12.01 0.36 12.06 0.76C12.17 1.54 12.44 2.47 12.73 3.04C13.62 4.84 15.23 6.03 17.17 6.34L17.67 6.41L17.67 7.21L17.67 8L17.22 8.08C14.28 8.57 12.36 10.77 12 14.06C11.98 14.28 11.95 14.45 11.94 14.45C11.84 14.45 10.2 14.05 10.16 14.02C10.14 14 10.16 13.8 10.2 13.58C10.68 11.1 12.04 9.09 13.81 8.25L14.23 8.04L5.51 8.03L0 8.02L0 6.41L5.53 6.4L14.22 6.39L13.69 6.12C12.3 5.41 11.2 4.03 10.55 2.18C10.37 1.65 10.09 0.45 10.14 0.4Z"/>
+      </g>
+    </symbol>
+  </svg>
+
+  <div class="drawer-backdrop" id="drawerBackdrop" hidden></div>
+  <aside class="mobile-drawer" id="mobileDrawer" aria-hidden="true" aria-label="Site menu">
+    <div class="mobile-drawer-head">
+      <a class="mobile-drawer-logo" href="protocol.html" aria-label="YouMind">
+        <img src="assets/065c9eb59e0f98fd.png" alt="YouMind">
+      </a>
+      <button class="mobile-drawer-close" id="drawerClose" type="button" aria-label="Close menu">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <path d="M2 2l10 10M12 2L2 12" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+    <div class="mobile-drawer-body">
+      <a class="mobile-drawer-link" href="#">About Us</a>
+      <a class="mobile-drawer-link" href="#">Case Study</a>
+
+      <div class="mobile-acc">
+        <button type="button" class="mobile-drawer-link mobile-acc-toggle" aria-expanded="false" aria-controls="mobileSolPanel">
+          <span>Solutions</span>
+          <svg class="mobile-acc-chevron" width="14" height="14" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.2l3.5 3.6 3.5-3.6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="mobile-acc-panel" id="mobileSolPanel" hidden>
+          <a class="mobile-sub" href="#">
+            <span class="mobile-sub-ico" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/><path d="M3 12h18"/></svg>
+            </span>
+            <span>
+              <span class="mega-title">Corporate / Organizational</span>
+              <span class="mega-desc">Build resilience. Reduce burnout. Improve performance.</span>
+            </span>
+          </a>
+          <a class="mobile-sub" href="#">
+            <span class="mobile-sub-ico" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 7-4-14-3 7H2"/></svg>
+            </span>
+            <span>
+              <span class="mega-title">Elite Athletics</span>
+              <span class="mega-desc">Optimize readiness. Accelerate recovery. Protect performance.</span>
+            </span>
+          </a>
+          <a class="mobile-sub" href="#">
+            <span class="mobile-sub-ico" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v7a6 6 0 006 6 6 6 0 006-6V3"/><path d="M4 3h4M16 3h4"/><path d="M12 16v2a3 3 0 003 3"/><circle cx="18" cy="20" r="2"/></svg>
+            </span>
+            <span>
+              <span class="mega-title">Healthcare</span>
+              <span class="mega-desc">Build resilience. Reduce burnout. Improve performance.</span>
+            </span>
+          </a>
+          <a class="mobile-sub" href="#">
+            <span class="mobile-sub-ico" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3.5v5.8c0 4.6-3.2 8.8-8 9.7-4.8-.9-8-5.1-8-9.7V6.5L12 3z"/></svg>
+            </span>
+            <span>
+              <span class="mega-title">Tactical &amp; Defense</span>
+              <span class="mega-desc">Strengthen resilience. Support recovery under pressure.</span>
+            </span>
+          </a>
+          <a class="mobile-sub" href="#">
+            <span class="mobile-sub-ico" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7v14"/><path d="M3 11h16a2 2 0 012 2v8"/><path d="M3 18h18"/><path d="M7 11V8a2 2 0 012-2h6a2 2 0 012 2v3"/></svg>
+            </span>
+            <span>
+              <span class="mega-title">Hospitality</span>
+              <span class="mega-desc">Enhance sleep. Elevate guest recovery.</span>
+            </span>
+          </a>
+          <a class="mobile-sub" href="#">
+            <span class="mobile-sub-ico" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 11a2 2 0 00-2 2c0 1.5-.15 3.4-.4 5"/><path d="M14 13c0 2.4-.15 5.6-1 8"/><path d="M9.2 13.2c-.25 2.2-.8 4.4-1.7 6.3"/><path d="M16.5 14.2c.2 1.8.15 4-.4 6"/><path d="M7.2 11.2a5 5 0 019.6 1.2"/><path d="M5 14.5a8 8 0 0114 1"/><path d="M4.5 18c-1 1.6-1.8 3-2.5 4"/><path d="M19.6 17.8c.7 1.5 1.2 2.8 1.4 4.2"/></svg>
+            </span>
+            <span>
+              <span class="mega-title">Personal / Bespoke</span>
+              <span class="mega-desc">Personalized protocols. Smarter focus. Better recovery.</span>
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <div class="mobile-acc">
+        <button type="button" class="mobile-drawer-link mobile-acc-toggle" aria-expanded="false" aria-controls="mobileSciPanel">
+          <span>The Science</span>
+          <svg class="mobile-acc-chevron" width="14" height="14" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.2l3.5 3.6 3.5-3.6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="mobile-acc-panel" id="mobileSciPanel" hidden>
+          <a class="mobile-sub" href="#">
+            <span class="mobile-sub-ico" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="10" width="7" height="11"/><rect x="14" y="6" width="7" height="15"/><path d="M6.5 14v2M6.5 7V4M17.5 10V7"/></svg>
+            </span>
+            <span>
+              <span class="mega-title">Organizational Performance</span>
+              <span class="mega-desc">Science behind workforce resilience and executive capacity.</span>
+            </span>
+          </a>
+          <a class="mobile-sub" href="#">
+            <span class="mobile-sub-ico" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0016.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 002 8.5c0 2.3 1.5 4.05 3 5.5l7 7z"/><path d="M3.2 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.3"/></svg>
+            </span>
+            <span>
+              <span class="mega-title">Hospitality and Healthcare</span>
+              <span class="mega-desc">Recovery protocols for guests, patients, and clinical teams.</span>
+            </span>
+          </a>
+          <a class="mobile-sub" href="#">
+            <span class="mobile-sub-ico" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3.5 3.5 0 00-3.4 4.2 4 4 0 00-2.1 6.6A3.5 3.5 0 009.5 21h5a3.5 3.5 0 002.9-5.2 4 4 0 00-2-6.6A3.5 3.5 0 0012 5z"/><path d="M12 5v16M9.5 10.5c.8.4 1.7.4 2.5 0M9.5 14c.8.4 1.7.4 2.5 0"/></svg>
+            </span>
+            <span>
+              <span class="mega-title">Personalized Brain Entrainment (Bespoke)</span>
+              <span class="mega-desc">Individual neurofunctional profiles and acoustic protocols.</span>
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <a class="mobile-drawer-link" href="#">Testimonials</a>
+    </div>
+    <div class="mobile-drawer-foot">
+      <a class="btn-contact" href="#">
+        <span>Contact Us</span>
+        <span class="btn-contact-icon" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </a>
+    </div>
+  </aside>
+
+  <div class="page">
+
+    <section class="hero dash-top">
+      <div class="hero-deco" aria-hidden="true"></div>
+      <header class="nav-wrap">
+        <nav class="dash-nav nav fade-el" aria-label="Primary">
+          <a class="nav-logo" href="protocol.html" aria-label="YouMind">
+            <img src="assets/065c9eb59e0f98fd.png" alt="YouMind">
+          </a>
+          <button class="nav-menu-btn" id="navMenuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="siteNavLinks">
+            <svg width="18" height="14" viewBox="0 0 18 14" fill="none" aria-hidden="true">
+              <path d="M1 1h10" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+              <path d="M1 7h16" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+              <path d="M7 13h10" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <ul class="nav-links" id="siteNavLinks">
+            <li><a class="nav-link" href="#">About Us</a></li>
+            <li><a class="nav-link" href="#">Case Study</a></li>
+            <li class="nav-item has-mega" id="solTrigger">
+              <button class="nav-link nav-link--btn" type="button" aria-expanded="false" aria-controls="solMenu">
+                Solutions
+                <svg class="nav-chevron" width="14" height="14" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.2l3.5 3.6 3.5-3.6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div class="mega-menu" id="solMenu" role="menu" hidden>
+                <a class="mega-item" href="#" role="menuitem">
+                  <span class="mega-icon" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/><path d="M3 12h18"/></svg>
+                  </span>
+                  <span>
+                    <span class="mega-title">Corporate / Organizational</span>
+                    <span class="mega-desc">Build resilience. Reduce burnout. Improve performance.</span>
+                  </span>
+                </a>
+                <a class="mega-item" href="#" role="menuitem">
+                  <span class="mega-icon" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 7-4-14-3 7H2"/></svg>
+                  </span>
+                  <span>
+                    <span class="mega-title">Elite Athletics</span>
+                    <span class="mega-desc">Optimize readiness. Accelerate recovery. Protect performance.</span>
+                  </span>
+                </a>
+                <a class="mega-item" href="#" role="menuitem">
+                  <span class="mega-icon" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v7a6 6 0 006 6 6 6 0 006-6V3"/><path d="M4 3h4M16 3h4"/><path d="M12 16v2a3 3 0 003 3"/><circle cx="18" cy="20" r="2"/></svg>
+                  </span>
+                  <span>
+                    <span class="mega-title">Healthcare</span>
+                    <span class="mega-desc">Build resilience. Reduce burnout. Improve performance.</span>
+                  </span>
+                </a>
+                <a class="mega-item" href="#" role="menuitem">
+                  <span class="mega-icon" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3.5v5.8c0 4.6-3.2 8.8-8 9.7-4.8-.9-8-5.1-8-9.7V6.5L12 3z"/></svg>
+                  </span>
+                  <span>
+                    <span class="mega-title">Tactical &amp; Defense</span>
+                    <span class="mega-desc">Strengthen resilience. Support recovery under pressure.</span>
+                  </span>
+                </a>
+                <a class="mega-item" href="#" role="menuitem">
+                  <span class="mega-icon" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7v14"/><path d="M3 11h16a2 2 0 012 2v8"/><path d="M3 18h18"/><path d="M7 11V8a2 2 0 012-2h6a2 2 0 012 2v3"/></svg>
+                  </span>
+                  <span>
+                    <span class="mega-title">Hospitality</span>
+                    <span class="mega-desc">Enhance sleep. Elevate guest recovery.</span>
+                  </span>
+                </a>
+                <a class="mega-item" href="#" role="menuitem">
+                  <span class="mega-icon" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 11a2 2 0 00-2 2c0 1.5-.15 3.4-.4 5"/><path d="M14 13c0 2.4-.15 5.6-1 8"/><path d="M9.2 13.2c-.25 2.2-.8 4.4-1.7 6.3"/><path d="M16.5 14.2c.2 1.8.15 4-.4 6"/><path d="M7.2 11.2a5 5 0 019.6 1.2"/><path d="M5 14.5a8 8 0 0114 1"/><path d="M4.5 18c-1 1.6-1.8 3-2.5 4"/><path d="M19.6 17.8c.7 1.5 1.2 2.8 1.4 4.2"/></svg>
+                  </span>
+                  <span>
+                    <span class="mega-title">Personal / Bespoke</span>
+                    <span class="mega-desc">Personalized protocols. Smarter focus. Better recovery.</span>
+                  </span>
+                </a>
+              </div>
+            </li>
+            <li class="nav-item has-mega" id="sciTrigger">
+              <button class="nav-link nav-link--btn" type="button" aria-expanded="false" aria-controls="sciMenu">
+                The Science
+                <svg class="nav-chevron" width="14" height="14" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.2l3.5 3.6 3.5-3.6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div class="mega-menu mega-menu--science" id="sciMenu" role="menu" hidden>
+                <a class="mega-item" href="#" role="menuitem">
+                  <span class="mega-icon" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="10" width="7" height="11"/><rect x="14" y="6" width="7" height="15"/><path d="M6.5 14v2M6.5 7V4M17.5 10V7"/></svg>
+                  </span>
+                  <span>
+                    <span class="mega-title">Organizational Performance</span>
+                    <span class="mega-desc">Science behind workforce resilience and executive capacity.</span>
+                  </span>
+                </a>
+                <a class="mega-item" href="#" role="menuitem">
+                  <span class="mega-icon" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0016.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 002 8.5c0 2.3 1.5 4.05 3 5.5l7 7z"/><path d="M3.2 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.3"/></svg>
+                  </span>
+                  <span>
+                    <span class="mega-title">Hospitality and Healthcare</span>
+                    <span class="mega-desc">Recovery protocols for guests, patients, and clinical teams.</span>
+                  </span>
+                </a>
+                <a class="mega-item" href="#" role="menuitem">
+                  <span class="mega-icon" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3.5 3.5 0 00-3.4 4.2 4 4 0 00-2.1 6.6A3.5 3.5 0 009.5 21h5a3.5 3.5 0 002.9-5.2 4 4 0 00-2-6.6A3.5 3.5 0 0012 5z"/><path d="M12 5v16M9.5 10.5c.8.4 1.7.4 2.5 0M9.5 14c.8.4 1.7.4 2.5 0"/></svg>
+                  </span>
+                  <span>
+                    <span class="mega-title">Personalized Brain Entrainment (Bespoke)</span>
+                    <span class="mega-desc">Individual neurofunctional profiles and acoustic protocols.</span>
+                  </span>
+                </a>
+              </div>
+            </li>
+            <li><a class="nav-link" href="#">Testimonials</a></li>
+          </ul>
+          <div class="dash-nav-user">
+            <span class="dash-nav-progress" aria-hidden="true">
+              <strong id="navDay">Day 6</strong>
+              <span>Your First 14 Days</span>
+            </span>
+            <button type="button" class="dash-nav-user-btn" id="profileMenuBtn" aria-expanded="false" aria-haspopup="true" aria-controls="profileMenu" aria-label="Account menu">
+              <img class="dash-nav-avatar" src="assets/blog-author.png" alt="">
+            </button>
+            <div class="dash-profile-menu" id="profileMenu" hidden>
+              <div class="dash-profile-id">
+                <img class="dash-profile-avatar" src="assets/blog-author.png" alt="">
+                <span class="dash-profile-meta">
+                  <strong class="dash-profile-name">Jack Rowe</strong>
+                </span>
+              </div>
+              <div class="dash-profile-group">
+                <button type="button" class="dash-profile-link" data-sheet="profile">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="8" r="3.6" stroke="currentColor" stroke-width="1.6"/><path d="M5 20c.6-3.6 3.5-5.6 7-5.6s6.4 2 7 5.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                  Profile
+                </button>
+                <button type="button" class="dash-profile-link" data-sheet="guidance">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 016.5 3H18v16.5H6.5A2.5 2.5 0 014 17V5.5z" stroke="currentColor" stroke-width="1.6"/><path d="M8 7.5h6M8 11h8M8 14.5h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                  Guidance
+                </button>
+                <button type="button" class="dash-profile-link" data-sheet="dashboard">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 19V5M4 19h16M8 17V11M12 17V7M16 17v-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Dashboard
+                </button>
+              </div>
+              <button type="button" class="dash-profile-link dash-profile-signout" id="profileSignOut">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 17l5-5-5-5M20 12H9M12 3H6a1 1 0 00-1 1v16a1 1 0 001 1h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Sign out
+              </button>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      <div class="listen-hero-intro fade-el">
+        <span class="listen-hero-air" aria-hidden="true"></span>
+        <h1 class="listen-hero-title">
+          <span>Bespoke Neuroacoustic</span>
+          <em>Protocol</em>
+        </h1>
+        <!-- The journey, drawn as three strands rather than one line.
+
+             Left: three signals out of phase with each other, different
+             amplitudes, crossing — an unregulated system is many competing
+             rhythms, not one loud one.
+
+             Middle: they stop fighting. Amplitudes even out, the crossings
+             stop, the phases lock.
+
+             Right: they become one wave that is still moving. Calm is a steady
+             rhythm, not a flat line — so the strands share an identical tail,
+             overlapping into a single brighter stroke that keeps breathing. -->
+        <svg class="listen-hero-wave" viewBox="0 0 900 120" preserveAspectRatio="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="waveGrad" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#0b7c76"/>
+              <stop offset="0.18" stop-color="#12968d"/>
+              <stop offset="0.42" stop-color="#17aca1"/>
+              <stop offset="0.62" stop-color="#2ec9bf"/>
+              <stop offset="0.8" stop-color="#6fc094"/>
+              <stop offset="0.93" stop-color="#bfa863"/>
+              <stop offset="1" stop-color="#c79a4a"/>
+            </linearGradient>
+            <filter id="waveGlow" x="-6%" y="-70%" width="112%" height="240%">
+              <feGaussianBlur stdDeviation="2.6"/>
+            </filter>
+          </defs>
+
+          <g class="wave-breathe">
+            <path class="wave-strand wave-strand--b" d="M14,60 C40,80 68,40 98,60 C128,79 158,41 192,60 C226,76 260,44 298,60 C336,72 374,48 414,60 C454,67 506,60 534,60"/>
+            <path class="wave-signal wave-signal--glow" d="M14,60 C40,16 68,104 98,60 C128,18 158,102 192,60 C226,24 260,96 298,60 C336,32 374,88 414,60 C454,42 506,60 534,60"/>
+            <path class="wave-signal" id="waveSignal" d="M14,60 C40,16 68,104 98,60 C128,18 158,102 192,60 C226,24 260,96 298,60 C336,32 374,88 414,60 C454,42 506,60 534,60"/>
+            <!-- Where the journey lands, it keeps living: slow rings leaving the
+                 resting point like a drop on still water. Never finishes,
+                 never hurries. -->
+            <circle class="wave-rest-ring" cx="886" cy="60" r="6" fill="none" opacity="0"/>
+            <circle class="wave-rest-ring wave-rest-ring--b" cx="886" cy="60" r="6" fill="none" opacity="0"/>
+            <circle class="wave-rest-halo" r="5" cx="0" cy="0" fill="none" opacity="0"/>
+            <circle class="listen-hero-rider" r="5" cx="0" cy="0"/>
+          </g>        </svg>
+        <p class="listen-hero-ends"><span>Alert</span><span>Settled</span></p>
+      </div>
+    </section>
+
+    <section class="dash-shell">
+      <div class="dash-inner">
+
+        <main class="proto-main fade-el" id="protoMain">
+          <div class="listen-hero-body">
+            <div class="proto-card-wrap">
+              <div class="proto-card">
+                <div class="proto-player">
+                  <div class="proto-player-art" id="playerArt" role="img" aria-label="Session artwork"></div>
+                  <div class="proto-player-body">
+                    <p class="proto-player-ep" id="playerEp">Day 6 &middot; Session</p>
+                    <h2 class="proto-player-title" id="playerTitle">Deep Recovery</h2>
+                    <div class="player-controls">
+                      <button type="button" class="player-play" id="playerPlayPause" aria-label="Play">
+                        <svg class="player-icon-play" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M8 6.5v11l10-5.5L8 6.5z" fill="currentColor"/></svg>
+                        <svg class="player-icon-pause" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M8 6h3v12H8V6zm5 0h3v12h-3V6z" fill="currentColor"/></svg>
+                      </button>
+                      <button type="button" class="player-ctrl player-ctrl--dark" id="playerRewind" aria-label="Rewind 10 seconds">&minus;10s</button>
+                      <button type="button" class="player-ctrl player-ctrl--dark" id="playerSpeed" aria-label="Playback speed">1&times;</button>
+                      <button type="button" class="player-ctrl player-ctrl--dark" id="playerForward" aria-label="Forward 10 seconds">+10s</button>
+                      <span class="player-status" id="playerStatus" hidden>Played today &check;</span>
+                      <button type="button" class="player-ctrl player-ctrl--dark player-ctrl--vol" id="playerMute" aria-label="Mute">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                          <path d="M5 9v6h4l5 4V5L9 9H5z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                          <path class="player-vol-wave" d="M16.5 9.5a3.5 3.5 0 010 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                          <path class="player-vol-wave" d="M19 7a6.5 6.5 0 010 10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" opacity="0.75"/>
+                          <path class="player-vol-off" d="M18 8l4 8M22 8l-4 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                        </svg>
+                      </button>
+                    </div>
+                    <div class="proto-player-foot">
+                      <div class="player-progress-wrap">
+                        <input type="range" class="player-progress player-progress--dark" id="playerProgress" min="0" max="1000" value="0" aria-label="Session progress">
+                        <div class="player-time player-time--dark">
+                          <span id="playerElapsed">00:00</span>
+                          <span class="player-time-sep" aria-hidden="true">|</span>
+                          <span id="playerDuration">20:00</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="proto-episodes">
+                  <p class="proto-episodes-label">More sessions</p>
+                  <ul class="player-episodes player-episodes--dark" id="playerEpisodes"></ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="dash-orient dash-card fade-el" id="orientBanner">
+              <h3>Getting started</h3>
+              <p>For your first few sessions, follow the recommended guidelines and explore the sessions included in your protocol. The purpose is to become familiar with the different experiences and understand how they feel for you.</p>
+            </div>
+
+            <section class="proto-discover fade-el" aria-label="Recommended listening">
+              <div class="dash-row dash-row--session">
+                <article class="dash-card dash-today" id="suggestCard">
+                  <div class="dash-card-head dash-today-head">
+                    <h2>Suggested today</h2>
+                    <span class="dash-card-meta">Part of your protocol</span>
+                  </div>
+                  <div class="dash-today-row">
+                    <div class="dash-today-media" id="suggestMedia" role="img" aria-label="Suggested session artwork">
+                      <span class="dash-today-art" id="suggestArt"></span>
+                      <button type="button" class="dash-today-play" id="suggestPlay" aria-label="Play suggested session">
+                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 7v10l8-5-8-5z" fill="currentColor"/></svg>
+                      </button>
+                    </div>
+                    <div class="dash-today-info">
+                      <h3 id="suggestTitle">Deep Recovery</h3>
+                      <p class="dash-today-meta"><span id="suggestMins">20</span> min</p>
+                      <p class="dash-today-note" id="suggestNote">The longest wind-down. Best in the evening, not before work.</p>
+                      <button type="button" class="btn-explore dash-listen-btn" id="btnSuggestListen">
+                        <span>Listen</span>
+                        <span class="btn-explore-icon" aria-hidden="true">
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M8 6.5v11l10-5.5L8 6.5z" fill="currentColor"/></svg>
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                </article>
+                <article class="dash-card dash-used" id="mostUsedCard">
+                  <div class="dash-card-head">
+                    <h2>Your most used</h2>
+                  </div>
+                  <ul class="dash-used-list" id="mostUsedList"></ul>
+                </article>
+              </div>
+            </section>
+
+            <p class="listen-hero-note">Best with headphones, somewhere you will not be interrupted.</p>
+          </div>
+        </main>
+
+        <nav class="proto-shelf" aria-label="Protocol sections">
+          <button type="button" class="proto-shelf-tab" data-sheet="guidance" aria-expanded="false">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 016.5 3H18v16.5H6.5A2.5 2.5 0 014 17V5.5z" stroke="currentColor" stroke-width="1.5"/><path d="M8 7.5h6M8 11h8M8 14.5h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span>Guidance</span>
+          </button>
+          <button type="button" class="proto-shelf-tab" data-sheet="dashboard" aria-expanded="false">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 19V5M4 19h16M8 17V11M12 17V7M16 17v-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Dashboard</span>
+          </button>
+        </nav>
+
+        <div class="proto-sheet-backdrop" id="sheetBackdrop" hidden></div>
+
+        <aside class="proto-sheet proto-sheet--guide" id="sheetGuidance" hidden role="dialog" aria-modal="true" aria-labelledby="sheetGuidanceTitle">
+          <header class="proto-sheet-head">
+            <button type="button" class="proto-sheet-back" data-sheet-close aria-label="Back to listening">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>Listen</span>
+            </button>
+            <h2 id="sheetGuidanceTitle">Guidance</h2>
+          </header>
+          <div class="proto-sheet-body guidance-body">
+
+          <article class="dash-card guide-guidelines">
+            <div class="dash-card-head">
+              <h2>Your protocol guidelines</h2>
+            </div>
+            <p class="guide-lead">What each session is for and how to use it. Worth reading once before you start.</p>
+            <a class="btn-explore protocol-btn-sm" href="https://youmind.org/wp-content/uploads/2026/08/guidelines-2085.pdf" target="_blank" rel="noopener">
+              <span>Open guidelines</span>
+              <span class="btn-explore-icon" aria-hidden="true"><svg class="icon-arrow-ne" width="18" height="18"><use href="#icon-arrow-ne"/></svg></span>
+            </a>
+          </article>
+
+          <article class="dash-card guide-clips">
+            <div class="dash-card-head">
+              <h2>Short guides</h2>
+              <span class="dash-card-meta">20–30 sec each</span>
+            </div>
+            <p class="guide-lead">One idea per clip.</p>
+            <div class="guide-clip-row">
+                <button type="button" class="dash-clip-card" data-clip="Why consistency matters" data-duration="0:28" data-desc="Small, repeated sessions build more than perfect timing." data-thumb="assets/blog-related-1.jpg">
+                  <span class="dash-clip-thumb" style="background-image:url('assets/blog-related-1.jpg')">
+                    <span class="dash-clip-play" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M9 7.5v9l8-4.5-8-4.5z" fill="currentColor"/></svg></span>
+                    <span class="dash-clip-duration">0:28</span>
+                  </span>
+                  <span class="dash-clip-copy">
+                    <span class="dash-clip-title">Why consistency matters</span>
+                  </span>
+                </button>
+                <button type="button" class="dash-clip-card" data-clip="How sound can influence arousal" data-duration="0:24" data-desc="Certain frequencies can nudge your nervous system toward calm or alertness." data-thumb="assets/blog-hero-headphones.png">
+                  <span class="dash-clip-thumb" style="background-image:url('assets/blog-hero-headphones.png')">
+                    <span class="dash-clip-play" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M9 7.5v9l8-4.5-8-4.5z" fill="currentColor"/></svg></span>
+                    <span class="dash-clip-duration">0:24</span>
+                  </span>
+                  <span class="dash-clip-copy">
+                    <span class="dash-clip-title">How sound can influence arousal</span>
+                  </span>
+                </button>
+                <button type="button" class="dash-clip-card" data-clip="What your Neurofunctional Profile means" data-duration="0:30" data-desc="Your profile shapes which sessions are suggested — a starting point, not a label." data-thumb="assets/2c1bc3fc1bd04c04.jpg">
+                  <span class="dash-clip-thumb" style="background-image:url('assets/2c1bc3fc1bd04c04.jpg')">
+                    <span class="dash-clip-play" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M9 7.5v9l8-4.5-8-4.5z" fill="currentColor"/></svg></span>
+                    <span class="dash-clip-duration">0:30</span>
+                  </span>
+                  <span class="dash-clip-copy">
+                    <span class="dash-clip-title">What your Neurofunctional Profile means</span>
+                  </span>
+                </button>
+                <button type="button" class="dash-clip-card" data-clip="Why repetition matters" data-duration="0:26" data-desc="Returning to the same session lets your system recognise it faster." data-thumb="assets/blog-related-2.jpg">
+                  <span class="dash-clip-thumb" style="background-image:url('assets/blog-related-2.jpg')">
+                    <span class="dash-clip-play" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M9 7.5v9l8-4.5-8-4.5z" fill="currentColor"/></svg></span>
+                    <span class="dash-clip-duration">0:26</span>
+                  </span>
+                  <span class="dash-clip-copy">
+                    <span class="dash-clip-title">Why repetition matters</span>
+                  </span>
+                </button>
+                <button type="button" class="dash-clip-card" data-clip="How to explore your protocol" data-duration="0:22" data-desc="After the first few days, follow the sessions you are naturally drawn to." data-thumb="assets/blog-related-3.jpg">
+                  <span class="dash-clip-thumb" style="background-image:url('assets/blog-related-3.jpg')">
+                    <span class="dash-clip-play" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M9 7.5v9l8-4.5-8-4.5z" fill="currentColor"/></svg></span>
+                    <span class="dash-clip-duration">0:22</span>
+                  </span>
+                  <span class="dash-clip-copy">
+                    <span class="dash-clip-title">How to explore your protocol</span>
+                  </span>
+                </button>
+                <button type="button" class="dash-clip-card" data-clip="What to expect during the first two weeks" data-duration="0:29" data-desc="Orientation first, then preference. Consistency matters more than the schedule." data-thumb="assets/6f033d54568d4054.jpg">
+                  <span class="dash-clip-thumb" style="background-image:url('assets/6f033d54568d4054.jpg')">
+                    <span class="dash-clip-play" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M9 7.5v9l8-4.5-8-4.5z" fill="currentColor"/></svg></span>
+                    <span class="dash-clip-duration">0:29</span>
+                  </span>
+                  <span class="dash-clip-copy">
+                    <span class="dash-clip-title">What to expect during the first two weeks</span>
+                  </span>
+                </button>
+              </div>
+          </article>
+
+          </div>
+        </aside>
+
+        <aside class="proto-sheet proto-sheet--profile" id="sheetProfile" hidden role="dialog" aria-modal="true" aria-labelledby="sheetProfileTitle">
+          <header class="proto-sheet-head">
+            <button type="button" class="proto-sheet-back" data-sheet-close aria-label="Back to listening">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>Listen</span>
+            </button>
+            <h2 id="sheetProfileTitle">Profile</h2>
+          </header>
+          <div class="proto-sheet-body">
+
+            <header class="profile-head">
+              <h1>YouMind&reg; Neurofunctional Profile</h1>
+              <p class="profile-chips">
+                <span class="dash-meta-chip">Date <b>October 20, 2026</b></span>
+                <span class="dash-meta-chip">Ref ID <b>3097</b></span>
+                <span class="dash-meta-chip">System Version <b>19.0</b></span>
+                <span class="dash-meta-chip dash-meta-chip--ok">Analysis Status <b>COMPLETED</b></span>
+              </p>
+              <p class="profile-resolution">Diagnostic Resolution: Moderate (Acoustic Verified)</p>
+            </header>
+
+            <article class="dash-card profile-card">
+              <div class="dash-card-head"><h2>Executive Summary</h2></div>
+              <p><b>Primary Driver:</b> Sleep Continuity Disruption, Emotional Exhaustion, and Autonomic Overload</p>
+              <p><b>Core Assessment:</b> The Context Engine has analyzed your semantic telemetry and evaluated it alongside your acoustic biomarkers. The acoustic data--specifically moderate vocal tremor, moderate breathing pattern shifts, and moderate stress load proxies--suggests that your nervous system is operating under significant emotional and metabolic strain. The pervasive sense of physical and mental exhaustion, frequent crying spells, and difficulty maintaining focus point toward a nervous system struggling to regulate emotional processing and clear residual stress. The cognitive engine appears to be functioning under a heavy compensatory load, leading to fragmented attention, stress-induced overeating, and a deep sense of emptiness.</p>
+              <p>A completely autonomous and minimalist acoustic protocol will mechanically support sleep architecture at night and gently stabilize emotional processing during the day. This will help restore physiological bandwidth without adding another exhausting task to your schedule.</p>
+            </article>
+
+            <article class="dash-card profile-card">
+              <div class="dash-card-head"><h2>Multi-Domain Context Analysis</h2></div>
+              <div class="profile-domain">
+                <p class="profile-kicker">Domain</p>
+                <h3>Sleep and Recovery Profile</h3>
+                <p><b>Detected Signature:</b> Sleep Continuity Disruption and Pre-Sleep Hyperarousal</p>
+                <p><b>Neurofunctional Insight:</b> The difficulty initiating sleep due to racing thoughts, combined with frequent awakenings, indicates that your brain is struggling to transition into and maintain restorative sleep cycles. This fragmented sleep architecture prevents the nervous system from fully resetting, creating a residual biological drag that leaves you feeling tense, unhappy, and exhausted upon waking.</p>
+              </div>
+              <div class="profile-domain">
+                <p class="profile-kicker">Domain</p>
+                <h3>Emotional State and Stress Load</h3>
+                <p><b>Detected Signature:</b> Emotional Fragility and Compensatory Regulation</p>
+                <p><b>Neurofunctional Insight:</b> Experiencing frequent crying spells, feeling empty, and relying heavily on external factors for emotional stability reveals a nervous system that is deeply depleted. The moderate breathing pattern shifts and vocal tremor detected in the acoustic data are consistent with a body working extremely hard behind the scenes to manage accumulated emotional stress and environmental pressures.</p>
+              </div>
+              <div class="profile-domain">
+                <p class="profile-kicker">Domain</p>
+                <h3>Cognitive Function and Mental Performance</h3>
+                <p><b>Detected Signature:</b> Executive Fatigue and Attention Fragmentation</p>
+                <p><b>Neurofunctional Insight:</b> The presence of forced thoughts, difficulty initiating tasks, and frequent forgetfulness are strong indicators of executive fatigue. When the prefrontal cortex becomes overloaded by emotional distress and insufficient sleep recovery, it loses its ability to sustain deep focus, resulting in mental exhaustion and a feeling of being pressured by daily demands.</p>
+              </div>
+              <div class="profile-domain">
+                <p class="profile-kicker">Domain</p>
+                <h3>Physical Energy Regulation</h3>
+                <p><b>Detected Signature:</b> Metabolic Strain and Energy Depletion</p>
+                <p><b>Neurofunctional Insight:</b> Feeling physically heavy, experiencing severe afternoon sleepiness, and engaging in stress-induced overeating point directly to a system struggling with energy regulation. The body appears to be seeking external energy sources to compensate for the lack of restorative sleep and the high metabolic cost of carrying chronic emotional tension.</p>
+              </div>
+              <div class="profile-domain">
+                <p class="profile-kicker">Domain</p>
+                <h3>Intentions and Desired Outcomes</h3>
+                <p><b>Detected Signature:</b> Protocol Fatigue Risk and Autonomic Decompression</p>
+                <p><b>Neurofunctional Insight:</b> Entering this process already feeling deeply exhausted physically and mentally mandates an absolute minimalist approach. The acoustic intervention must deliver maximum biological yield with zero compliance friction, prioritizing nervous system stabilization before any optimization.</p>
+              </div>
+            </article>
+
+            <article class="dash-card profile-card">
+              <div class="dash-card-head"><h2>Safety &amp; Constraints</h2></div>
+              <p><b>Safety Interlock Status:</b> ACTIVE</p>
+              <p><b>Primary Constraint:</b> Emotional Exhaustion and Sleep Architecture Failure</p>
+              <p><b>Mandatory Exclusion Zones:</b> Because your system is currently experiencing significant emotional fragility and sleep disruption, all high-excitatory frequencies (Beta and Gamma) are strictly locked out to prevent overstimulating a depleted nervous system. Furthermore, performance and focus tracks are excluded during this initial phase. The protocol is structured as an absolute minimalist, autonomous framework designed exclusively for nervous system stabilization.</p>
+            </article>
+
+            <article class="dash-card profile-card">
+              <div class="dash-card-head"><h2>The Individualized Protocol Roadmap</h2></div>
+              <p><b>Biological Triage Active:</b> Primary routing anchored to Tier 2 (Sleep Architecture Failure) and Tier 3 (Emotional Dysregulation).</p>
+              <div class="profile-domain">
+                <p class="profile-kicker">Phase 1</p>
+                <h3>The Minimalist Stabilization Playlist (Weeks 1 to 2)</h3>
+                <p><b>Objective:</b> Restoring Sleep Continuity and Emotional Grounding</p>
+                <p><b>Biological Sequencing Notice:</b> Naturally restoring the foundation of your sleep and stabilizing your emotional baseline will effortlessly unlock the mental clarity and physical energy you are seeking.</p>
+                <p><b>The Minimum Effective Dose (MED) - Mood Support for Persistent Depression:</b> To ensure your neuroplastic trajectory is successful without adding overwhelm, your daytime anchor is this specific track. It is ideally utilized in the morning or early afternoon to gently support emotional processing, alleviate feelings of emptiness, and reduce repetitive negative thoughts. Beyond this single biological anchor, you have absolute autonomy to use the rest of this toolkit entirely on-demand.</p>
+                <p><b>The Sleep Anchor - Sleep Induction:</b> To help synchronize the brain for deep sleep and quiet racing pre-sleep thoughts, you are invited to use this track as you get into bed. Crucially, you have complete permission to remove your headset the moment you feel yourself naturally drifting off or feeling tired. The goal is to facilitate deep sleep onset, not to force you to stay awake to finish the track.</p>
+              </div>
+            </article>
+
+            <article class="dash-card profile-card">
+              <div class="dash-card-head"><h2>The Longitudinal Reassessment Gateway</h2></div>
+              <p class="profile-kicker">Clinical Milestone</p>
+              <h3>Day 7 Integration Check</h3>
+              <p>Due to the high level of emotional exhaustion and sleep disruption reported, the YouMind system will invite you back at Day 7 to simply listen to your progress and calculate your biological variance. During this check, we will explore key reassessment questions: Has your sleep improved? Has your anxiety decreased? Has your emotional stability improved? Did any track increase agitation? Please note that these current phases and protocol suggestions are an initial baseline projection; these suggestions may change or evolve following each reassessment cycle based on updated biological telemetry.</p>
+            </article>
+
+            <article class="dash-card profile-card">
+              <div class="dash-card-head"><h2>Conclusion &amp; Next Steps</h2></div>
+              <p>Your Neurofunctional Profile is now finalized. This data serves as the computational baseline for your Personalized YouMind&reg; Brain Entrainment Protocol. By giving your nervous system the precise acoustic tools it needs to stabilize emotional processing and restore sleep continuity, you will safely and effortlessly return to a more grounded and resilient state.</p>
+            </article>
+
+            <article class="profile-cta">
+              <p>Action Required: To begin the assembly of your time-structured audio journey and unlock the frequency maps identified in this profile, please activate your YouMind subscription by proceeding to the secure checkout portal below.</p>
+              <a class="profile-pay" id="profilePay" href="https://buy.stripe.com/14AdR90ffchR4i7fnJ7g40b" target="_blank" rel="noopener">
+                <span>Activate Subscription and Access Audio Protocols</span>
+                <span class="btn-explore-icon" aria-hidden="true"><svg class="icon-arrow-ne" width="18" height="18"><use href="#icon-arrow-ne"/></svg></span>
+              </a>
+              <p class="profile-paid">Your subscription is active. Your audio protocols are unlocked.</p>
+            </article>
+
+            <p class="profile-disclaimer">DISCLAIMER: YouMind is a neuroacoustic entrainment system designed for state-regulation and performance-optimization. It is not a medical device and is not intended to diagnose, treat, cure, or prevent any disease or neurological condition. Always consult with a qualified health professional before beginning any new physiological intervention.</p>
+          </div>
+        </aside>
+
+        <aside class="proto-sheet proto-sheet--wide" id="sheetDashboard" hidden role="dialog" aria-modal="true" aria-labelledby="sheetDashboardTitle">
+          <header class="proto-sheet-head">
+            <button type="button" class="proto-sheet-back" data-sheet-close aria-label="Back to listening">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>Listen</span>
+            </button>
+            <h2 id="sheetDashboardTitle">Dashboard</h2>
+          </header>
+          <div class="proto-sheet-body">
+        <header class="dash-head fade-el">
+          <div class="dash-head-copy">
+            <h1>Dashboard Overview</h1>
+            <p class="dash-head-meta">
+              <span class="dash-meta-chip">Your First 14 Days</span>
+              <span class="dash-meta-item">Consistency over schedule — you're building momentum.</span>
+            </p>
+          </div>
+          <div class="dash-head-actions">
+            <div class="dash-since">
+              <span class="dash-since-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.4V12l3 1.8"/></svg>
+              </span>
+              <span class="dash-since-copy">
+                <span class="dash-since-label">Started</span>
+                <strong class="dash-since-date" id="startedOn">&mdash;</strong>
+              </span>
+              <span class="dash-since-rule" aria-hidden="true"></span>
+              <span class="dash-since-copy">
+                <span class="dash-since-label">Day</span>
+                <strong class="dash-since-day" id="startedDay">&mdash;</strong>
+              </span>
+            </div>          </div>
+        </header>
+
+
+        <div class="dash-kpi-grid fade-el">
+          <article class="dash-card dash-kpi-card">
+            <div class="dash-kpi-top">
+              <span class="dash-kpi-label">Day in cycle</span>
+              <span class="dash-kpi-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M8 3v4M16 3v4M3.5 10h17"/></svg></span>
+            </div>
+            <strong class="dash-kpi-value"><span id="protoDayKpi">Day 6</span> of 14</strong>
+            <span class="dash-kpi-delta" id="protoDayPct">43% through your first cycle</span>
+          </article>
+          <article class="dash-card dash-kpi-card">
+            <div class="dash-kpi-top">
+              <span class="dash-kpi-label">Sessions this week</span>
+              <span class="dash-kpi-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M8.4 12.2l2.4 2.4 4.7-5"/></svg></span>
+            </div>
+            <strong class="dash-kpi-value" id="protoWeekKpi">4 of 5</strong>
+            <span class="dash-kpi-delta" id="protoWeekHead">Strong rhythm this week</span>
+          </article>
+          <article class="dash-card dash-kpi-card">
+            <div class="dash-kpi-top">
+              <span class="dash-kpi-label">Sessions completed</span>
+              <span class="dash-kpi-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l8 4.1-8 4.2-8-4.2 8-4.1z"/><path d="M4 12.3l8 4.2 8-4.2"/></svg></span>
+            </div>
+            <strong class="dash-kpi-value" id="protoTotalKpi">9</strong>
+            <span class="dash-kpi-delta">Building consistency</span>
+          </article>
+          <article class="dash-card dash-kpi-card">
+            <div class="dash-kpi-top">
+              <span class="dash-kpi-label">Total listening time</span>
+              <span class="dash-kpi-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.4V12l3 1.8"/></svg></span>
+            </div>
+            <strong class="dash-kpi-value" id="protoTimeKpi">2h 47m</strong>
+            <span class="dash-kpi-delta">Time invested in your program</span>
+          </article>
+          <article class="dash-card dash-kpi-card">
+            <div class="dash-kpi-top">
+              <span class="dash-kpi-label">Current streak</span>
+              <span class="dash-kpi-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17.4l4.6-4.6 3 3L20 7.2"/><path d="M15 7.2h5v5"/></svg></span>
+            </div>
+            <strong class="dash-kpi-value" id="protoStreakKpi">3 days</strong>
+            <span class="dash-kpi-delta">Keep showing up — progress adds up</span>
+          </article>
+        </div>
+
+
+        <div class="dash-charts-grid fade-el">
+          <article class="dash-card dash-chart-card">
+            <div class="dash-card-head">
+              <h2>How you've been feeling</h2>
+              <span class="dash-card-meta" id="feelChartMeta">Baseline · Week 1</span>
+            </div>
+            <div class="dash-feel-chart" id="feelChart" role="img" aria-label="Weekly check-in scores across emotional state, sleep, clarity and focus, and stress"></div>
+            <p class="dash-feel-note" id="feelChartNote">Each dot is one weekly check-in. More check-ins add context over time.</p>
+          </article>
+          <article class="dash-card dash-donut-card">
+            <div class="dash-card-head">
+              <h2>Overall wellbeing</h2>
+            </div>
+            <div class="dash-donut-top">
+              <div class="dash-donut-visual">
+                <svg class="dash-donut" id="feelDonut" viewBox="0 0 120 120" aria-hidden="true">
+                  <circle cx="60" cy="60" r="44" fill="none" stroke="#e8eef2" stroke-width="11"/>
+                </svg>
+                <div class="dash-donut-center">
+                  <span id="feelDonutCenter">—</span>
+                  <small id="feelDonutCenterLabel">avg. check-in</small>
+                </div>
+              </div>
+              <p class="dash-donut-lead" id="feelDonutLead"></p>
+            </div>
+            <ul class="dash-donut-legend" id="feelDonutLegend"></ul>
+            <p class="dash-donut-foot" id="feelDonutFoot"></p>
+          </article>
+        </div>
+
+
+          <div class="dash-row dash-row--plan fade-el">
+            <article class="dash-card dash-plan">
+              <div class="dash-card-head">
+                <h2>Best times to listen</h2>
+                <span class="dash-card-meta">Suggestions, not appointments</span>
+              </div>
+              <p class="dash-plan-lead">Placed at your natural attention windows &mdash; not against them.</p>
+              <div class="dash-plan-body">
+                <ul class="dash-plan-list" id="planList"></ul>
+                <div class="dash-plan-side">
+                  <p class="dash-plan-week-label">Your 14 days</p>
+                  <div class="dash-plan-week" id="planWeek"></div>
+                  <p class="dash-plan-summary" id="planSummary"></p>
+                  <p class="dash-plan-foot">Filled marks are sessions you played. Hollow ones are still ahead &mdash; a quiet day is just quiet.</p>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="dash-row dash-row--track">
+            <article class="dash-card dash-milestones">
+              <div class="dash-card-head">
+                <h2>Milestones</h2>
+              </div>
+              <ul class="dash-ms-list" id="milestoneList"></ul>
+            </article>
+
+            <article class="dash-card dash-checkin">
+              <div class="dash-card-head">
+                <h2>Weekly check-in</h2>
+                <span class="dash-checkin-time">Under 1 min</span>
+              </div>
+              <p class="dash-checkin-lead">Reflect on how this week felt.</p>
+              <ul class="dash-checkin-list" aria-label="What you'll complete">
+                <li class="dash-checkin-item">
+                  <span class="dash-checkin-icon" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle stroke="currentColor" stroke-width="1.6" cx="12" cy="12" r="9"/><path stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M9 10h.01M15 10h.01"/><path stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M8.5 14.5a4.5 4.5 0 007 0"/></svg>
+                  </span>
+                  <span class="dash-checkin-item-label">Emotional state</span>
+                </li>
+                <li class="dash-checkin-item">
+                  <span class="dash-checkin-icon" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M19 14.79A9 9 0 019.21 5 7 7 0 1019 14.79z"/></svg>
+                  </span>
+                  <span class="dash-checkin-item-label">Sleep</span>
+                </li>
+                <li class="dash-checkin-item">
+                  <span class="dash-checkin-icon" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle stroke="currentColor" stroke-width="1.6" cx="12" cy="12" r="8"/><circle stroke="currentColor" stroke-width="1.6" cx="12" cy="12" r="3.5"/><circle stroke="currentColor" stroke-width="1.6" cx="12" cy="12" r="0.6"/></svg>
+                  </span>
+                  <span class="dash-checkin-item-label">Clarity &amp; focus</span>
+                </li>
+                <li class="dash-checkin-item">
+                  <span class="dash-checkin-icon" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M4.5 16.5a8.5 8.5 0 1115 0"/><path stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M12 16.5l4.2-4.2"/></svg>
+                  </span>
+                  <span class="dash-checkin-item-label">Stress</span>
+                </li>
+                <li class="dash-checkin-item">
+                  <span class="dash-checkin-icon" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4 20h16M7 17l3-9 3 5 2-4 2 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                  <span class="dash-checkin-item-label">What changed most</span>
+                </li>
+              </ul>
+              <p class="dash-checkin-foot">Week-over-week pulse — not your full Neurofunctional Profile.</p>
+              <div class="dash-checkin-action" id="checkinReady">
+                <button type="button" class="btn-explore protocol-btn-sm dash-checkin-btn" id="btnWeeklyCheckin">
+                  <span>Start check-in</span>
+                  <span class="btn-explore-icon" aria-hidden="true"><svg class="icon-arrow-ne" width="18" height="18"><use href="#icon-arrow-ne"/></svg></span>
+                </button>
+              </div>
+              <div class="dash-checkin-complete" id="checkinDone" hidden>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 12.5l3.5 3.5L18 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Saved for this week</span>
+              </div>
+            </article>
+          </div>
+
+
+
+        <div class="dash-reassess fade-el" id="reassessBanner">
+          <div>
+            <h2>Your First 14 Days Are Complete</h2>
+            <p id="reassessMeta">9 sessions · 2h 47m listening · 1 weekly check-in</p>
+            <p class="dash-reassess-q">Ready for Reassessment?</p>
+          </div>
+          <button type="button" class="btn-explore" id="btnReassess">
+            <span>Reassess my profile</span>
+            <span class="btn-explore-icon" aria-hidden="true"><svg class="icon-arrow-ne" width="20" height="20"><use href="#icon-arrow-ne"/></svg></span>
+          </button>
+        </div>
+
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <div class="protocol-modal-backdrop" id="sessionModal" hidden>
+      <div class="protocol-modal" role="dialog" aria-modal="true" aria-labelledby="sessionModalTitle">
+        <h2 id="sessionModalTitle">Session complete&nbsp;✓</h2>
+        <p class="protocol-modal-session" id="sessionModalMeta">Deep Recovery &middot; 20 min</p>
+        <p class="protocol-modal-q">How do you feel right now?</p>
+        <p class="protocol-modal-hint">This is how your protocol learns what works for you.</p>
+        <div class="protocol-feel" id="feelButtons">
+          <button type="button" data-feel="Better">Better</button>
+          <button type="button" data-feel="Same">Same</button>
+          <button type="button" data-feel="More tense">More tense</button>
+        </div>
+        <p class="protocol-modal-label">How would you rate your current state? <span>(optional)</span></p>
+        <div class="protocol-scale" id="stateScale">
+          <button type="button" data-score="1">1</button>
+          <button type="button" data-score="2">2</button>
+          <button type="button" data-score="3">3</button>
+          <button type="button" data-score="4">4</button>
+          <button type="button" data-score="5">5</button>
+        </div>
+        <div class="protocol-modal-actions">
+          <button type="button" class="link-read" id="sessionModalSkip">Skip for now</button>
+          <button type="button" class="btn-explore protocol-btn-sm" id="sessionModalDone"><span>Done</span><span class="btn-explore-icon" aria-hidden="true"><svg class="icon-arrow-ne" width="18" height="18"><use href="#icon-arrow-ne"/></svg></span></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="protocol-modal-backdrop" id="weeklyModal" hidden>
+      <div class="protocol-modal protocol-modal--weekly" role="dialog" aria-modal="true" aria-labelledby="weeklyModalTitle">
+        <header class="protocol-modal-weekly-head">
+          <div>
+            <h2 id="weeklyModalTitle">Weekly check-in</h2>
+            <p class="protocol-modal-lead">Quick pulse on perceived change — not a full assessment.</p>
+          </div>
+          <button type="button" class="protocol-modal-close" id="weeklyModalClose" aria-label="Close">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 2l10 10M12 2L2 12" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+          </button>
+        </header>
+        <div class="protocol-modal-weekly-body">
+          <div class="protocol-checkin-fields">
+            <div class="protocol-checkin-field">
+              <p class="protocol-checkin-category">Emotional state</p>
+              <label>How would you describe your emotional state this week?</label>
+              <div class="protocol-scale" data-weekly="emotion">
+                <button type="button" data-score="1">1</button>
+                <button type="button" data-score="2">2</button>
+                <button type="button" data-score="3">3</button>
+                <button type="button" data-score="4">4</button>
+                <button type="button" data-score="5">5</button>
+              </div>
+            </div>
+            <div class="protocol-checkin-field">
+              <p class="protocol-checkin-category">Sleep</p>
+              <label>How would you rate your sleep this week?</label>
+              <div class="protocol-scale" data-weekly="sleep">
+                <button type="button" data-score="1">1</button>
+                <button type="button" data-score="2">2</button>
+                <button type="button" data-score="3">3</button>
+                <button type="button" data-score="4">4</button>
+                <button type="button" data-score="5">5</button>
+              </div>
+            </div>
+            <div class="protocol-checkin-field">
+              <p class="protocol-checkin-category">Clarity &amp; focus</p>
+              <label>How would you rate your mental clarity and focus?</label>
+              <div class="protocol-scale" data-weekly="mental">
+                <button type="button" data-score="1">1</button>
+                <button type="button" data-score="2">2</button>
+                <button type="button" data-score="3">3</button>
+                <button type="button" data-score="4">4</button>
+                <button type="button" data-score="5">5</button>
+              </div>
+            </div>
+            <div class="protocol-checkin-field">
+              <p class="protocol-checkin-category">Stress</p>
+              <label>How would you rate your overall stress? <span class="protocol-scale-hint">1 = low · 5 = high</span></label>
+              <div class="protocol-scale" data-weekly="stress">
+                <button type="button" data-score="1">1</button>
+                <button type="button" data-score="2">2</button>
+                <button type="button" data-score="3">3</button>
+                <button type="button" data-score="4">4</button>
+                <button type="button" data-score="5">5</button>
+              </div>
+            </div>
+            <div class="protocol-checkin-field protocol-checkin-field--open">
+              <p class="protocol-checkin-category">One open question</p>
+              <label for="weeklyNote">What has changed most for you this week?</label>
+              <textarea id="weeklyNote" rows="3" placeholder="Share what's shifted — even small changes count."></textarea>
+            </div>
+          </div>
+        </div>
+        <footer class="protocol-modal-actions protocol-modal-weekly-foot">
+          <button type="button" class="link-read" id="weeklyModalSkip">Close</button>
+          <button type="button" class="btn-explore protocol-btn-sm" id="weeklyModalDone"><span>Save check-in</span><span class="btn-explore-icon" aria-hidden="true"><svg class="icon-arrow-ne" width="18" height="18"><use href="#icon-arrow-ne"/></svg></span></button>
+        </footer>
+      </div>
+    </div>
+
+    <div class="protocol-modal-backdrop" id="clipModal" hidden>
+      <div class="protocol-modal protocol-modal--clip" role="dialog" aria-modal="true" aria-labelledby="clipModalTitle">
+        <div class="protocol-clip-player" id="clipPlayerThumb"></div>
+        <h2 id="clipModalTitle">Why consistency matters</h2>
+        <p id="clipModalDesc">Small, repeated sessions build more than perfect timing.</p>
+        <p class="dash-clip-modal-meta" id="clipModalDuration">0:28</p>
+        <div class="protocol-modal-actions">
+          <button type="button" class="link-read" id="clipModalClose">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="protocol-modal-backdrop" id="paywallModal" hidden>
+      <div class="protocol-modal" role="dialog" aria-modal="true" aria-labelledby="paywallTitle">
+        <span class="paywall-icon" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M8 11V8a4 4 0 018 0v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><rect x="5" y="11" width="14" height="10" rx="3" fill="currentColor"/><circle cx="12" cy="15.2" r="1.5" fill="#0b4a46"/><path d="M12 16v2" stroke="#0b4a46" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </span>
+        <h2 id="paywallTitle">Your protocol is ready</h2>
+        <p>Activate your subscription to start listening. Your profile is already built around you.</p>
+        <div class="protocol-modal-actions paywall-actions">
+          <button type="button" class="link-read" id="paywallClose">Not now</button>
+          <a class="btn-explore protocol-btn-sm" href="https://buy.stripe.com/14AdR90ffchR4i7fnJ7g40b" target="_blank" rel="noopener"><span>Activate subscription</span><span class="btn-explore-icon" aria-hidden="true"><svg class="icon-arrow-ne" width="18" height="18"><use href="#icon-arrow-ne"/></svg></span></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-main">
+          <div class="footer-brand">
+            <img class="footer-logo" src="assets/065c9eb59e0f98fd.png" alt="YouMind">
+            <p>YouMind delivers science-backed neuro-acoustic protocols that help organizations</p>
+          </div>
+          <div class="footer-col">
+            <h4>COMPANY</h4>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>RESOURCES</h4>
+            <ul>
+              <li><a href="#">Insights</a></li>
+              <li><a href="#">Science</a></li>
+              <li><a href="#">Frameworks</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Solution</h4>
+            <ul>
+              <li><a href="#">Personal</a></li>
+              <li><a href="#">Hospitality</a></li>
+              <li><a href="#">Healthcare</a></li>
+              <li><a href="#">Corporate</a></li>
+              <li><a href="#">Defense</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p class="footer-copy">&copy; 2026 YouMind&reg;. All rights reserved.</p>
+          <div class="footer-legal">
+            <a href="#">Terms of Service</a>
+            <a href="#">Privacy Policy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    /* Fade-in on first scroll into view (elements only, once) */
+    (function () {
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      /* Anything below the fold reveals when it is scrolled to, not at load —
+         an entry animation nobody is looking at is a wasted one. Above the
+         fold keeps its own load sequence; these are the elements you have to
+         travel to. The stagger is per element, in reading order. */
+      const revealGroups = [
+        ['.dash-today-head h2', '.dash-today-head .dash-card-meta', '.dash-today-media',
+         '.dash-today-info h3', '.dash-today-info .dash-today-meta', '.dash-today-note',
+         '.dash-today-info .dash-listen-btn'],
+        ['#mostUsedCard .dash-card-head h2'],
+        ['.listen-hero-note']
+      ];
+      revealGroups.forEach(function (group) {
+        group.forEach(function (sel, i) {
+          document.querySelectorAll(sel).forEach(function (el) {
+            el.classList.add('js-reveal');
+            el.style.setProperty('--fade-delay', (i * 0.07).toFixed(2) + 's');
+          });
+        });
+      });
+      document.querySelectorAll('.dash-used-list li').forEach(function (el, i) {
+        el.classList.add('js-reveal');
+        el.style.setProperty('--fade-delay', (0.08 + i * 0.09).toFixed(2) + 's');
+      });
+
+      const targets = () => document.querySelectorAll('.fade-el, .js-reveal, .protocol-progress, .protocol-suggest, .protocol-choose, .protocol-discover, .protocol-milestones, .footer-brand, .footer-col, .footer-bottom');
+
+      function mark(el) {
+        if (el.classList.contains('is-inview')) return;
+        el.classList.add('fade-el', 'is-inview');
+      }
+
+      function observe(nodes) {
+        const list = Array.from(nodes);
+        if (reduce || !('IntersectionObserver' in window)) {
+          list.forEach(mark);
+          window.__observeFade = (extra) => extra.forEach(mark);
+          return;
+        }
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            mark(entry.target);
+            io.unobserve(entry.target);
+          });
+        }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+        const watch = (el) => {
+          el.classList.add('fade-el');
+          if (!el.classList.contains('is-inview')) io.observe(el);
+        };
+        list.forEach(watch);
+        window.__observeFade = (extra) => extra.forEach(watch);
+      }
+
+      observe(targets());
+
+      /* Load-sequence animations are scoped to this class. It is set here,
+         before the main script renders anything, so JS-built content can ask
+         whether it is arriving with the page or later — and it is dropped once
+         the sequence is over, so a re-render never replays an entry. */
+      document.body.classList.add('page-entering');
+      window.setTimeout(function () { document.body.classList.remove('page-entering'); }, 4200);
+
+      document.body.classList.remove('is-loading');
+      document.body.classList.add('is-ready');
+    })();
+
+    /* Mega menus: Solutions + The Science — only one open at a time */
+    (function () {
+      const nav = document.getElementById('siteNav');
+      if (!nav) return;
+      const isCompactNav = () => window.matchMedia('(max-width: 900px)').matches;
+      const megas = [];
+
+      function closeAllExcept(keep) {
+        megas.forEach((m) => {
+          if (m !== keep) m.closeNow();
+        });
+      }
+
+      function wireMega(triggerId, menuId) {
+        const trigger = document.getElementById(triggerId);
+        const menu = document.getElementById(menuId);
+        const btn = trigger && trigger.querySelector('.nav-link--btn');
+        if (!trigger || !menu || !btn) return;
+        let closeTimer;
+        const api = { closeNow: () => {} };
+
+        const place = () => {
+          if (isCompactNav()) {
+            menu.style.top = '';
+            menu.style.left = '';
+            menu.style.right = '';
+            return;
+          }
+          const navRect = nav.getBoundingClientRect();
+          const trigRect = trigger.getBoundingClientRect();
+          menu.style.top = (navRect.bottom - trigRect.top + 16) + 'px';
+          menu.style.left = '50%';
+          menu.style.right = 'auto';
+        };
+
+        const closeNow = () => {
+          clearTimeout(closeTimer);
+          trigger.classList.remove('is-open');
+          btn.classList.remove('is-open');
+          btn.setAttribute('aria-expanded', 'false');
+          menu.classList.remove('is-open');
+        };
+        api.closeNow = closeNow;
+
+        const open = () => {
+          if (isCompactNav()) return;
+          clearTimeout(closeTimer);
+          closeAllExcept(api);
+          place();
+          menu.hidden = false;
+          trigger.classList.add('is-open');
+          btn.classList.add('is-open');
+          btn.setAttribute('aria-expanded', 'true');
+          menu.classList.add('is-open');
+        };
+        const closeSoon = () => {
+          clearTimeout(closeTimer);
+          closeTimer = setTimeout(closeNow, 80);
+        };
+
+        trigger.addEventListener('mouseenter', () => { if (!isCompactNav()) open(); });
+        trigger.addEventListener('mouseleave', () => { if (!isCompactNav()) closeSoon(); });
+        menu.addEventListener('mouseenter', () => { if (!isCompactNav()) open(); });
+        menu.addEventListener('mouseleave', () => { if (!isCompactNav()) closeSoon(); });
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          if (isCompactNav()) return;
+          if (trigger.classList.contains('is-open')) closeNow();
+          else open();
+        });
+        window.addEventListener('resize', () => {
+          if (isCompactNav()) {
+            menu.style.top = '';
+            menu.style.left = '';
+            closeNow();
+          } else if (trigger.classList.contains('is-open')) {
+            place();
+          }
+        });
+
+        megas.push(api);
+      }
+
+      wireMega('solTrigger', 'solMenu');
+      wireMega('sciTrigger', 'sciMenu');
+    })();
+
+    /* Mobile / tablet drawer */
+    (function () {
+      const openBtn = document.getElementById('navMenuBtn');
+      const closeBtn = document.getElementById('drawerClose');
+      const drawer = document.getElementById('mobileDrawer');
+      const backdrop = document.getElementById('drawerBackdrop');
+      if (!openBtn || !drawer || !backdrop) return;
+
+      const accordionItems = Array.from(drawer.querySelectorAll('.mobile-acc'));
+
+      const setAccOpen = (item, open) => {
+        const btn = item.querySelector('.mobile-acc-toggle');
+        const panel = item.querySelector('.mobile-acc-panel');
+        if (!btn || !panel) return;
+        item.classList.toggle('is-open', open);
+        btn.setAttribute('aria-expanded', String(open));
+        panel.hidden = !open;
+      };
+
+      const collapseAll = () => accordionItems.forEach((item) => setAccOpen(item, false));
+
+      accordionItems.forEach((item) => {
+        const btn = item.querySelector('.mobile-acc-toggle');
+        if (!btn) return;
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const willOpen = !item.classList.contains('is-open');
+          accordionItems.forEach((other) => setAccOpen(other, other === item && willOpen));
+        });
+      });
+
+      const setOpen = (open) => {
+        document.body.classList.toggle('drawer-open', open);
+        drawer.classList.toggle('is-open', open);
+        drawer.setAttribute('aria-hidden', String(!open));
+        backdrop.hidden = !open;
+        openBtn.setAttribute('aria-expanded', String(open));
+        openBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        if (!open) collapseAll();
+      };
+
+      openBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        setOpen(!drawer.classList.contains('is-open'));
+      });
+      closeBtn && closeBtn.addEventListener('click', () => setOpen(false));
+      backdrop.addEventListener('click', () => setOpen(false));
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') setOpen(false);
+      });
+      window.addEventListener('resize', () => {
+        if (window.matchMedia('(min-width: 901px)').matches) setOpen(false);
+      });
+    })();
+
+    /* Protocol dashboard demo */
+    (function () {
+      const SESSION_MINS = { Calm: 15, "Deep Recovery": 20, Recenter: 12, Focus: 18, Reset: 10 };
+
+      const SESSION_FOCUS = {
+        Calm: "stress",
+        "Deep Recovery": "sleep",
+        Recenter: "emotion",
+        Focus: "mental",
+        Reset: "stress"
+      };
+
+      const SESSION_TAGS = {
+        Calm: "When you are wound up",
+        "Deep Recovery": "Evening wind-down",
+        Recenter: "Between tasks",
+        Focus: "Background, while you work",
+        Reset: "When you only have ten minutes"
+      };
+
+      const SESSION_NOTES = {
+        Calm: "Lowers arousal. Use it when you are wound up and cannot settle.",
+        "Deep Recovery": "The longest wind-down. Best in the evening, not before work.",
+        Recenter: "A short reset between tasks. Good for the middle of the day.",
+        Focus: "Made to sit in the background while you work. Do not listen to it.",
+        Reset: "The shortest option. For days when ten minutes is what you have."
+      };
+
+      const PLAN = [
+        { at: "08:00", h: 8, m: 0, session: "Focus", tag: "Focus", why: "Right as your attention window opens for the day" },
+        { at: "13:30", h: 13, m: 30, session: "Reset", tag: "Reset", why: "Placed at the post-lunch dip, not fighting it" },
+        { at: "21:30", h: 21, m: 30, session: "Deep Recovery", tag: "Wind-down", why: "45 minutes before your target sleep time" }
+      ];
+      const SESSION_IMAGES = {
+        Calm: "assets/blog-related-1.jpg",
+        "Deep Recovery": "assets/blog-hero-headphones.png",
+        Recenter: "assets/blog-related-2.jpg",
+        Focus: "assets/blog-related-3.jpg",
+        Reset: "assets/069e9c99e1f81191.png"
+      };
+
+      /* One artwork per session, used on every surface that shows it — player,
+         suggestion, most used, choose list — so a session looks the same
+         wherever it appears. */
+      const sessionArt = (name) => {
+        const img = SESSION_IMAGES[name] || SESSION_IMAGES["Deep Recovery"];
+        return '<span class="session-art-img" style="background-image:url(\'' + img + '\')" aria-hidden="true"></span>';
+      };
+      const CHECKIN_DIMS = [
+        { key: "emotion", label: "Emotional state", color: "#199a91", iconColor: "#199a91", glow: "#199a91", tint: "#e3f4f3", higherBetter: true,
+          icon: '<circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01"/><path d="M8.5 14.5a4.5 4.5 0 007 0"/>' },
+        { key: "sleep", label: "Sleep", color: "#3fd9cf", iconColor: "#12a79d", glow: "#3fd9cf", tint: "#e4faf8", higherBetter: true,
+          icon: '<path d="M19 14.79A9 9 0 019.21 5 7 7 0 1019 14.79z"/>' },
+        { key: "mental", label: "Clarity & focus", color: "#7ec8e3", iconColor: "#3f9dc0", glow: "#7ec8e3", tint: "#e8f4fa", higherBetter: true,
+          icon: '<circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3.5"/><circle cx="12" cy="12" r="0.6"/>' },
+        { key: "stress", label: "Stress", color: "#082725", iconColor: "#082725", glow: "#2f7d75", tint: "#e6eceb", higherBetter: false,
+          icon: '<path d="M4.5 16.5a8.5 8.5 0 1115 0"/><path d="M12 16.5l4.2-4.2"/>' }
+      ];
+
+      const MILESTONES = [
+        { id: "first", title: "First session", done: (s) => s.total >= 1, copy: "Your program has started." },
+        { id: "three", title: "3 sessions", done: (s) => s.total >= 3, copy: "You're building consistency." },
+        { id: "week", title: "1 week", done: (s) => s.day >= 7, copy: "First week completed." },
+        { id: "ten", title: "10 sessions", done: (s) => s.total >= 10, copy: "You've established a consistent listening pattern." },
+        { id: "fourteen", title: "14 days", done: (s) => s.day >= 14, copy: "Your first program cycle is complete." },
+        { id: "reassess", title: "Reassessment ready", done: (s) => s.day >= 14, copy: "See how your Neurofunctional Profile has evolved." }
+      ];
+
+      const state = {
+        day: 6,
+        weekDone: 4,
+        weekGoal: 5,
+        total: 9,
+        minutes: 167,
+        streak: 3,
+        suggest: "Deep Recovery",
+        suggestMins: 20,
+        usage: { Calm: 5, "Deep Recovery": 3, Recenter: 2, Focus: 1, Reset: 1 },
+        checkins: 1,
+        weekCheckinDone: false,
+        sessionLog: [
+          { day: 1, session: "Calm" },
+          { day: 2, session: "Deep Recovery" },
+          { day: 2, session: "Focus" },
+          { day: 3, session: "Calm" },
+          { day: 4, session: "Recenter" },
+          { day: 4, session: "Calm" },
+          { day: 5, session: "Reset" },
+          { day: 5, session: "Deep Recovery" },
+          { day: 6, session: "Calm" }
+        ],
+        checkinHistory: [
+          { week: 1, label: "Week 1", emotion: 3, sleep: 2, mental: 3, stress: 4 }
+        ],
+        pendingSession: null
+      };
+
+      const el = {
+        weekHead: document.getElementById("protoWeekHead"),
+        weekKpi: document.getElementById("protoWeekKpi"),
+        timeKpi: document.getElementById("protoTimeKpi"),
+        totalKpi: document.getElementById("protoTotalKpi"),
+        dayKpi: document.getElementById("protoDayKpi"),
+        navDay: document.getElementById("navDay"),
+        streakKpi: document.getElementById("protoStreakKpi"),
+        dayPct: document.getElementById("protoDayPct"),
+        feelChart: document.getElementById("feelChart"),
+        feelChartMeta: document.getElementById("feelChartMeta"),
+        feelChartNote: document.getElementById("feelChartNote"),
+        feelDonut: document.getElementById("feelDonut"),
+        feelDonutCenter: document.getElementById("feelDonutCenter"),
+        feelDonutCenterLabel: document.getElementById("feelDonutCenterLabel"),
+        feelDonutLegend: document.getElementById("feelDonutLegend"),
+        feelDonutLead: document.getElementById("feelDonutLead"),
+        feelDonutFoot: document.getElementById("feelDonutFoot"),
+        orient: document.getElementById("orientBanner"),
+        milestoneList: document.getElementById("milestoneList"),
+        checkinReady: document.getElementById("checkinReady"),
+        checkinDone: document.getElementById("checkinDone"),
+        reassess: document.getElementById("reassessBanner"),
+        reassessMeta: document.getElementById("reassessMeta"),
+        sessionModal: document.getElementById("sessionModal"),
+        weeklyModal: document.getElementById("weeklyModal"),
+        clipModal: document.getElementById("clipModal"),
+        clipModalTitle: document.getElementById("clipModalTitle"),
+        clipModalDesc: document.getElementById("clipModalDesc"),
+        clipModalDuration: document.getElementById("clipModalDuration"),
+        clipPlayerThumb: document.getElementById("clipPlayerThumb"),
+        playerArt: document.getElementById("playerArt"),
+        playerTitle: document.getElementById("playerTitle"),
+        playerEp: document.getElementById("playerEp"),
+        playerStatus: document.getElementById("playerStatus"),
+        playerEpisodes: document.getElementById("playerEpisodes"),
+        playerProgress: document.getElementById("playerProgress"),
+        playerElapsed: document.getElementById("playerElapsed"),
+        playerDuration: document.getElementById("playerDuration"),
+        playerPlayPause: document.getElementById("playerPlayPause"),
+        suggestTitle: document.getElementById("suggestTitle"),
+        suggestMins: document.getElementById("suggestMins"),
+        suggestMedia: document.getElementById("suggestMedia"),
+        suggestArt: document.getElementById("suggestArt"),
+        suggestCard: document.getElementById("suggestCard"),
+        mostUsedCard: document.getElementById("mostUsedCard"),
+        mostUsedList: document.getElementById("mostUsedList"),
+        choose: document.getElementById("choosePanel"),
+        chooseList: document.getElementById("chooseList")
+      };
+
+      const player = {
+        name: "",
+        mins: 20,
+        seconds: 0,
+        duration: 1200,
+        playing: false,
+        speed: 1,
+        muted: false,
+        tick: null
+      };
+
+      const fmtClock = (sec) => {
+        const m = Math.floor(sec / 60);
+        const s = Math.floor(sec % 60);
+        return String(m).padStart(2, "0") + ":" + String(s).padStart(2, "0");
+      };
+
+      const stopTick = () => {
+        if (player.tick) {
+          clearInterval(player.tick);
+          player.tick = null;
+        }
+        player.playing = false;
+        if (el.playerPlayPause) {
+          el.playerPlayPause.classList.remove("is-playing");
+          el.playerPlayPause.querySelector(".player-icon-play").hidden = false;
+          el.playerPlayPause.querySelector(".player-icon-pause").hidden = true;
+        }
+      };
+
+      const scrollToPlayer = () => {
+        const main = document.getElementById("protoMain");
+        if (main) main.scrollIntoView({ behavior: "smooth", block: "start" });
+      };
+
+      const closeChoosePanel = () => {
+        if (el.choose) el.choose.hidden = true;
+        if (el.suggestCard) el.suggestCard.hidden = false;
+      };
+
+      const renderSuggest = () => {
+        if (el.suggestTitle) el.suggestTitle.textContent = state.suggest;
+        if (el.suggestMins) el.suggestMins.textContent = String(state.suggestMins);
+        if (el.suggestArt) el.suggestArt.innerHTML = sessionArt(state.suggest);
+        if (el.suggestMedia) el.suggestMedia.setAttribute("aria-label", state.suggest + " cover art");
+        const note = document.getElementById("suggestNote");
+        if (note) note.textContent = SESSION_NOTES[state.suggest] || "";
+      };
+
+      const renderMostUsed = () => {
+        if (!el.mostUsedList) return;
+        const ranked = Object.keys(state.usage)
+          .sort(function (a, b) { return state.usage[b] - state.usage[a]; })
+          .slice(0, 3);
+        el.mostUsedList.innerHTML = ranked.map(function (name) {
+          const count = state.usage[name];
+          return '<li><button type="button" class="dash-used-item" data-session="' + name + '" data-mins="' + SESSION_MINS[name] + '">' +
+            '<span class="dash-used-thumb">' + sessionArt(name) + '</span>' +
+            '<span class="dash-used-info"><strong>' + name + '</strong><small>' + count + ' session' + (count === 1 ? "" : "s") + '</small></span>' +
+            '<span class="dash-used-play">Listen</span></button></li>';
+        }).join("");
+        el.mostUsedList.querySelectorAll(".dash-used-item").forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            loadPlayerTrack(btn.getAttribute("data-session"), Number(btn.getAttribute("data-mins")), true);
+            closeChoosePanel();
+            scrollToPlayer();
+          });
+        });
+
+        /* These rows are built here, after the reveal observer has already
+           collected its targets, so they have to hand themselves in. Rows
+           rebuilt later — after a session completes — are shown outright,
+           since the card is on screen and animating them would be a flicker. */
+        const rows = [].slice.call(el.mostUsedList.querySelectorAll("li"));
+        if (document.body.classList.contains("page-entering") && window.__observeFade) {
+          rows.forEach(function (li, i) {
+            li.classList.add("js-reveal");
+            li.style.setProperty("--fade-delay", (0.08 + i * 0.09).toFixed(2) + "s");
+          });
+          window.__observeFade(rows);
+        } else {
+          rows.forEach(function (li) { li.classList.add("fade-el", "is-inview"); });
+        }
+      };
+
+      const renderChooseList = () => {
+        if (!el.chooseList) return;
+        el.chooseList.innerHTML = Object.keys(SESSION_MINS).map(function (name) {
+          /* Artwork + play mark: this is a list of music, and should look like one.
+             The note sits where the choice is made, not in a separate list (brief §11). */
+          return '<li><button type="button" data-session="' + name + '" data-mins="' + SESSION_MINS[name] + '">' +
+            '<span class="dash-session-art">' + sessionArt(name) +
+              '<span class="dash-session-play" aria-hidden="true">' +
+                '<svg viewBox="0 0 24 24" fill="none"><path d="M9 7v10l8-5-8-5z" fill="currentColor"/></svg>' +
+              '</span>' +
+            '</span>' +
+            '<span class="dash-session-text">' +
+              '<span class="dash-session-head">' + name + '<span>' + SESSION_MINS[name] + ' min</span></span>' +
+              '<small class="dash-session-note">' + SESSION_NOTES[name] + '</small>' +
+            '</span></button></li>';
+        }).join("");
+        el.chooseList.querySelectorAll("button").forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            loadPlayerTrack(btn.getAttribute("data-session"), Number(btn.getAttribute("data-mins")), true);
+            closeChoosePanel();
+            scrollToPlayer();
+          });
+        });
+      };
+
+      const renderPlayerEpisodes = () => {
+        if (!el.playerEpisodes) return;
+        el.playerEpisodes.innerHTML = Object.keys(SESSION_MINS).map((name) => {
+          const active = name === player.name ? " is-active" : "";
+          /* What the session is for sits under its name — read at the moment of
+             choosing, which is the only place it is useful. */
+          return '<li><button type="button" class="player-ep-item' + active + '" data-session="' + name + '" data-mins="' + SESSION_MINS[name] + '">' +
+            '<span class="player-ep-play" aria-hidden="true">▶</span>' +
+            '<span class="player-ep-copy">' +
+              '<span class="player-ep-top">' +
+                '<strong class="player-ep-name">' + name + '</strong>' +
+                '<small class="player-ep-dur">' + SESSION_MINS[name] + ' min</small>' +
+              '</span>' +
+              '<small class="player-ep-note">' + SESSION_NOTES[name] + '</small>' +
+            '</span></button></li>';
+        }).join("");
+        el.playerEpisodes.querySelectorAll(".player-ep-item").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            loadPlayerTrack(btn.getAttribute("data-session"), Number(btn.getAttribute("data-mins")), true);
+          });
+        });
+        syncEpisodeFade();
+      };
+
+      /* The fade at the foot of the list means "there is more" — so it has to
+         go once there isn't. */
+      const syncEpisodeFade = () => {
+        const list = el.playerEpisodes;
+        if (!list) return;
+        const atEnd = list.scrollTop + list.clientHeight >= list.scrollHeight - 4;
+        list.classList.toggle("is-at-end", atEnd);
+      };
+
+      const updatePlayerUI = () => {
+        if (el.playerTitle) el.playerTitle.textContent = player.name;
+        if (el.playerEp) el.playerEp.textContent = "Day " + state.day + " · Session";
+        if (el.playerDuration) el.playerDuration.textContent = fmtClock(player.duration);
+        if (el.playerElapsed) el.playerElapsed.textContent = fmtClock(player.seconds);
+        const pct = player.duration ? Math.round((player.seconds / player.duration) * 100) : 0;
+        if (el.playerProgress) {
+          el.playerProgress.value = Math.round((player.seconds / player.duration) * 1000);
+          el.playerProgress.style.setProperty("--pct", pct + "%");
+        }
+        if (el.playerEpisodes) {
+          el.playerEpisodes.querySelectorAll(".player-ep-item").forEach((btn) => {
+            btn.classList.toggle("is-active", btn.getAttribute("data-session") === player.name);
+          });
+        }
+        if (el.playerArt) {
+          el.playerArt.innerHTML = sessionArt(player.name);
+          el.playerArt.setAttribute("aria-label", player.name + " cover art");
+        }
+        /* Once a track has run out the transport alone reads as "never started",
+           so the player says plainly that this one is done. */
+        if (el.playerStatus) el.playerStatus.hidden = !player.completed;
+      };
+
+      const loadPlayerTrack = (name, mins, resume) => {
+        stopTick();
+        player.name = name;
+        player.mins = mins;
+        player.duration = mins * 60;
+        player.seconds = 0;
+        player.completed = false;
+        state.pendingSession = { name: name, mins: mins };
+        renderPlayerEpisodes();
+        updatePlayerUI();
+        if (resume) startTick();
+      };
+
+      /* A session counts when the track actually finishes. */
+      const COMPLETE_AT = 1;
+
+      /* Payment gate. Playing is the one thing a free profile cannot do.
+         Stripe's payment link is set to redirect back here with ?paid=1; that
+         flag is remembered in this browser. It is a front-end gate for the
+         prototype — the real unlock has to come from the server once there is
+         one (Stripe webhook / success session). */
+      const STRIPE_URL = "https://buy.stripe.com/14AdR90ffchR4i7fnJ7g40b";
+      const paywallModal = document.getElementById("paywallModal");
+      const setPaid = (on) => {
+        state.paid = on;
+        document.body.classList.toggle("is-paid", on);
+        try { on ? localStorage.setItem("ym_paid", "1") : localStorage.removeItem("ym_paid"); } catch (e) {}
+      };
+      window.ymUnlock = () => setPaid(true);
+      window.ymLock = () => setPaid(false);
+
+      const startTick = () => {
+        if (!state.paid) {
+          stopTick();
+          setModal(paywallModal, true);
+          return;
+        }
+        stopTick();
+        player.playing = true;
+        if (el.playerPlayPause) {
+          el.playerPlayPause.classList.add("is-playing");
+          el.playerPlayPause.querySelector(".player-icon-play").hidden = true;
+          el.playerPlayPause.querySelector(".player-icon-pause").hidden = false;
+        }
+        player.tick = setInterval(() => {
+          player.seconds = Math.min(player.duration, player.seconds + player.speed);
+          updatePlayerUI();
+          /* The track finishing is what completes the session. No button to
+             press — the check-in comes to the listener. */
+          if (!player.completed && player.seconds >= player.duration * COMPLETE_AT) {
+            player.completed = true;
+            stopTick();
+            openFeedback();
+          }
+        }, 1000);
+      };
+
+      const closePlayer = () => {
+        stopTick();
+      };
+
+      const openFeedback = () => {
+        closePlayer();
+        state.pendingSession = { name: player.name, mins: player.mins };
+        /* Name the session that just ended — the question is about that track,
+           not about the day in general. */
+        const meta = document.getElementById("sessionModalMeta");
+        if (meta) meta.textContent = player.name + " · " + player.mins + " min";
+        setModal(el.sessionModal, true);
+      };
+
+      const fmtTime = (mins) => {
+        const h = Math.floor(mins / 60);
+        const m = mins % 60;
+        return h > 0 ? h + "h " + m + "m" : m + "m";
+      };
+
+      const setModal = (node, open) => {
+        if (!node) return;
+        node.hidden = !open;
+        document.documentElement.classList.toggle("modal-open", open);
+        document.body.classList.toggle("modal-open", open);
+        if (open) {
+          const scrollBody = node.querySelector(".protocol-modal-weekly-body");
+          if (scrollBody) scrollBody.scrollTop = 0;
+        } else if (node === el.clipModal) {
+          /* Closing has to remove the iframe, or the clip keeps playing
+             behind the backdrop — true for every close path: button,
+             backdrop click and Escape. */
+          const host = node.querySelector("#clipPlayerThumb");
+          if (host) host.innerHTML = "";
+        }
+      };
+
+      const renderMilestones = () => {
+        if (!el.milestoneList) return;
+        const nextIdx = MILESTONES.findIndex((m) => !m.done(state));
+        el.milestoneList.innerHTML = MILESTONES.map((m, i) => {
+          const done = m.done(state);
+          const isNext = i === nextIdx;
+          let cls = "dash-ms-row";
+          if (done) cls += " is-done";
+          if (isNext) cls += " is-current";
+          return '<li class="' + cls + '">' +
+            '<span class="dash-ms-check" aria-hidden="true">' + (done ? "✓" : "○") + "</span>" +
+            "<div><p class=\"dash-ms-title\">" + m.title + "</p>" +
+            "<p class=\"dash-ms-desc\">" + m.copy + "</p></div></li>";
+        }).join("");
+      };
+
+      const FEEL_NARROW = "(max-width: 760px)";
+
+      const feelLayout = () => {
+        const host = document.getElementById("feelChart");
+        const w = Math.max(320, Math.round(host ? host.clientWidth : 640));
+        return window.matchMedia(FEEL_NARROW).matches
+          /* Narrow: the label sits above its own row, so the row needs enough
+             height to hold a 21px dot plus a label without the two colliding. */
+          ? { w: w, h: 404, left: 34, right: w - 34, rowYs: [90, 182, 274, 366], stack: true, labelSize: 15, statusSize: 13, axisY: 22, gridTop: 44, gridBottom: 392, blobBase: 16, blobRange: 76, r: 21, iconPx: 25 }
+          : { w: w, h: 268, left: 176, right: w - 140, rowYs: [54, 118, 182, 246], stack: false, labelSize: 16, statusSize: 16, axisY: 22, gridTop: 32, gridBottom: 268, blobBase: 18, blobRange: 88, r: 23, iconPx: 27 };
+      };
+
+      const scoreX = (score, L) => L.left + ((score - 1) / 4) * (L.right - L.left);
+
+      const trendLabel = (dim, first, last) => {
+        if (first === last) return "Stable";
+        const delta = last - first;
+        if (dim.higherBetter) return delta > 0 ? "Improved" : "Lower";
+        return delta < 0 ? "Eased" : "Higher";
+      };
+
+      const readWeeklyScores = () => {
+        const scores = {};
+        document.querySelectorAll("[data-weekly]").forEach((group) => {
+          const key = group.getAttribute("data-weekly");
+          const selected = group.querySelector("button.is-selected");
+          if (selected) scores[key] = Number(selected.getAttribute("data-score"));
+        });
+        return scores;
+      };
+
+      const renderFeelChart = () => {
+        if (!el.feelChart) return;
+        const history = state.checkinHistory || [];
+        const n = history.length;
+        const L = feelLayout();
+
+        if (el.feelChartMeta) {
+          if (!n) el.feelChartMeta.textContent = "No check-ins yet";
+          else if (n === 1) el.feelChartMeta.textContent = "Baseline · " + history[0].label;
+          else el.feelChartMeta.textContent = history[0].label + " → " + history[n - 1].label;
+        }
+        if (el.feelChartNote) el.feelChartNote.hidden = n > 1;
+
+        const txt = (x, y, size, fill, anchor, body) =>
+          '<text x="' + x + '" y="' + y + '" font-size="' + size + '" fill="' + fill + '" font-family="Poppins,sans-serif"' +
+          (anchor ? ' text-anchor="' + anchor + '"' : "") + ">" + body + "</text>";
+
+        let svg = '<svg viewBox="0 0 ' + L.w + " " + L.h + '" role="presentation" aria-hidden="true">';
+
+        if (n) {
+          const latest = history[n - 1];
+          let defs = "<defs>";
+          let field = '<g class="dash-feel-field">';
+          CHECKIN_DIMS.forEach((dim, i) => {
+            const value = latest[dim.key];
+            if (!value) return;
+            const norm = dimScore(dim, value);
+            const cx = scoreX(value, L);
+            const cy = L.rowYs[i];
+            const id = "feelGlow-" + dim.key;
+
+            defs += '<radialGradient id="' + id + '">' +
+              '<stop offset="0" stop-color="' + dim.glow + '" stop-opacity="' + (0.05 + 0.13 * norm).toFixed(3) + '"/>' +
+              '<stop offset="1" stop-color="' + dim.glow + '" stop-opacity="0"/></radialGradient>';
+
+            field += '<circle class="dash-feel-halo" cx="' + cx + '" cy="' + cy +
+              '" r="' + (L.blobBase + L.blobRange * norm).toFixed(1) + '" fill="url(#' + id + ')"/>';
+
+            field += '<circle class="dash-feel-ripple" cx="' + cx + '" cy="' + cy + '" r="' + L.r + '" fill="none" stroke="' +
+              dim.glow + '" stroke-width="1.4" style="--rp-a:' + (0.1 + 0.22 * norm).toFixed(3) +
+              ';--rp-s:' + (2.3 + 1.9 * norm).toFixed(2) + ';animation-delay:' + (i * 2).toFixed(1) + 's"/>';
+          });
+          svg += defs + "</defs>" + field + "</g>";
+        }
+
+        for (let tick = 1; tick <= 5; tick += 1) {
+          const x = scoreX(tick, L);
+          svg += '<line x1="' + x + '" y1="' + L.gridTop + '" x2="' + x + '" y2="' + L.gridBottom + '" stroke="#eef2f4" stroke-width="1"/>';
+          if (tick === 1 || tick === 5) {
+            svg += txt(x, L.axisY, 11, "#b3bfc4", "middle", tick === 1 ? "low" : "high");
+          }
+        }
+
+        CHECKIN_DIMS.forEach((dim, i) => {
+          const y = L.rowYs[i];
+          const labelY = L.stack ? y - (L.r + 14) : y + 4;
+          svg += txt(0, labelY, L.labelSize, "#021019", null, dim.label).replace("<text ", '<text font-weight="500" ');
+          svg += '<line x1="' + L.left + '" y1="' + y + '" x2="' + L.right + '" y2="' + y + '" stroke="#e8eef2" stroke-width="1"/>';
+
+          const points = history.map((entry) => ({ x: scoreX(entry[dim.key], L), value: entry[dim.key] })).filter((pt) => pt.value);
+          if (points.length >= 2) {
+            svg += '<line x1="' + points[0].x + '" y1="' + y + '" x2="' + points[points.length - 1].x + '" y2="' + y + '" stroke="' + dim.color + '" stroke-width="2" opacity="0.28"/>';
+          }
+          points.forEach((point, idx) => {
+            if (idx === points.length - 1) {
+              svg += '<circle cx="' + point.x + '" cy="' + y + '" r="' + L.r + '" fill="' + dim.tint + '"/>';
+              var ip = L.iconPx;
+              svg += '<g transform="translate(' + (point.x - ip / 2) + "," + (y - ip / 2) + ') scale(' + (ip / 24).toFixed(3) + ')" fill="none" stroke="' + dim.iconColor + '" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">' + dim.icon + "</g>";
+            } else {
+              svg += '<rect x="' + (point.x - 17) + '" y="' + (y - 14) + '" width="34" height="28" rx="9" fill="#f4f7f8"/>';
+              svg += txt(point.x, y + 6, 16, "#93a3aa", "middle", point.value);
+            }
+          });
+
+          if (n >= 2) {
+            const label = trendLabel(dim, history[0][dim.key], history[n - 1][dim.key]);
+            svg += L.stack
+              ? txt(L.right, labelY, L.statusSize, "#93a3aa", "end", label)
+              : txt(L.right + 24, y + 4, L.statusSize, "#93a3aa", null, label);
+          }
+        });
+
+        svg += "</svg>";
+        el.feelChart.innerHTML = svg;
+      };
+
+      let feelNarrowState = window.matchMedia(FEEL_NARROW).matches;
+      let feelLastW = 0;
+      const syncFeelChart = () => {
+        const host = document.getElementById("feelChart");
+        const w = host ? Math.round(host.clientWidth) : 0;
+        const narrow = window.matchMedia(FEEL_NARROW).matches;
+        if (narrow !== feelNarrowState || Math.abs(w - feelLastW) > 8) {
+          feelNarrowState = narrow;
+          feelLastW = w;
+          renderFeelChart();
+        }
+      };
+      const feelMq = window.matchMedia(FEEL_NARROW);
+      if (feelMq.addEventListener) feelMq.addEventListener("change", syncFeelChart);
+      else if (feelMq.addListener) feelMq.addListener(syncFeelChart);
+      window.addEventListener("resize", syncFeelChart);
+      if (window.ResizeObserver && el.feelChart) new ResizeObserver(syncFeelChart).observe(el.feelChart);
+
+      const dimScore = (dim, value) => (dim.higherBetter ? value - 1 : 5 - value) / 4;
+
+      const renderFeelDonut = () => {
+        const history = state.checkinHistory || [];
+        if (!el.feelDonut || !el.feelDonutLegend) return;
+
+        if (!history.length) {
+          el.feelDonut.innerHTML = '<circle cx="60" cy="60" r="44" fill="none" stroke="#e8eef2" stroke-width="11"/>';
+          if (el.feelDonutCenter) el.feelDonutCenter.textContent = "—";
+          if (el.feelDonutCenterLabel) el.feelDonutCenterLabel.textContent = "no check-ins yet";
+          el.feelDonutLegend.innerHTML = "";
+          if (el.feelDonutLead) el.feelDonutLead.textContent = "";
+          if (el.feelDonutFoot) el.feelDonutFoot.textContent = "";
+          return;
+        }
+
+        const latest = history[history.length - 1];
+        const circumference = 276;
+        const overall = CHECKIN_DIMS.reduce((sum, dim) => sum + dimScore(dim, latest[dim.key] || 1), 0) / CHECKIN_DIMS.length;
+
+        el.feelDonut.innerHTML =
+          '<circle cx="60" cy="60" r="44" fill="none" stroke="#e8eef2" stroke-width="11"/>' +
+          '<circle cx="60" cy="60" r="44" fill="none" stroke="#199a91" stroke-width="11" stroke-linecap="round" stroke-dasharray="' +
+          (overall * circumference).toFixed(1) + ' ' + circumference + '" transform="rotate(-90 60 60)"/>';
+
+        let improvement = null;
+        if (history.length >= 2) {
+          const first = history[0];
+          let totalDelta = 0;
+          CHECKIN_DIMS.forEach((dim) => {
+            totalDelta += dimScore(dim, latest[dim.key]) - dimScore(dim, first[dim.key]);
+          });
+          improvement = Math.round((totalDelta / CHECKIN_DIMS.length) * 100);
+        }
+
+        if (el.feelDonutCenter) {
+          el.feelDonutCenter.textContent = improvement === null
+            ? Math.round(overall * 100) + '%'
+            : (improvement > 0 ? '+' : '') + improvement + '%';
+        }
+        if (el.feelDonutCenterLabel) {
+          el.feelDonutCenterLabel.textContent = improvement === null ? 'overall score' : 'since baseline';
+        }
+
+        el.feelDonutLegend.innerHTML = CHECKIN_DIMS.map((dim) => {
+          return '<li><span class="dash-donut-ico" style="background:' + dim.tint + '">' +
+            '<svg viewBox="0 0 24 24" fill="none" stroke="' + dim.iconColor + '" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + dim.icon + '</svg>' +
+            '</span><span class="dash-donut-name">' + dim.label + '</span>' +
+            '<strong>' + latest[dim.key] + ' / 5</strong></li>';
+        }).join('');
+
+        if (el.feelDonutLead) {
+          el.feelDonutLead.textContent = improvement === null
+            ? 'Where you started across the four check-in areas.'
+            : 'How those four areas have moved since your first check-in.';
+        }
+
+        if (el.feelDonutFoot) {
+          if (improvement === null) {
+            el.feelDonutFoot.textContent = 'Your next weekly check-in adds the first comparison.';
+          } else {
+            let topDim = null;
+            let topDelta = 0;
+            CHECKIN_DIMS.forEach((dim) => {
+              const delta = dimScore(dim, latest[dim.key]) - dimScore(dim, history[0][dim.key]);
+              if (Math.abs(delta) > Math.abs(topDelta)) { topDelta = delta; topDim = dim; }
+            });
+            el.feelDonutFoot.textContent = topDim
+              ? 'Biggest change: ' + topDim.label + ' — ' + trendLabel(topDim, history[0][topDim.key], latest[topDim.key]).toLowerCase() + '.'
+              : 'Every area held steady this week.';
+          }
+        }
+      };
+
+      const weekTone = (done, goal) => {
+        const ratio = done / goal;
+        if (ratio >= 1) return "Great consistency this week";
+        if (ratio >= 0.6) return "Strong rhythm this week";
+        if (done > 0) return "Every session counts — keep going";
+        return "Your week is open — start when you're ready";
+      };
+
+      const SHEETS = ["guidance", "dashboard", "profile"];
+      const sheetBackdrop = document.getElementById("sheetBackdrop");
+      const sheetGuidance = document.getElementById("sheetGuidance");
+      const sheetDashboard = document.getElementById("sheetDashboard");
+      const sheetProfile = document.getElementById("sheetProfile");
+
+      let activeSheet = null;
+
+      const openSheet = (name) => {
+        const sheet = SHEETS.indexOf(name) >= 0 ? name : null;
+        const switching = !!activeSheet && !!sheet && activeSheet !== sheet;
+        const opening = !activeSheet && !!sheet;
+
+        document.body.classList.toggle("sheet-switching", switching);
+
+        if (sheetBackdrop) sheetBackdrop.hidden = !sheet;
+        if (sheetGuidance) {
+          sheetGuidance.hidden = sheet !== "guidance";
+          sheetGuidance.classList.toggle("proto-sheet--enter", opening && sheet === "guidance");
+          sheetGuidance.classList.remove("proto-sheet--swap");
+        }
+        if (sheetDashboard) {
+          sheetDashboard.hidden = sheet !== "dashboard";
+          sheetDashboard.classList.toggle("proto-sheet--enter", opening && sheet === "dashboard");
+          sheetDashboard.classList.remove("proto-sheet--swap");
+        }
+        if (sheetProfile) {
+          sheetProfile.hidden = sheet !== "profile";
+          sheetProfile.classList.toggle("proto-sheet--enter", opening && sheet === "profile");
+          sheetProfile.classList.remove("proto-sheet--swap");
+        }
+
+        document.body.classList.toggle("sheet-open", !!sheet);
+        document.querySelectorAll(".proto-shelf-tab").forEach(function (t) {
+          var mine = t.getAttribute("data-sheet") === sheet;
+          t.classList.toggle("is-active", mine);
+          t.setAttribute("aria-expanded", mine ? "true" : "false");
+          t.setAttribute("aria-label", (mine ? "Close " : "Open ") + (t.getAttribute("data-sheet") === "guidance" ? "Guidance" : "Dashboard"));
+        });
+
+        if (sheet) {
+          const active = sheet === "guidance" ? sheetGuidance : sheet === "profile" ? sheetProfile : sheetDashboard;
+          if (active) {
+            document.body.style.setProperty("--sheet-x", Math.round(active.getBoundingClientRect().width) + "px");
+            if (switching) {
+              active.classList.add("proto-sheet--swap");
+              window.setTimeout(function () {
+                active.classList.remove("proto-sheet--swap");
+              }, 360);
+            }
+          }
+          if (typeof renderFeelChart === "function") requestAnimationFrame(function () { renderFeelChart(); });
+          if (active) active.querySelectorAll(".fade-el").forEach(function (el) { el.classList.add("is-inview"); });
+        } else {
+          document.body.style.setProperty("--sheet-x", "0px");
+          if (sheetGuidance) {
+            sheetGuidance.classList.remove("proto-sheet--enter");
+            sheetGuidance.classList.remove("proto-sheet--swap");
+          }
+          if (sheetDashboard) {
+            sheetDashboard.classList.remove("proto-sheet--enter");
+            sheetDashboard.classList.remove("proto-sheet--swap");
+          }
+          if (sheetProfile) {
+            sheetProfile.classList.remove("proto-sheet--enter");
+            sheetProfile.classList.remove("proto-sheet--swap");
+          }
+        }
+
+        activeSheet = sheet;
+
+        if (switching) {
+          window.setTimeout(function () {
+            document.body.classList.remove("sheet-switching");
+          }, 360);
+        }
+
+        if (history.replaceState) history.replaceState(null, "", sheet ? "#" + sheet : location.pathname + location.search);
+      };
+
+      /* Calendar: no OAuth and no backend. Each row opens a pre-filled Google
+         Calendar template; the sync button builds a real .ics so it also works
+         with Apple Calendar and Outlook. Times are local, repeating weekdays. */
+      const pad = (n) => String(n).padStart(2, "0");
+
+      const nextWeekdayAt = (h, m) => {
+        const d = new Date();
+        d.setSeconds(0, 0);
+        d.setHours(h, m);
+        if (d.getTime() <= Date.now()) d.setDate(d.getDate() + 1);
+        while (d.getDay() === 0 || d.getDay() === 6) d.setDate(d.getDate() + 1);
+        return d;
+      };
+
+      const stamp = (d) => d.getFullYear() + pad(d.getMonth() + 1) + pad(d.getDate()) +
+        "T" + pad(d.getHours()) + pad(d.getMinutes()) + "00";
+
+      const planEvent = (item) => {
+        const start = nextWeekdayAt(item.h, item.m);
+        const end = new Date(start.getTime() + (SESSION_MINS[item.session] || 15) * 60000);
+        return { start: start, end: end, title: "YouMind · " + item.session, desc: item.why };
+      };
+
+      const googleUrl = (item) => {
+        const e = planEvent(item);
+        return "https://calendar.google.com/calendar/render?action=TEMPLATE" +
+          "&text=" + encodeURIComponent(e.title) +
+          "&dates=" + stamp(e.start) + "/" + stamp(e.end) +
+          "&details=" + encodeURIComponent(e.desc) +
+          "&recur=" + encodeURIComponent("RRULE:FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR");
+      };
+
+      const buildIcs = (items) => {
+        const out = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//YouMind//Protocol//EN", "CALSCALE:GREGORIAN"];
+        items.forEach(function (item, i) {
+          const e = planEvent(item);
+          out.push("BEGIN:VEVENT");
+          out.push("UID:youmind-" + Date.now() + "-" + i + "@youmind.org");
+          out.push("DTSTAMP:" + stamp(new Date()));
+          out.push("DTSTART:" + stamp(e.start));
+          out.push("DTEND:" + stamp(e.end));
+          out.push("RRULE:FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR");
+          out.push("SUMMARY:" + e.title);
+          out.push("DESCRIPTION:" + e.desc);
+          out.push("END:VEVENT");
+        });
+        out.push("END:VCALENDAR");
+        return out.join("\r\n");
+      };
+
+      const downloadIcs = () => {
+        const body = buildIcs(PLAN);
+        const blob = new Blob([body], { type: "text/calendar;charset=utf-8" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "youmind-protocol.ics";
+        a.type = "text/calendar";
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+      };
+
+      /* Start date is derived, not stored: day 1 is (state.day - 1) days ago. */
+      const renderSince = () => {
+        const started = new Date();
+        started.setHours(0, 0, 0, 0);
+        started.setDate(started.getDate() - (state.day - 1));
+        const on = document.getElementById("startedOn");
+        const day = document.getElementById("startedDay");
+        if (on) {
+          on.textContent = started.toLocaleDateString(undefined, { day: "numeric", month: "short", year: "numeric" });
+        }
+        if (day) day.textContent = state.day + " of 14";
+      };
+
+      const renderPlan = () => {
+        const list = document.getElementById("planList");
+        if (list) {
+          list.innerHTML = PLAN.map(function (item) {
+            return '<li class="dash-plan-item">' +
+              '<span class="dash-plan-time">' + item.at + '</span>' +
+              '<span class="dash-plan-copy">' +
+                '<span class="dash-plan-name">' + item.session +
+                ' <em class="dash-plan-tag">' + item.tag + '</em></span>' +
+                '<span class="dash-plan-why">' + item.why + '</span>' +
+              '</span>' +              '</li>';
+          }).join("");
+        }
+        /* One calendar, both truths: hollow = planned, filled = actually played.
+           A session counts on the day it was PLAYED, not the day it was planned —
+           shifting a session should never read as a miss. Nothing here marks a
+           quiet day as failure: no red, no strikethrough, no missed counter. */
+        const week = document.getElementById("planWeek");
+        if (week) {
+          const played = {};
+          (state.sessionLog || []).forEach(function (entry) {
+            (played[entry.day] = played[entry.day] || []).push(entry.session);
+          });
+
+          const dayCells = [];
+          for (var d = 1; d <= 14; d += 1) {
+            var done = played[d] || [];
+            var isPast = d < state.day;
+            var isToday = d === state.day;
+            var marks = done.map(function (name) {
+              var dim = CHECKIN_DIMS.filter(function (x) { return x.key === SESSION_FOCUS[name]; })[0];
+              return '<i class="dash-cycle-mark is-done" style="background:' + (dim ? dim.color : "#199a91") + '" title="' + name + '"></i>';
+            });
+            if (!isPast) {
+              var planned = PLAN.length - done.length;
+              for (var k = 0; k < planned && k < 3; k += 1) {
+                marks.push('<i class="dash-cycle-mark is-planned"></i>');
+              }
+            }
+            dayCells.push([
+              '<span class="dash-cycle-day' + (isToday ? " is-today" : "") + (isPast && !done.length ? " is-quiet" : "") + '">',
+              '<span class="dash-cycle-num">' + d + '</span>',
+              '<span class="dash-cycle-marks">' + marks.join("") + '</span>',
+              '</span>'
+            ].join(""));
+          }
+          week.innerHTML = dayCells.join("");
+        }
+
+        const summary = document.getElementById("planSummary");
+        if (summary) {
+          var log = state.sessionLog || [];
+          var days = {};
+          log.forEach(function (e) { days[e.day] = 1; });
+          var nDays = Object.keys(days).length;
+          summary.textContent = log.length + (log.length === 1 ? " session" : " sessions") +
+            " across " + nDays + (nDays === 1 ? " day" : " days") + " so far.";
+        }
+        const sync = document.getElementById("planSyncAll");
+        if (sync && !sync.dataset.wired) {
+          sync.dataset.wired = "1";
+          sync.addEventListener("click", downloadIcs);
+        }
+      };
+
+      const render = () => {
+        const dayPct = Math.min(100, Math.round((state.day / 14) * 100));
+        if (el.weekKpi) el.weekKpi.textContent = state.weekDone + " of " + state.weekGoal;
+        if (el.weekHead) el.weekHead.textContent = weekTone(state.weekDone, state.weekGoal);
+        if (el.timeKpi) el.timeKpi.textContent = fmtTime(state.minutes);
+        if (el.totalKpi) el.totalKpi.textContent = String(state.total);
+        if (el.dayKpi) el.dayKpi.textContent = "Day " + state.day;
+        if (el.navDay) el.navDay.textContent = "Day " + state.day;
+        if (el.streakKpi) el.streakKpi.textContent = state.streak + " day" + (state.streak === 1 ? "" : "s");
+        if (el.dayPct) el.dayPct.textContent = dayPct + "% through your first cycle";
+        if (el.orient) el.orient.hidden = state.total >= 4;
+        if (el.reassess) el.reassess.classList.toggle("is-visible", state.day >= 14);
+        if (el.reassessMeta) {
+          el.reassessMeta.textContent = state.total + " sessions · " + fmtTime(state.minutes) + " listening · " +
+            state.checkins + " weekly check-in" + (state.checkins === 1 ? "" : "s");
+        }
+        if (el.mostUsedCard) {
+          const showMost = state.total >= 4;
+          el.mostUsedCard.hidden = !showMost;
+          const row = el.mostUsedCard.closest(".dash-row--session");
+          if (row) row.classList.toggle("is-suggest-only", !showMost);
+        }
+        updatePlayerUI();
+        renderSuggest();
+        renderMostUsed();
+        renderFeelChart();
+        renderFeelDonut();
+        renderMilestones();
+        renderPlan();
+        renderSince();
+        if (el.checkinReady) el.checkinReady.hidden = state.weekCheckinDone;
+        if (el.checkinDone) el.checkinDone.hidden = !state.weekCheckinDone;
+      };
+
+      const applyCompletion = (name, mins) => {
+        state.weekDone = Math.min(state.weekGoal, state.weekDone + 1);
+        state.total += 1;
+        state.minutes += mins;
+        state.streak += 1;
+        state.usage[name] = (state.usage[name] || 0) + 1;
+        state.sessionLog.push({ day: state.day, session: name });
+        state.suggest = name;
+        state.suggestMins = mins;
+        if (state.day < 14) state.day += 1;
+        render();
+      };
+
+      const finishFeedback = () => {
+        if (state.pendingSession) {
+          applyCompletion(state.pendingSession.name, state.pendingSession.mins);
+          state.pendingSession = null;
+        }
+        setModal(el.sessionModal, false);
+        document.querySelectorAll("#feelButtons button, #stateScale button").forEach((b) => b.classList.remove("is-selected"));
+      };
+
+      const btnSuggestListen = document.getElementById("btnSuggestListen");
+      const btnChoose = document.getElementById("btnChooseSession");
+      const startSuggested = function () {
+        loadPlayerTrack(state.suggest, state.suggestMins, true);
+        closeChoosePanel();
+        scrollToPlayer();
+      };
+      if (btnSuggestListen) btnSuggestListen.addEventListener("click", startSuggested);
+      if (el.suggestMedia) el.suggestMedia.addEventListener("click", startSuggested);
+      const suggestPlay = document.getElementById("suggestPlay");
+      if (suggestPlay) {
+        suggestPlay.addEventListener("click", function (e) {
+          e.stopPropagation();
+          startSuggested();
+        });
+      }
+      if (btnChoose && el.choose) {
+        btnChoose.addEventListener("click", function () {
+          const open = el.choose.hidden;
+          el.choose.hidden = !open;
+          if (el.suggestCard) el.suggestCard.hidden = open;
+          /* Opening the panel below the fold is useless if the user has to find it. */
+          if (open) {
+            const smooth = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+            requestAnimationFrame(function () {
+              el.choose.scrollIntoView({ behavior: smooth ? "smooth" : "auto", block: "center" });
+            });
+          }
+        });
+      }
+
+      /* On mobile the sheet is full width, so there is no backdrop to tap —
+         the header carries the way back to the listen view. */
+      document.querySelectorAll("[data-sheet-close]").forEach(function (btn) {
+        btn.addEventListener("click", function () { openSheet(null); });
+      });
+
+      const paywallClose = document.getElementById("paywallClose");
+      if (paywallClose) paywallClose.addEventListener("click", function () { setModal(paywallModal, false); });
+      if (paywallModal) {
+        paywallModal.addEventListener("click", function (e) { if (e.target === paywallModal) setModal(paywallModal, false); });
+      }
+
+      document.querySelectorAll("[data-sheet]").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var pm = document.getElementById("profileMenu");
+          if (pm) pm.hidden = true;
+          var want = btn.getAttribute("data-sheet");
+          openSheet(btn.classList.contains("is-active") ? null : want);
+        });
+      });
+      document.querySelectorAll("[data-sheet-close]").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          openSheet(null);
+        });
+      });
+      if (sheetBackdrop) {
+        sheetBackdrop.addEventListener("click", function () {
+          openSheet(null);
+        });
+      }
+
+      document.querySelectorAll("#feelButtons button, #stateScale button").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const group = btn.parentElement;
+          group.querySelectorAll("button").forEach((b) => b.classList.remove("is-selected"));
+          btn.classList.add("is-selected");
+        });
+      });
+      document.querySelectorAll("[data-weekly] button").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const group = btn.parentElement;
+          group.querySelectorAll("button").forEach((b) => b.classList.remove("is-selected"));
+          btn.classList.add("is-selected");
+        });
+      });
+
+      const skip = document.getElementById("sessionModalSkip");
+      const done = document.getElementById("sessionModalDone");
+      if (skip) skip.addEventListener("click", finishFeedback);
+      if (done) done.addEventListener("click", finishFeedback);
+
+      const weeklyBtn = document.getElementById("btnWeeklyCheckin");
+      const weeklySkip = document.getElementById("weeklyModalSkip");
+      const weeklyClose = document.getElementById("weeklyModalClose");
+      const weeklyDone = document.getElementById("weeklyModalDone");
+      const openWeekly = () => setModal(el.weeklyModal, true);
+      const finishWeekly = () => {
+        const scores = readWeeklyScores();
+        const hasScores = CHECKIN_DIMS.every((dim) => scores[dim.key]);
+        if (hasScores) {
+          const weekNum = state.checkinHistory.length + 1;
+          state.checkinHistory.push({
+            week: weekNum,
+            label: "Week " + weekNum,
+            emotion: scores.emotion,
+            sleep: scores.sleep,
+            mental: scores.mental,
+            stress: scores.stress
+          });
+        }
+        state.weekCheckinDone = true;
+        state.checkins += 1;
+        setModal(el.weeklyModal, false);
+        document.querySelectorAll("[data-weekly] button").forEach((b) => b.classList.remove("is-selected"));
+        const note = document.getElementById("weeklyNote");
+        if (note) note.value = "";
+        render();
+      };
+      if (weeklyBtn) weeklyBtn.addEventListener("click", openWeekly);
+      if (weeklySkip) weeklySkip.addEventListener("click", () => setModal(el.weeklyModal, false));
+      if (weeklyClose) weeklyClose.addEventListener("click", () => setModal(el.weeklyModal, false));
+      if (weeklyDone) weeklyDone.addEventListener("click", finishWeekly);
+
+      /* Placeholder clip — every guide points at the same Vimeo video until the
+         real ones are supplied. autoplay=1 needs muted=1 or browsers block it. */
+      const CLIP_VIDEO = "https://player.vimeo.com/video/1222710784?h=0a6908d9fb&autoplay=1&muted=1";
+
+
+      document.querySelectorAll(".dash-clip-card").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const title = btn.getAttribute("data-clip") || "Short guide";
+          const thumb = btn.getAttribute("data-thumb") || "";
+          const desc = btn.getAttribute("data-desc") || "";
+          const duration = btn.getAttribute("data-duration") || "";
+          if (el.clipModalTitle) el.clipModalTitle.textContent = title;
+          if (el.clipModalDesc) el.clipModalDesc.textContent = desc;
+          if (el.clipModalDuration) el.clipModalDuration.textContent = duration;
+          /* The clip plays as soon as the modal opens — one tap, not two.
+             The iframe is built on open and torn down on close so the video
+             actually stops instead of playing on behind the backdrop. */
+          if (el.clipPlayerThumb) {
+            el.clipPlayerThumb.innerHTML =
+              '<iframe title="' + title.replace(/"/g, "&quot;") + '" src="' + CLIP_VIDEO +
+              '" frameborder="0" referrerpolicy="strict-origin-when-cross-origin"' +
+              ' allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"' +
+              " allowfullscreen></iframe>";
+          }
+          setModal(el.clipModal, true);
+        });
+      });
+      const clipClose = document.getElementById("clipModalClose");
+      if (clipClose) clipClose.addEventListener("click", () => setModal(el.clipModal, false));
+
+      [el.sessionModal, el.weeklyModal, el.clipModal].forEach((modal) => {
+        if (!modal) return;
+        modal.addEventListener("click", (e) => {
+          if (e.target !== modal) return;
+          if (modal === el.sessionModal) finishFeedback();
+          else if (modal === el.weeklyModal) setModal(modal, false);
+          else setModal(modal, false);
+        });
+      });
+
+      if (el.playerPlayPause) {
+        el.playerPlayPause.addEventListener("click", () => {
+          if (player.playing) stopTick();
+          else startTick();
+        });
+      }
+      const playerRewind = document.getElementById("playerRewind");
+      const playerForward = document.getElementById("playerForward");
+      const playerSpeed = document.getElementById("playerSpeed");
+      const playerMute = document.getElementById("playerMute");
+      const playerClose = document.getElementById("playerClose");
+      if (playerRewind) playerRewind.addEventListener("click", () => {
+        player.seconds = Math.max(0, player.seconds - 10);
+        updatePlayerUI();
+      });
+      if (playerForward) playerForward.addEventListener("click", () => {
+        player.seconds = Math.min(player.duration, player.seconds + 10);
+        updatePlayerUI();
+      });
+      if (playerSpeed) {
+        playerSpeed.addEventListener("click", () => {
+          const speeds = [1, 1.25, 1.5, 2];
+          const idx = speeds.indexOf(player.speed);
+          player.speed = speeds[(idx + 1) % speeds.length];
+          playerSpeed.textContent = player.speed + "×";
+        });
+      }
+      if (playerMute) playerMute.addEventListener("click", () => {
+        player.muted = !player.muted;
+        playerMute.classList.toggle("is-muted", player.muted);
+      });
+      if (playerClose) playerClose.addEventListener("click", closePlayer);
+      if (el.playerProgress) {
+        el.playerProgress.addEventListener("input", () => {
+          player.seconds = Math.round((Number(el.playerProgress.value) / 1000) * player.duration);
+          updatePlayerUI();
+        });
+      }
+
+      const profileMenuBtn = document.getElementById("profileMenuBtn");
+      const profileMenu = document.getElementById("profileMenu");
+      if (profileMenuBtn && profileMenu) {
+        profileMenuBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          const open = profileMenu.hidden;
+          profileMenu.hidden = !open;
+          profileMenuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+        });
+        document.addEventListener("click", () => {
+          profileMenu.hidden = true;
+          profileMenuBtn.setAttribute("aria-expanded", "false");
+        });
+        profileMenu.addEventListener("click", (e) => e.stopPropagation());
+      }
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key !== "Escape") return;
+        if (profileMenu && !profileMenu.hidden) {
+          profileMenu.hidden = true;
+          if (profileMenuBtn) profileMenuBtn.setAttribute("aria-expanded", "false");
+          return;
+        }
+        if (el.sessionModal && !el.sessionModal.hidden) finishFeedback();
+        if (el.weeklyModal && !el.weeklyModal.hidden) setModal(el.weeklyModal, false);
+        if (el.clipModal && !el.clipModal.hidden) setModal(el.clipModal, false);
+        if (sheetGuidance && !sheetGuidance.hidden) openSheet(null);
+        if (sheetDashboard && !sheetDashboard.hidden) openSheet(null);
+        if (sheetProfile && !sheetProfile.hidden) openSheet(null);
+        if (paywallModal && !paywallModal.hidden) setModal(paywallModal, false);
+      });
+
+      /* Sheet widths are viewport-relative; keep the shelf tabs glued to the
+         sheet edge when the window resizes or the phone rotates. */
+      window.addEventListener("resize", function () {
+        const open = activeSheet === "guidance" ? sheetGuidance : activeSheet === "profile" ? sheetProfile : activeSheet === "dashboard" ? sheetDashboard : null;
+        if (open) document.body.style.setProperty("--sheet-x", Math.round(open.getBoundingClientRect().width) + "px");
+      });
+
+      window.addEventListener("hashchange", function () {
+        const hash = location.hash.replace("#", "");
+        if (SHEETS.indexOf(hash) >= 0) openSheet(hash);
+        else openSheet(null);
+      });
+
+      player.name = state.suggest;
+      player.mins = state.suggestMins;
+      player.duration = state.suggestMins * 60;
+      renderPlayerEpisodes();
+      updatePlayerUI();
+
+      /* Back from Stripe with ?paid=1, or already unlocked in this browser. */
+      (function () {
+        let remembered = false;
+        try { remembered = localStorage.getItem("ym_paid") === "1"; } catch (e) {}
+        const fromStripe = /[?&]paid=1\b/.test(location.search);
+        setPaid(remembered || fromStripe);
+        if (fromStripe && history.replaceState) {
+          history.replaceState(null, "", location.pathname + location.hash);
+        }
+      })();
+
+      renderChooseList();
+      render();
+      const bootHash = location.hash.replace("#", "");
+      /* The browser restores the old scroll position on reload, then our own
+         layout settles and yanks the page — which read as "it jumps somewhere
+         then comes back". Own the scroll instead of fighting it. */
+      if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+      window.scrollTo(0, 0);
+
+      /* Guidance/Dashboard float over the page on a phone, so they cover
+         whatever is behind them. They step out of the way while you read
+         forward and come straight back on the first upward scroll — the
+         gesture people already make when they want controls. They also stay
+         put at the very top and the very bottom, where nothing is hidden. */
+      if (el.playerEpisodes) el.playerEpisodes.addEventListener("scroll", syncEpisodeFade, { passive: true });
+
+      /* One timeline for the whole wave.
+
+         The line was drawn by animating stroke-dashoffset in CSS while the dot
+         travelled by offset-distance. Two mechanisms, interpolated separately
+         by the browser — so the dot ran ahead of the drawing edge and the
+         resting rings began on a fixed timer whether or not the line had
+         arrived. Here a single progress value drives every strand and the dot,
+         and the idle state only begins once the draw has actually finished. */
+      /* The settled tail is generated, not authored.
+
+         The markup carries only the alert half — every path in it ends at the
+         join, x=534. Everything to the right of that is built here, so the
+         same generator produces the still tail during the draw and the moving
+         one at rest. There is no second copy of the geometry to fall out of
+         sync with, and nothing depends on slicing a `d` string.
+
+         Three rules keep it honest:
+           - amplitude ramps from zero at the join, so the halves stay one line
+           - wavelength stretches toward Settled: the rhythm slows, it does not
+             merely shrink
+           - the phase advances with wall-clock time, so a dropped frame or a
+             backgrounded tab never leaves it out of step */
+      (function drawHeroWave() {
+        const svg = document.querySelector(".listen-hero-wave");
+        const signal = document.getElementById("waveSignal");
+        const rider = document.querySelector(".listen-hero-rider");
+        const halo = document.querySelector(".wave-rest-halo");
+        if (!svg || !signal || !rider) return;
+
+        const JOIN_X = 534;
+        const END_X = 886;
+        const MID_Y = 60;
+        const AMP = 8;
+        const STEP = 6;
+        const PERIOD = 6000;
+
+        /* The resting point is the source, not the destination.
+
+           Phase is measured backwards from the end, so a crest is born at the
+           dot and travels left along the tail — the dot moves first and the
+           line follows it. Measuring forwards made the middle appear to drive
+           the motion and the dot merely receive it.
+
+           Amplitude follows the same idea: strongest at the dot and easing to
+           nothing by the join, so the pulse fades into the settled line rather
+           than running the whole length of it. */
+        const tailY = function (x, phase) {
+          const fromEnd = (END_X - x) / (END_X - JOIN_X);
+          const reach = Math.pow(1 - fromEnd, 1.35);
+          const theta = (END_X - x) / 54 * (1 - 0.28 * (1 - fromEnd));
+          return MID_Y + AMP * reach * Math.sin(theta - phase);
+        };
+
+        const tailPath = function (phase) {
+          let d = "";
+          for (let x = JOIN_X + STEP; x < END_X; x += STEP) {
+            d += "L" + x + "," + tailY(x, phase).toFixed(2) + " ";
+          }
+          return d + "L" + END_X + "," + tailY(END_X, phase).toFixed(2);
+        };
+        /* Fewer crests on a narrow screen.
+
+           The SVG is drawn with preserveAspectRatio="none", so a 900-unit box
+           squeezed into 320px compresses horizontally about three times harder
+           than vertically. Five crests become a scribble at that scale, so the
+           narrow layout gets three wider ones — the same journey, told with
+           fewer syllables. */
+        const HEADS = {
+          wide: {
+            signal: "M14,60 C40,16 68,104 98,60 C128,18 158,102 192,60 C226,24 260,96 298,60 C336,32 374,88 414,60 C454,42 506,60 534,60",
+            strand: "M14,60 C40,80 68,40 98,60 C128,79 158,41 192,60 C226,76 260,44 298,60 C336,72 374,48 414,60 C454,67 506,60 534,60"
+          },
+          narrow: {
+            signal: "M14,60 C58,10 106,110 154,60 C208,16 266,104 324,60 C388,26 450,94 508,60 C512,58 524,60 534,60",
+            strand: "M14,60 C58,84 106,36 154,60 C208,82 266,38 324,60 C388,76 450,44 508,60 C512,59 524,60 534,60"
+          }
+        };
+        const narrowQuery = window.matchMedia("(max-width: 760px)");
+
+        const strands = [].slice.call(svg.querySelectorAll(".wave-strand, .wave-signal"));
+
+        /* Which half of the line a strand draws decides which head it takes. */
+        let heads = [];
+        const pickHeads = function () {
+          const set = narrowQuery.matches ? HEADS.narrow : HEADS.wide;
+          heads = strands.map(function (p) {
+            return p.classList.contains("wave-strand") ? set.strand : set.signal;
+          });
+        };
+        pickHeads();
+
+        let lastPhase = 0;
+        const setTail = function (phase) {
+          lastPhase = phase;
+          const tail = tailPath(phase);
+          strands.forEach(function (p, i) { p.setAttribute("d", heads[i] + " " + tail); });
+        };
+
+        setTail(0);
+
+        /* Swapping between layouts mid-life redraws in place — no reload, and
+           the resting rhythm carries on from the phase it was already at. */
+        /* Driven by the measured state rather than by the media query's change
+           event: that event does not fire under every resize path, and a wave
+           that keeps the wrong head after a rotation is worse than one extra
+           comparison per resize. */
+        let wasNarrow = narrowQuery.matches;
+        const onBreakpoint = function () {
+          if (narrowQuery.matches === wasNarrow) return;
+          wasNarrow = narrowQuery.matches;
+          pickHeads();
+          setTail(lastPhase);
+          if (svg.classList.contains("is-settled")) {
+            strands.forEach(function (p) { p.style.strokeDasharray = "none"; p.style.strokeDashoffset = 0; });
+          }
+        };
+        window.addEventListener("resize", onBreakpoint, { passive: true });
+        window.addEventListener("orientationchange", onBreakpoint);
+
+        const lens = strands.map(function (p) {
+          const len = p.getTotalLength();
+          p.style.strokeDasharray = len;
+          p.style.strokeDashoffset = len;
+          return len;
+        });
+        const signalLen = signal.getTotalLength();
+
+        /* At rest the dash is retired entirely — the line is fully drawn, and
+           leaving a dash pattern on a path whose length changes every frame
+           would make the far end flicker. */
+        let restFrame = null;
+        const rest = function (now) {
+          /* One phase per frame, derived from wall-clock and shared by the tail
+             and the dot, so the point can never sit off the line it rides. */
+          const phase = ((now % PERIOD) / PERIOD) * Math.PI * 2;
+          setTail(phase);
+          rider.setAttribute("cx", END_X);
+          rider.setAttribute("cy", tailY(END_X, phase).toFixed(2));
+          /* The halo is a separate circle so it can grow without the point growing
+
+             with it; both sit at the same place on the line. */
+          if (halo) { halo.setAttribute("cx", END_X); halo.setAttribute("cy", tailY(END_X, phase).toFixed(2)); }
+          restFrame = window.requestAnimationFrame(rest);
+        };
+
+        const settle = function (animate) {
+          strands.forEach(function (p) {
+            p.style.strokeDasharray = "none";
+            p.style.strokeDashoffset = 0;
+            p.style.opacity = "";
+          });
+          rider.setAttribute("cx", END_X);
+          rider.setAttribute("cy", tailY(END_X, 0).toFixed(2));
+          if (halo) { halo.setAttribute("cx", END_X); halo.setAttribute("cy", tailY(END_X, 0).toFixed(2)); }
+          rider.style.opacity = 1;
+          svg.classList.add("is-settled");
+          if (animate && restFrame === null) restFrame = window.requestAnimationFrame(rest);
+        };
+
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          settle(false);
+          return;
+        }
+
+        /* Same shape as the old keyframes: slow through the crowded opening,
+           gathering as the strands agree, unhurried into the settled tail. */
+        const STOPS = [[0, 0], [0.2, 0.12], [0.42, 0.32], [0.66, 0.62], [0.85, 0.84], [1, 1]];
+        const easeDraw = function (t) {
+          for (let i = 1; i < STOPS.length; i += 1) {
+            if (t <= STOPS[i][0]) {
+              const a = STOPS[i - 1];
+              const b = STOPS[i];
+              const k = (t - a[0]) / (b[0] - a[0]);
+              return a[1] + (b[1] - a[1]) * k;
+            }
+          }
+          return 1;
+        };
+
+        /* Paced with the page, not against it: the elements settle by about
+           2.4s, so the line finishes drawing alongside them rather than still
+           travelling long after everything else has arrived. */
+        const DELAY = 300;
+        const DUR = 2000;
+        /* The clock starts on the first frame the browser actually paints, not
+           when this script runs. A tab opened in the background pauses
+           animation frames, so timing from load would spend the whole sequence
+           while nobody is looking and reveal a finished line. */
+        let start = null;
+
+        const frame = function (now) {
+          if (start === null) start = now + DELAY;
+          const t = Math.min(1, Math.max(0, (now - start) / DUR));
+          const drawn = easeDraw(t);
+
+          strands.forEach(function (p, i) {
+            /* The companion trails a little, so it reads as the signal
+               emerging from it rather than the two arriving together. */
+            const own = p.classList.contains("wave-strand") ? Math.max(0, drawn - 0.06) : drawn;
+            p.style.strokeDashoffset = lens[i] * (1 - own);
+            p.style.opacity = t <= 0 ? 0 : "";
+          });
+
+          const pt = signal.getPointAtLength(signalLen * drawn);
+          rider.setAttribute("cx", pt.x);
+          rider.setAttribute("cy", pt.y);
+          rider.style.opacity = drawn > 0.01 ? 1 : 0;
+
+          if (t < 1) window.requestAnimationFrame(frame);
+          else settle(true);
+        };
+
+        rider.style.opacity = 0;
+        window.requestAnimationFrame(frame);
+      })();
+
+      (function shelfOnScroll() {
+        var lastY = window.scrollY;
+        var docH = document.documentElement.scrollHeight;
+        var refresh = function () { docH = document.documentElement.scrollHeight; };
+        window.addEventListener("resize", refresh, { passive: true });
+        window.addEventListener("scroll", function () {
+          var y = Math.max(0, window.scrollY);
+          var delta = y - lastY;
+          if (Math.abs(delta) < 6) return;
+          var atTop = y < 120;
+          var atBottom = y + window.innerHeight >= docH - 80;
+          document.body.classList.toggle("shelf-tucked", delta > 0 && !atTop && !atBottom);
+          lastY = y;
+        }, { passive: true });
+        setInterval(refresh, 2000);
+      })();
+
+      if (SHEETS.indexOf(bootHash) >= 0) openSheet(bootHash);
+    })();
+  </script>
+</body>
+</html>
+
+
