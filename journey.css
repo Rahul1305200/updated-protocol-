@@ -1653,22 +1653,6 @@ body.bespoke-page .assess-guide p.assess-guide-head {
 
 .bespoke-split #emailCard .bespoke-card-icon { margin-left: 0; }
 
-/* Form gone: back to the single centred column */
-.bespoke-split:has(#emailCard[hidden]) {
-  display: block;
-  max-width: 760px;
-  text-align: center;
-}
-
-.bespoke-split:has(#emailCard[hidden]) .bespoke-copy { max-width: none; margin: 0 auto; }
-
-.bespoke-split:has(#emailCard[hidden]) .bespoke-aside {
-  margin: 0 auto;
-  padding-top: 0;
-  border-top: 0;
-  text-align: center;
-}
-
 /* Arrival: title (existing), then sub, note and card */
 .bespoke-split .bespoke-sub { animation: arriveRise 0.62s cubic-bezier(0.22, 0.61, 0.36, 1) 0.32s both; }
 .bespoke-split #nativeAside { animation: arriveRise 0.62s cubic-bezier(0.22, 0.61, 0.36, 1) 0.44s both; }
@@ -1818,7 +1802,6 @@ body.dash-page .bespoke-shell { gap: 40px; }
 .bespoke-card-head { margin: 0 0 20px; padding-bottom: 20px; }
 .bespoke-split .bespoke-aside { margin-top: 32px; padding-top: 24px; }
 .thanks .bespoke-sub { margin-bottom: 40px; }
-.bespoke-intro:has(.bespoke-split:not(:has(#emailCard:not([hidden])))):not(:has(#bespokeWelcome:not([hidden]))) { display: none; }
 @media (max-width: 860px) { body.bespoke-page.dash-page .dash-shell { padding-top: 24px; } }
 
 /* 14. Live-site icons on the option tiles and the "what happens next" cards */
@@ -1851,3 +1834,227 @@ body.bespoke-page .assess-options .assess-label--type { transition: none; }
 body.bespoke-page .assess-options .assess-label--type { align-items: flex-start; }
 .assess-opt-ico { flex: 0 0 48px; }
 body.bespoke-page .assess-options .assess-label--type .assess-opt-text { flex: 1 1 auto; padding-top: 4px; }
+
+/* 17. Details step: part of the assessment (progress on top, labelled fields) */
+#emailCard .assess-time { margin: 0 0 14px; text-align: left; }
+#emailCard .assess-steps { margin: 0 0 26px; }
+.bespoke-form .bespoke-field { display: block; text-align: left; }
+.bespoke-form .bespoke-field label { display: block; margin: 0 0 8px; font-size: 14px; line-height: 20px; font-weight: 500; color: #0a0a0a; }
+.bespoke-form .bespoke-field label span { margin-left: 6px; font-weight: 400; color: #93a3aa; }
+.bespoke-form .assess-error { margin: 0; text-align: left; }
+.bespoke-form .bespoke-field input { width: 100%; }
+#emailCard .assess-step:not(.is-current) .assess-step-label { display: none; }
+#emailCard .assess-steps { flex-wrap: nowrap; }
+#emailCard .assess-step { flex: 1 1 0; min-width: 0; }
+#emailCard .assess-step.is-current { flex: 0 0 auto; }
+.assess-steps { grid-template-columns: repeat(6, 1fr); }
+
+/* 18. First screen split: 40% copy, 60% form */
+.bespoke-split { grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); gap: 64px; }
+.bespoke-copy { max-width: none; }
+.bespoke-split #emailCard { max-width: none; }
+@media (max-width: 860px) { .bespoke-split { grid-template-columns: 1fr; gap: 32px; } }
+
+/* 19. One card that opens up: details -> assessment in the same place */
+.bespoke-stage { position: relative; min-width: 0; }
+.bespoke-stage #assessCard { width: 100%; }
+.bespoke-split { transition: grid-template-columns 0.65s cubic-bezier(0.22, 0.61, 0.36, 1), gap 0.65s cubic-bezier(0.22, 0.61, 0.36, 1), max-width 0.65s cubic-bezier(0.22, 0.61, 0.36, 1); }
+.bespoke-split.is-open { grid-template-columns: 0fr 1fr; gap: 0; max-width: 1040px; align-items: start; }
+.bespoke-split.is-open .bespoke-copy { overflow: hidden; visibility: hidden; transition: visibility 0s 0.3s; }
+.bespoke-intro > .bespoke-aside { margin: 32px auto 0; max-width: 760px; text-align: center; }
+#assessCard.just-opened .assess-step:first-child .assess-dot { animation: stepTick 0.6s cubic-bezier(0.22, 0.61, 0.36, 1) 0.4s both; }
+@keyframes stepTick { 0% { transform: scale(0.55); } 60% { transform: scale(1.12); } 100% { transform: scale(1); } }
+@media (max-width: 860px) {
+  .bespoke-split.is-open { grid-template-columns: 1fr; max-width: none; }
+  .bespoke-split.is-open .bespoke-copy { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { .bespoke-split { transition: none; } #assessCard.just-opened .assess-step:first-child .assess-dot { animation: none; } }
+
+.bespoke-stage .is-morphing { position: absolute; top: 0; left: 0; right: 0; }
+.bespoke-split.is-open .bespoke-copy { height: 0; margin: 0; padding: 0; }
+
+/* 20. Morph: the stage owns the card box while the two cards dissolve inside it */
+.bespoke-split { transition-duration: var(--morph, 0.65s); transition-timing-function: cubic-bezier(0.65, 0, 0.35, 1); }
+.bespoke-stage { border-radius: 28px; }
+.bespoke-stage.is-morph {
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 0 0 1px #e8efef, 0 1px 2px rgba(2, 16, 25, 0.04), 0 28px 64px rgba(2, 16, 25, 0.1);
+  pointer-events: none;
+}
+.bespoke-stage.is-morph > .bespoke-card { background: none; box-shadow: none; border-color: transparent; }
+.bespoke-stage #assessCard { border-radius: 28px; border: 1px solid #e8efef; box-shadow: 0 1px 2px rgba(2, 16, 25, 0.04), 0 28px 64px rgba(2, 16, 25, 0.1); }
+#assessCard.just-opened .assess-step:first-child .assess-dot { animation-delay: 0.95s; }
+/* Same inner frame on both cards so the stepper sits on the same spot while it morphs */
+.bespoke-stage #assessCard { padding: 36px 40px 40px; }
+.bespoke-stage #assessCard .assess-time { margin: 0 0 14px; text-align: left; }
+@media (max-width: 560px) { .bespoke-stage #assessCard { padding: 28px 22px; } }
+
+/* 21. Root-cause fixes for the opening motion */
+/* geometry is animated in px from script; no CSS transitions on the split */
+.bespoke-split { position: relative; align-items: start; transition: none !important; }
+.bespoke-stage { grid-column: 2; }
+.bespoke-split.is-open { align-items: start; }
+.bespoke-split.is-open .bespoke-copy { height: auto; overflow: visible; visibility: visible; transition: none; }
+.bespoke-split.is-open:not(.is-morphing) .bespoke-copy { display: none; }
+.bespoke-split.is-morphing .bespoke-copy { position: absolute; left: 0; top: var(--copy-top, 0); width: var(--copy-w, auto); max-width: none; margin: 0; pointer-events: none; }
+
+/* stepper: one element, state changes are real transitions */
+.assess-step::before { background: #e3e9ea; transition: none; }
+.assess-step::after {
+  content: "";
+  position: absolute;
+  top: 19px;
+  right: 50%;
+  width: 100%;
+  height: 2px;
+  background: #199a91;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.8s cubic-bezier(0.65, 0, 0.35, 1) 0.3s;
+}
+.assess-step:first-child::after { display: none; }
+.assess-step.is-done::after, .assess-step.is-current::after { transform: scaleX(1); }
+.assess-step.is-done::before, .assess-step.is-current::before { background: #e3e9ea; }
+.assess-dot { transition: border-color 0.5s ease, color 0.5s ease, box-shadow 0.6s ease; }
+.assess-dot::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  z-index: -1;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #199a91 0%, #082725 100%);
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+.assess-step.is-done .assess-dot { background: #fff; }
+.assess-step.is-done .assess-dot::before { opacity: 1; }
+.assess-step.is-current .assess-dot { transition-delay: 0s, 0s, 0.9s; border-color: #199a91; }
+.assess-step-label { transition: color 0.5s ease; }
+#assessCard.just-opened .assess-step:first-child .assess-dot { animation: none; }
+#emailCard .assess-step:not(.is-current) .assess-step-label { display: block; }
+@media (max-width: 560px) {
+  .assess-step::after { top: 16px; }
+  .assess-step:not(.is-current) .assess-step-label { display: none; }
+}
+
+/* 22. Progress lives on the stage, above both cards. Both cards reserve the same
+   space for it, so nothing can overlap it and nothing moves when a card swaps. */
+.stage-progress { position: absolute; top: 37px; left: 41px; right: 41px; z-index: 3; pointer-events: none; }
+.stage-progress .assess-time { margin: 0 0 14px; text-align: left; }
+.stage-progress .assess-steps { margin: 0; }
+.bespoke-stage #emailCard { padding-top: 158px; }
+.bespoke-stage #assessCard { padding-top: 160px; }
+@media (max-width: 560px) {
+  .stage-progress { left: 23px; right: 23px; top: 29px; }
+  .bespoke-stage #emailCard { padding-top: 150px; }
+  .bespoke-stage #assessCard { padding-top: 152px; }
+}
+.bespoke-split .stage-progress { animation: arriveRise 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) 0.3s both; }
+@media (prefers-reduced-motion: reduce) { .bespoke-split .stage-progress { animation: none; } }
+
+/* 23. While the stage owns the box, neither card may draw its own (ID selectors above out-rank the class rule) */
+.bespoke-stage.is-morph > #emailCard,
+.bespoke-stage.is-morph > #assessCard { background: none !important; box-shadow: none !important; border-color: transparent !important; }
+.bespoke-stage.is-morph { will-change: height, transform; }
+
+/* 24. Finishing: centred time line, equal-height columns, Back + Next together on the right */
+.stage-progress .assess-time { justify-content: center; text-align: center; }
+.assess-body { align-items: stretch; }
+.assess-guide { position: static; align-self: stretch; }
+.assess-actions { justify-content: flex-end; gap: 12px; border-top: 0; padding-top: 0; margin-top: 24px; min-height: 0; }
+.assess-actions .btn-explore { margin-left: 0; }
+@media (max-width: 860px) { .assess-guide { align-self: auto; } }
+
+/* 25. Right column: guidance on top (its own height), Back + Next at the bottom, level with the answer panel */
+.assess-side { grid-column: 2; grid-row: 1; display: flex; flex-direction: column; gap: 24px; min-width: 0; }
+.assess-side .assess-guide { grid-column: auto; grid-row: auto; flex: 0 0 auto; align-self: stretch; }
+.assess-side .assess-actions { margin-top: auto; padding-top: 0; border-top: 0; min-height: 0; justify-content: flex-end; }
+@media (max-width: 860px) { .assess-side { grid-column: 1; grid-row: auto; order: 2; } .assess-side .assess-actions { margin-top: 0; } }
+.assess-side .assess-guide { flex: 1 1 auto; }
+@media (max-width: 860px) { .assess-side .assess-guide { flex: 0 0 auto; } }
+
+/* 26. The right column is one card: guidance on top, Back + Next on the card itself */
+.assess-side {
+  padding: 28px;
+  border-radius: 24px;
+  border: 1px solid var(--line);
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(2, 16, 25, 0.04), 0 16px 40px rgba(2, 16, 25, 0.05);
+  gap: 24px;
+}
+.assess-side .assess-guide { padding: 0; margin: 0; border: 0; border-radius: 0; background: none; box-shadow: none; position: static; flex: 1 1 auto; }
+.assess-side .assess-actions { justify-content: space-between; margin-top: auto; }
+.assess-side .assess-actions .btn-explore { margin-left: auto; }
+@media (max-width: 860px) { .assess-side { padding: 22px 20px; } .assess-side .assess-guide { flex: 0 0 auto; } }
+
+/* 27. Card hierarchy: guidance on top, a quiet divider, then Back + Next as a matched pair */
+.assess-side .assess-actions { border-top: 1px solid var(--line); padding-top: 24px; margin-top: auto; gap: 12px; }
+.assess-side .assess-actions .assess-back,
+.assess-side .assess-actions .btn-explore {
+  box-sizing: border-box;
+  height: 56px;
+  min-height: 56px;
+  min-width: 136px;
+  margin: 0;
+  border-radius: 100px;
+  font-family: var(--font);
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+.assess-side .assess-actions .assess-back {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 30px;
+  border: 1px solid #d9e6e5;
+  background: #fff;
+  color: var(--ink-2);
+  text-decoration: none;
+  box-shadow: none;
+}
+.assess-side .assess-actions .assess-back:hover { border-color: #199a91; color: #199a91; background: #fff; transform: none; }
+.assess-side .assess-actions .btn-explore { padding: 0 8px 0 28px; }
+@media (max-width: 860px) {
+  .assess-side .assess-actions .assess-back, .assess-side .assess-actions .btn-explore { width: 100%; }
+}
+@media (min-width: 861px) { .assess-side .assess-actions .assess-back, .assess-side .assess-actions .btn-explore { flex: 0 0 144px; width: 144px; min-width: 144px; } }
+
+/* 28. Gentle cue on Next once an answer exists */
+.assess-actions .btn-explore.is-nudge { animation: nextNudge 1.1s ease-out 2; }
+@keyframes nextNudge { 0% { box-shadow: 0 0 0 0 rgba(25, 154, 145, 0.45); } 100% { box-shadow: 0 0 0 20px rgba(25, 154, 145, 0); } }
+.assess-actions .btn-explore:focus-visible { outline: 3px solid rgba(25, 154, 145, 0.45); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { .assess-actions .btn-explore.is-nudge { animation: none; } }
+
+/* 29. Phone: single column. The stage must sit in column 1 (the desktop rule put it in column 2,
+   which created a second, squeezed column). */
+@media (max-width: 860px) {
+  .bespoke-split, .bespoke-split.is-open { display: grid; grid-template-columns: minmax(0, 1fr); column-gap: 0; row-gap: 28px; max-width: none; }
+  .bespoke-stage { grid-column: 1; grid-row: 2; width: 100%; }
+  .bespoke-copy { grid-column: 1; grid-row: 1; max-width: none; }
+}
+@media (max-width: 860px) {
+  .bespoke-stage #emailCard, .bespoke-stage #assessCard { padding-left: 22px; padding-right: 22px; padding-bottom: 28px; }
+  .assess-step-label { white-space: nowrap; }
+  .bespoke-card-head { grid-template-columns: 44px minmax(0, 1fr); gap: 14px; }
+}
+
+/* 30. Phone: answer, then Back/Next right under it, then the guidance as its own card */
+@media (max-width: 860px) {
+  .assess-body { display: flex; flex-direction: column; gap: 20px; }
+  .assess-side { display: contents; }
+  .assess-answer { order: 1; }
+  .assess-side .assess-actions { order: 2; border-top: 0; padding-top: 0; margin: 0; flex-direction: column-reverse; align-items: stretch; gap: 12px; }
+  .assess-side .assess-guide {
+    order: 3; flex: 0 0 auto;
+    padding: 22px 20px; border: 1px solid var(--line); border-radius: 20px; background: #fff;
+    box-shadow: 0 1px 3px rgba(2, 16, 25, 0.04), 0 12px 32px rgba(2, 16, 25, 0.05);
+  }
+}
+
+/* 31. Phone morph: the copy stays in flow (no absolute lift, no column maths) */
+@media (max-width: 860px) {
+  .bespoke-split.is-morphing .bespoke-copy { position: static; width: auto; display: contents; margin: 0; }
+}

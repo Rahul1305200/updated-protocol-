@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css?v=240">
-  <link rel="stylesheet" href="journey.css?v=33">
+  <link rel="stylesheet" href="journey.css?v=61">
 </head>
 <body class="dash-page bespoke-page">
   <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true">
@@ -166,35 +166,35 @@
           <p>Our system listens not only to what you say but also to how you say it. It analyzes the pacing and subtle tension in your voice to understand you more accurately. For the most accurate and personalized experience, please speak freely in your native language.</p>
         </div>
           </div>
+            <div class="bespoke-stage" id="stage">
+            <div class="stage-progress">
+              <p class="assess-time" id="assessTime" aria-live="polite"></p>
+              <ol class="assess-steps" id="assessSteps" aria-label="Assessment progress"></ol>
+            </div>
             <div class="bespoke-card" id="emailCard">
               <div class="bespoke-card-head">
                 <span class="bespoke-card-icon" aria-hidden="true"><img src="assets/icons/speaking-head.svg" alt="" width="40" height="40"></span>
                 <div>
-                  <h2>Enter Your Email</h2>
-                  <p class="bespoke-card-lead">We’ll send your personalized wellness insights to this email address.</p>
+                  <h2>Let’s start with you</h2>
+                  <p class="bespoke-card-lead">Your profile will be sent to the email you share here.</p>
                 </div>
               </div>
               <form class="bespoke-form" id="bespokeForm" novalidate>
-                <input type="text" id="youmind-name" name="name" placeholder="Enter your name..." autocomplete="name" aria-label="Your name">
-                <input type="email" id="youmind-email" name="email" placeholder="Enter your email..." autocomplete="email" aria-label="Your email">
-                <input type="text" id="youmind-partner" name="partner" placeholder="Partner Affiliation..." aria-label="Partner affiliation">
+                <div class="bespoke-field"><label for="youmind-name">Name</label>
+                  <input type="text" id="youmind-name" name="name" placeholder="Your name" autocomplete="name"></div>
+                <div class="bespoke-field"><label for="youmind-email">Email</label>
+                  <input type="email" id="youmind-email" name="email" placeholder="you@example.com" autocomplete="email" required aria-describedby="detailsError"></div>
+                <div class="bespoke-field"><label for="youmind-partner">Partner affiliation <span>Optional</span></label>
+                  <input type="text" id="youmind-partner" name="partner" placeholder="If someone referred you" aria-label="Partner affiliation, optional"></div>
+                <p class="assess-error" id="detailsError" role="alert" hidden>Please enter a valid email so we know where to send your profile.</p>
                 <button type="submit" class="btn-explore protocol-btn-sm" id="youmind-start">
-                  <span>Continue to Assessment</span>
+                  <span>Begin Your Assessment</span>
                   <span class="btn-explore-icon" aria-hidden="true"><svg class="icon-arrow-ne" width="18" height="18"><use href="#icon-arrow-ne"/></svg></span>
                 </button>
               </form>
             </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="dash-shell">
-      <div class="dash-inner bespoke-shell">
-
         <!-- Assessment: five questions, one answer each, recorded, uploaded or typed -->
         <div class="bespoke-card bespoke-card--assess" id="assessCard" hidden>
-          <p class="assess-time" id="assessTime" aria-live="polite"></p>
-          <ol class="assess-steps" id="assessSteps" aria-label="Assessment progress"></ol>
 
           <div class="assess-pane" id="assessPane">
             <header class="assess-head">
@@ -206,7 +206,16 @@
             </header>
 
             <div class="assess-body">
-              <div class="assess-guide" id="assessGuide"></div>
+              <div class="assess-side">
+                <div class="assess-guide" id="assessGuide"></div>
+                <div class="assess-actions">
+              <button type="button" class="link-read assess-back" id="assessBack" hidden>Back</button>
+              <button type="button" class="btn-explore protocol-btn-sm" id="assessNext" hidden>
+                <span id="assessNextLabel">Next</span>
+                <span class="btn-explore-icon" aria-hidden="true"><svg class="icon-arrow-ne" width="18" height="18"><use href="#icon-arrow-ne"/></svg></span>
+              </button>
+            </div>
+              </div>
 
               <div class="assess-answer">
                 <p class="assess-label">Record your response or upload audio.</p>
@@ -244,16 +253,16 @@
                 <p class="assess-error" id="assessError" role="alert" hidden></p>
               </div>
             </div>
-
-            <div class="assess-actions">
-              <button type="button" class="link-read assess-back" id="assessBack" hidden>Back</button>
-              <button type="button" class="btn-explore protocol-btn-sm" id="assessNext" hidden>
-                <span id="assessNextLabel">Next</span>
-                <span class="btn-explore-icon" aria-hidden="true"><svg class="icon-arrow-ne" width="18" height="18"><use href="#icon-arrow-ne"/></svg></span>
-              </button>
-            </div>
           </div>
         </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dash-shell">
+      <div class="dash-inner bespoke-shell">
 
         <div class="thanks" id="doneCard" hidden>
           <span class="thanks-check" aria-hidden="true">
@@ -474,6 +483,7 @@
 
       var answers = STEPS.map(function () { return null; }); /* { kind, blob|file, url, name } | { kind:'text', text } */
       var current = 0;
+      var atDetails = true;
       var person = { name: '', email: '', partner: '' };
       var rec = { recorder: null, stream: null, chunks: [], timer: null, secs: 0 };
 
@@ -482,11 +492,24 @@
       function showError(msg) { el.error.textContent = msg || ''; el.error.hidden = !msg; }
       function hasAnswer(i) { var a = answers[i]; return !!a && (a.kind === 'text' ? a.text.trim().length > 0 : true); }
 
-      function renderStepper() {
-        el.steps.innerHTML = STEPS.map(function (s, i) {
-          var cls = i < current ? ' is-done' : i === current ? ' is-current' : '';
-          return '<li class="assess-step' + cls + '"' + (i === current ? ' aria-current="step"' : '') + '><span class="assess-dot">' + (i + 1) + '</span><span class="assess-step-label">' + s.label + '</span></li>';
+      /* Step 1 of 6 is "About you"; the five questions follow. at = -1 means the details step. */
+      function stepperHtml(at) {
+        var all = [{ label: 'About you' }].concat(STEPS);
+        return all.map(function (s, k) {
+          var i = k - 1;
+          var cls = i < at ? ' is-done' : i === at ? ' is-current' : '';
+          return '<li class="assess-step' + cls + '"' + (i === at ? ' aria-current="step"' : '') + '><span class="assess-dot">' + (k + 1) + '</span><span class="assess-step-label">' + s.label + '</span></li>';
         }).join('');
+      }
+
+      function renderStepper() {
+        var at = atDetails ? -1 : current;
+        Array.prototype.forEach.call(el.steps.children, function (li, k) {
+          var i = k - 1;
+          li.classList.toggle('is-done', i < at);
+          li.classList.toggle('is-current', i === at);
+          if (i === at) li.setAttribute('aria-current', 'step'); else li.removeAttribute('aria-current');
+        });
       }
 
       function renderAnswer() {
@@ -505,7 +528,7 @@
       function updateNext() {
         el.next.hidden = !hasAnswer(current);
         el.nextLabel.textContent = current === STEPS.length - 1 ? 'Complete assessment' : 'Next';
-        el.back.hidden = current === 0;
+        el.back.hidden = false;
       }
 
       function renderStep() {
@@ -530,7 +553,7 @@
 
       function renderTime(animate) {
         var t = $('assessTime');
-        t.textContent = PROMISES[current];
+        t.textContent = atDetails ? 'About 12 min · Step 1 of 6' : PROMISES[current];
         if (animate && !reduced() && t.animate) {
           t.animate([{ opacity: 0, transform: 'translateY(6px)' }, { opacity: 1, transform: 'none' }], { duration: 320, easing: EASE });
         }
@@ -568,6 +591,18 @@
         renderAnswer();
       }
 
+      /* Once an answer is in (recorded or uploaded), lead the person to Next. */
+      function guideToNext() {
+        setTimeout(function () {
+          if (el.next.hidden) return;
+          var r = el.next.getBoundingClientRect();
+          if (r.top < 0 || r.bottom > window.innerHeight) el.next.scrollIntoView({ behavior: reduced() ? 'auto' : 'smooth', block: 'center' });
+          el.next.focus({ preventScroll: true });
+          el.next.classList.remove('is-nudge'); void el.next.offsetWidth; el.next.classList.add('is-nudge');
+        }, 450);
+      }
+      el.next.addEventListener('animationend', function (e) { if (e.animationName === 'nextNudge') el.next.classList.remove('is-nudge'); });
+
       /* Recording */
       function stopRecording(discard) {
         if (rec.timer) { clearInterval(rec.timer); rec.timer = null; }
@@ -598,6 +633,7 @@
             var blob = new Blob(rec.chunks, { type: r.mimeType || 'audio/webm' });
             setAnswer({ kind: 'recording', blob: blob, url: URL.createObjectURL(blob) });
             el.recLabel.textContent = 'Record again';
+            guideToNext();
           };
           r.start();
           el.rec.classList.add('is-recording');
@@ -617,6 +653,7 @@
         if (f.type && f.type.indexOf('audio/') !== 0) { showError('Please choose an audio file.'); el.file.value = ''; return; }
         showError('');
         setAnswer({ kind: 'file', file: f, name: f.name, url: URL.createObjectURL(f) });
+        guideToNext();
       });
 
       /* Type instead */
@@ -648,39 +685,239 @@
         /* TODO: send person + answers to the assessment backend, then show this. */
         el.assess.hidden = true;
         $('nativeAside').hidden = true;
+        document.querySelector('.bespoke-intro').hidden = true;
         el.done.hidden = false;
         $('doneTitle').focus({ preventScroll: true });
         window.scrollTo({ top: 0, behavior: 'auto' });
       });
 
-      /* Take another assessment: back to the details form, answers cleared. */
+      /* The details card opens into the assessment in the same place:
+         the copy steps aside, the card widens, its content cross-fades. */
+      var split = document.querySelector('.bespoke-split');
+      var copy = document.querySelector('.bespoke-copy');
+      var intro = document.querySelector('.bespoke-intro');
+      var aside = $('nativeAside');
+      /* Choreography. One timeline, three layers:
+         1. geometry: the card widens/narrows in real pixels (not a CSS grid
+            transition, which cannot interpolate these track lists)
+         2. the stepper is ONE element that stays put and changes state
+         3. each piece of content enters or leaves in turn */
+      var stage = $('stage');
+      var morphing = false, running = [], timers = [], startedAt = 0;
+      var EASE_IO = 'cubic-bezier(0.65, 0, 0.35, 1)';
+      var arr = function (root, sel) { return Array.prototype.slice.call(root.querySelectorAll(sel)); };
+      var later = function (ms, fn) { timers.push(setTimeout(fn, ms)); };
+      var seg = function (node, delay, dur, from, to, ease) {
+        if (!node) return null;
+        var a = node.animate([from, to], { duration: dur, delay: delay, easing: ease || EASE, fill: 'both' });
+        running.push(a);
+        return a;
+      };
+      var show = function (nodes, t0, dur, gap, rise, side) {
+        [].concat(nodes).forEach(function (n, i) {
+          seg(n, t0 + i * gap, dur, { opacity: 0, transform: side ? 'translateX(' + side + 'px)' : 'translateY(' + rise + 'px)' }, { opacity: 1, transform: 'none' });
+        });
+      };
+      var hide = function (nodes, t0, dur, gap, rise, side) {
+        [].concat(nodes).forEach(function (n, i) {
+          seg(n, t0 + i * gap, dur, { opacity: 1, transform: 'none' }, { opacity: 0, transform: side ? 'translateX(' + side + 'px)' : 'translateY(' + (-rise) + 'px)' }, 'ease-in');
+        });
+      };
+      var clearAnims = function () {
+        timers.forEach(clearTimeout); timers = [];
+        running.forEach(function (a) { a.cancel(); });
+        running = [];
+        [copy, aside, stage, split].forEach(function (n) { n.getAnimations().forEach(function (a) { if (!(a instanceof CSSAnimation)) a.cancel(); }); });
+        stage.style.height = '';
+      };
+      var skip = function (e) {
+        if (e.type === 'keydown' && e.key !== 'Escape') return;
+        if (e.type === 'pointerdown' && performance.now() - startedAt < 500) return;
+        running.slice().forEach(function (a) { try { a.finish(); } catch (err) {} });
+      };
+
+      /* The stepper and its time line are single elements; they live inside
+         whichever card is on top, at the same spot in both. */
+      var stepsEl = el.steps, timeEl = $('assessTime');
+      stepsEl.innerHTML = stepperHtml(-1);
+      timeEl.textContent = 'About 12 min · Step 1 of 6';
+
+      function snap() {
+        var s = split.getBoundingClientRect();
+        return { ch: $('bespokeWelcome').offsetHeight, cw: copy.offsetWidth, sw: stage.offsetWidth, W: s.width, H: s.height, top: stage.getBoundingClientRect().top,
+          ctop: copy.getBoundingClientRect().top - s.top, gap: parseFloat(getComputedStyle(split).columnGap) || 0 };
+      }
+
+      function morph(opening) {
+        var from = opening ? el.email : el.assess;
+        var to = opening ? el.assess : el.email;
+        var btn = $('youmind-start'), btnLabel = btn.firstElementChild;
+        var instant = reduced() || !stage.animate || !split.animate;
+        var phone = window.matchMedia('(max-width: 860px)').matches;
+        var settleState = function () {
+          atDetails = !opening;
+          renderStepper(); renderTime(false);
+        };
+        var finish = function () {
+          document.removeEventListener('pointerdown', skip, true);
+          document.removeEventListener('keydown', skip, true);
+          clearAnims();
+          settleState();
+          from.hidden = true; to.hidden = false;
+          to.classList.remove('is-morphing');
+          from.style.width = ''; to.style.width = '';
+          stage.classList.remove('is-morph');
+          split.classList.remove('is-morphing');
+          copy.style.overflow = ''; $('bespokeWelcome').style.overflow = '';
+          if (opening) { intro.appendChild(aside); } else { copy.appendChild(aside); }
+          aside.hidden = false;
+          if (opening && !instant && !phone) {
+            aside.animate([{ opacity: 0, transform: 'translateY(10px)' }, { opacity: 1, transform: 'none' }], { duration: 700, easing: EASE });
+          }
+          btnLabel.textContent = 'Begin Your Assessment'; btn.disabled = false;
+          morphing = false;
+          (opening ? el.title : $('youmind-name')).focus({ preventScroll: true });
+          if (phone && !instant) { var top = stage.getBoundingClientRect().top; if (top < 0 || top > window.innerHeight * 0.4) stage.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+        };
+        morphing = true;
+        if (instant) { split.classList.toggle('is-open', opening); finish(); return; }
+
+        /* 1. measure start and end layouts, without painting either */
+        var s0 = snap();
+        split.classList.toggle('is-open', opening);
+        to.classList.add('is-morphing'); to.hidden = false;
+        var s1 = snap(), h1 = to.offsetHeight;
+        split.classList.toggle('is-open', !opening);
+        void split.offsetWidth;
+        var closed = opening ? s0 : s1, open = opening ? s1 : s0, h0 = stage.offsetHeight;
+
+        /* both cards keep their final width while the box moves, so text never re-wraps mid-motion */
+        from.style.width = (opening ? closed.sw : open.sw) + 'px';
+        to.style.width = (opening ? open.sw : closed.sw) + 'px';
+
+        /* 2. start state: copy lifted out of the flow at fixed size, so it can
+              fade and slide without being squeezed by the closing column */
+        split.style.setProperty('--copy-w', closed.cw + 'px');
+        split.style.setProperty('--copy-top', closed.ctop + 'px');
+        split.classList.add('is-morphing');
+        stage.classList.add('is-morph');
+        split.classList.toggle('is-open', opening);
+        stage.style.height = h0 + 'px';
+        startedAt = performance.now();
+
+        var DUR = opening ? 1700 : 1200, G = opening ? 150 : 250, TOTAL = opening ? 3450 : 2100;
+        if (phone) {
+          /* phone: one column. The copy stays in the flow and folds away (or unfolds) while the card grows */
+          var ch = (opening ? s0 : s1).ch;
+          var wel = $('bespokeWelcome');
+          wel.style.overflow = 'hidden';
+          var cf = [{ height: ch + 'px', marginBottom: '0px', opacity: 1 }, { height: '0px', marginBottom: '-28px', opacity: 0 }];
+          if (!opening) cf.reverse();
+          running.push(wel.animate(cf, { duration: DUR, delay: G, easing: EASE_IO, fill: 'both' }));
+          running.push(stage.animate([{ height: h0 + 'px' }, { height: h1 + 'px' }], { duration: DUR, delay: G, easing: EASE_IO, fill: 'both' }));
+        } else {
+          var cols = ['' + closed.cw + 'px ' + closed.sw + 'px', '0px ' + open.sw + 'px'];
+          var frames = [
+            { gridTemplateColumns: cols[0], columnGap: closed.gap + 'px', maxWidth: closed.W + 'px', minHeight: closed.H + 'px' },
+            { gridTemplateColumns: cols[1], columnGap: '0px', maxWidth: open.W + 'px', minHeight: open.H + 'px' }
+          ];
+          if (!opening) frames.reverse();
+          running.push(split.animate(frames, { duration: DUR, delay: G, easing: EASE_IO, fill: 'both' }));
+          running.push(stage.animate([{ height: h0 + 'px', transform: 'translateY(' + (s0.top - s1.top) + 'px)' }, { height: h1 + 'px', transform: 'none' }],
+            { duration: DUR, delay: G, easing: EASE_IO, fill: 'both' }));
+          }
+        var clock = document.documentElement.animate([{ opacity: 1 }, { opacity: 1 }], { duration: TOTAL });
+        running.push(clock);
+        clock.onfinish = finish;
+        document.addEventListener('pointerdown', skip, true);
+        document.addEventListener('keydown', skip, true);
+
+        var E = el.email, A = el.assess, ans = A.querySelector('.assess-answer');
+        var sideEl = A.querySelector('.assess-side');
+        var sideNodes = getComputedStyle(sideEl).display === 'contents' ? arr(sideEl, ':scope > *') : [sideEl];
+        var copyBits = [copy.querySelector('.bespoke-hero-title'), copy.querySelector('.bespoke-sub'), (!phone && aside.parentNode === copy) ? aside : null].filter(Boolean);
+        if (opening) {
+          /* text leaves first, one line after another, toward the side it came from */
+          hide(copyBits, 0, 560, 130, 0, -28);
+          /* form lets go */
+          hide(arr(E, '.bespoke-field'), 0, 380, 90, 10);
+          hide([btn, $('detailsError')], 240, 340, 0, 8);
+          hide([E.querySelector('.bespoke-card-head')], 350, 450, 0, 8);
+          /* progress moves on, in order: time text, step 1 fills, line draws, step 2 lights */
+          later(700, function () { atDetails = false; renderStepper(); renderTime(true); });
+          btnLabel.textContent = 'Starting…'; btn.disabled = true;
+          /* the question arrives */
+          show([A.querySelector('.assess-icon')], 950, 560, 0, 10);
+          show([el.title, el.q], 1050, 640, 150, 10);
+          /* the voice part */
+          show([ans], 1400, 560, 0, 14);
+          show(arr(ans, '.assess-label:first-child'), 1550, 420, 0, 6);
+          arr($('assessWave'), 'i').forEach(function (b, i) {
+            seg(b, 1600 + i * 28, 560, { transform: 'scaleY(0.08)', opacity: 0.3 }, { transform: 'scaleY(1)', opacity: 1 });
+          });
+          show([$('recordBtn')], 2050, 480, 0, 12);
+          seg($('recordBtn'), 2550, 800, { boxShadow: '0 0 0 0 rgba(25,154,145,0.4)' }, { boxShadow: '0 0 0 24px rgba(25,154,145,0)' }, 'ease-out');
+          show(arr(ans, '.assess-mic, .assess-or, .assess-options'), 2200, 480, 110, 8);
+          show(sideNodes, 2250, 620, 80, 0, 28);
+        } else {
+          hide(arr(A, '.assess-head, .assess-answer').concat(sideNodes), 0, 380, 70, 8);
+          if (phone) { copy.appendChild(aside); aside.hidden = false; }
+          else seg(aside, 0, 300, { opacity: 1 }, { opacity: 0 });
+          later(450, function () { atDetails = true; renderStepper(); renderTime(true); });
+          if (!phone) later(500, function () {
+            aside.getAnimations().forEach(function (a) { a.cancel(); });
+            copy.appendChild(aside); aside.hidden = false;
+            show([copy.querySelector('.bespoke-hero-title'), copy.querySelector('.bespoke-sub'), aside], 200, 560, 130, 0, -28);
+          });
+          show([E.querySelector('.bespoke-card-head')], 800, 440, 0, 8);
+          show(arr(E, '.bespoke-field'), 900, 440, 90, 10);
+          show([btn], 1250, 420, 0, 8);
+          /* hold the copy invisible until its turn */
+          copyBits.forEach(function (n) { seg(n, 0, 1, { opacity: 0 }, { opacity: 0 }); });
+        }
+      }
+      function openAssessment() { current = 0; renderStep(); morph(true); }
+      function closeAssessment(instant) {
+        if (instant) {
+          clearAnims();
+          atDetails = true; renderStepper(); renderTime(false);
+          el.assess.hidden = true; el.email.hidden = false; el.done.hidden = true; intro.hidden = false;
+          el.assess.style.width = ''; el.email.style.width = '';
+          split.classList.remove('is-open', 'is-morphing'); stage.classList.remove('is-morph');
+          copy.appendChild(aside); aside.hidden = false;
+          return;
+        }
+        morph(false);
+      }
+
+      /* Take another assessment: back to the details step, answers cleared. */
       $('assessAgain').addEventListener('click', function () {
         answers.forEach(function (a) { if (a && a.url) URL.revokeObjectURL(a.url); });
         answers = STEPS.map(function () { return null; });
         current = 0;
-        el.done.hidden = true;
-        $('nativeAside').hidden = false;
-        el.welcome.hidden = false;
-        el.email.hidden = false;
+        closeAssessment(true);
         window.scrollTo({ top: 0, behavior: 'auto' });
       });
-      el.back.addEventListener('click', function () { if (current > 0) goTo(current - 1); });
+      el.back.addEventListener('click', function () {
+        if (morphing) return;
+        stopRecording(true);
+        if (current > 0) goTo(current - 1); else closeAssessment();
+      });
 
       /* Details form -> first question */
+      try { var saved = JSON.parse(localStorage.getItem('ym_person') || 'null'); if (saved) { $('youmind-name').value = saved.name || ''; $('youmind-email').value = saved.email || ''; $('youmind-partner').value = saved.partner || ''; } } catch (err) {}
       el.form.addEventListener('submit', function (e) {
         e.preventDefault();
+        if (morphing) return;
         var email = $('youmind-email');
-        if (!email.value || !email.checkValidity()) { email.focus(); return; }
+        if (!email.value || !email.checkValidity()) { $('detailsError').hidden = false; email.focus(); return; }
+        $('detailsError').hidden = true;
         person.name = $('youmind-name').value.trim();
         person.email = email.value.trim();
         person.partner = $('youmind-partner').value.trim();
-        el.welcome.hidden = true;
-        el.email.hidden = true;
-        el.assess.hidden = false;
-        current = 0;
-        renderStep();
-        renderTime(false);
-        window.scrollTo({ top: 0, behavior: 'auto' });
+        /* Logged in this browser for now; send to the backend when it exists. */
+        try { localStorage.setItem('ym_person', JSON.stringify(person)); } catch (err) {}
+        openAssessment();
       });
     })();
   </script>
