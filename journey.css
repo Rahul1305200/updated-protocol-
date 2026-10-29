@@ -2165,3 +2165,9 @@ body.bespoke-page .bespoke-stage .assess-guide p + ul { margin-top: 12px; }
   .assess-side .assess-actions .btn-explore { flex: 0 0 auto; width: auto; min-width: 144px; white-space: nowrap; }
 }
 .assess-side .assess-actions .btn-explore > span:first-child { white-space: nowrap; }
+
+/* 35. Back + Next sit right under the answer card, above the guidance */
+@media (min-width: 861px) {
+  body.bespoke-page .bespoke-stage .assess-side .assess-actions { order: 1; margin: 0; }
+  body.bespoke-page .bespoke-stage .assess-side .assess-guide { order: 2; }
+}
