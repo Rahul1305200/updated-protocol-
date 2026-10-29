@@ -2171,3 +2171,25 @@ body.bespoke-page .bespoke-stage .assess-guide p + ul { margin-top: 12px; }
   body.bespoke-page .bespoke-stage .assess-side .assess-actions { order: 1; margin: 0; }
   body.bespoke-page .bespoke-stage .assess-side .assess-guide { order: 2; }
 }
+
+/* 36. Back + Next live inside the answer card, under the options */
+body.bespoke-page .bespoke-stage .assess-answer .assess-actions {
+  align-self: stretch; order: 0; margin: 26px 0 0; padding: 0; border: 0; min-height: 0;
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+}
+body.bespoke-page .bespoke-stage .assess-answer .assess-actions .assess-back,
+body.bespoke-page .bespoke-stage .assess-answer .assess-actions .btn-explore {
+  box-sizing: border-box; height: 56px; min-height: 56px; margin: 0; border-radius: 100px;
+  font-family: var(--font); font-size: 17px; font-weight: 500; line-height: 1; letter-spacing: -0.01em; white-space: nowrap;
+}
+body.bespoke-page .bespoke-stage .assess-answer .assess-actions .assess-back {
+  display: inline-flex; align-items: center; justify-content: center; width: 144px; min-width: 144px; padding: 0 30px;
+  border: 1px solid #d9e6e5; background: #fff; color: var(--ink-2); box-shadow: none; text-decoration: none;
+}
+body.bespoke-page .bespoke-stage .assess-answer .assess-actions .assess-back:hover { border-color: #199a91; color: #199a91; background: #fff; transform: none; }
+body.bespoke-page .bespoke-stage .assess-answer .assess-actions .btn-explore { flex: 0 0 auto; width: auto; min-width: 144px; padding: 0 8px 0 28px; margin-left: auto; }
+@media (max-width: 860px) {
+  body.bespoke-page .bespoke-stage .assess-answer .assess-actions { flex-direction: column-reverse; align-items: stretch; }
+  body.bespoke-page .bespoke-stage .assess-answer .assess-actions .assess-back,
+  body.bespoke-page .bespoke-stage .assess-answer .assess-actions .btn-explore { width: 100%; }
+}
