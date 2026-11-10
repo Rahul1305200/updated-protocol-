@@ -2193,3 +2193,28 @@ body.bespoke-page .bespoke-stage .assess-answer .assess-actions .btn-explore { f
   body.bespoke-page .bespoke-stage .assess-answer .assess-actions .assess-back,
   body.bespoke-page .bespoke-stage .assess-answer .assess-actions .btn-explore { width: 100%; }
 }
+
+/* 37. Guidance examples: talking points, not buttons.
+   Each example is a soft white tile led by its own YouMind icon (teal gradient set, one per
+   example, never repeated within a question), in the same mint icon tile as the answer
+   options. The heading gets its ink back; an odd last example spans both columns. */
+body.bespoke-page .bespoke-stage .assess-side .assess-guide { padding: 22px 24px 24px; border: 1px solid #e1efed; background: #f2f9f8; }
+body.bespoke-page .bespoke-stage .assess-guide p.assess-guide-head { margin: 0 0 2px; font-size: 15px; line-height: 22px; font-weight: 600; color: #0a0a0a; }
+body.bespoke-page .bespoke-stage .assess-guide p { color: #4f6167; }
+body.bespoke-page .bespoke-stage .assess-guide p + ul { margin-top: 16px; }
+body.bespoke-page .bespoke-stage .assess-guide li {
+  align-items: center; gap: 12px; min-height: 52px; padding: 10px 16px 10px 12px;
+  border: 0; border-radius: 16px; background: #fff; box-shadow: 0 1px 2px rgba(8, 39, 37, 0.05);
+  font-size: 14px; line-height: 20px; color: #1f3236; cursor: default;
+}
+body.bespoke-page .bespoke-stage .assess-guide li::before { display: none; content: none; }
+body.bespoke-page .bespoke-stage .assess-guide .ag-ico {
+  flex: 0 0 38px; width: 38px; height: 38px; display: grid; place-items: center;
+  border-radius: 12px; border: 1px solid #d9eeec; background: linear-gradient(180deg, #f1fbfa 0%, #dff3f1 100%);
+}
+body.bespoke-page .bespoke-stage .assess-guide .ag-ico img { width: 22px; height: 22px; object-fit: contain; display: block; }
+body.bespoke-page .bespoke-stage .assess-guide li:last-child:nth-child(odd) { grid-column: 1 / -1; }
+@media (max-width: 640px) {
+  body.bespoke-page .bespoke-stage .assess-side .assess-guide { padding: 20px 16px 18px; }
+  body.bespoke-page .bespoke-stage .assess-guide li { min-height: 48px; }
+}

@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css?v=240">
-  <link rel="stylesheet" href="journey.css?v=66">
+  <link rel="stylesheet" href="journey.css?v=68">
 </head>
 <body class="dash-page bespoke-page">
   <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true">
@@ -466,19 +466,19 @@
         { label: 'Sleep', icon: 'moon', title: 'Sleep and Recovery Profile',
           q: 'Looking at the past few months, and especially the past few weeks, how would you describe your sleep overall?',
           lead: 'You can describe whatever comes to mind. For example:',
-          items: ['Falling asleep easily or struggling to fall asleep', 'Sleeping deeply or lightly', 'Restless or broken sleep', 'Waking calm or waking with tension', 'Feeling restored, neutral, or drained in the morning', 'Morning energy and emotional tone'] },
+          items: [['ic-sleep.png', 'Falling asleep easily or struggling to fall asleep'], ['ic-wave.png', 'Sleeping deeply or lightly'], ['ic-clock.png', 'Restless or broken sleep'], ['head-pulse.svg', 'Waking calm or waking with tension'], ['drop-gauge.svg', 'Feeling restored, neutral, or drained in the morning'], ['hands-heart.svg', 'Morning energy and emotional tone']] },
         { label: 'Emotional', icon: 'drop-gauge', title: 'Emotional Regulation',
           q: 'How would you describe your emotional state recently? What tends to show up most often during your days?',
           lead: 'You can share whatever feels relevant. For example:',
-          items: ['Generally calm, tense, anxious, irritated, heavy, or emotionally flat', 'Stable mood or noticeable emotional spikes during the day', 'Emotional tension that comes in waves or feels present most of the time', 'Body tension, mental pressure, or emotional fatigue', 'How long this has been present weeks, months, or longer'] },
+          items: [['hands-heart.svg', 'Generally calm, tense, anxious, irritated, heavy, or emotionally flat'], ['ic-chart.png', 'Stable mood or noticeable emotional spikes during the day'], ['ic-wave.png', 'Emotional tension that comes in waves or feels present most of the time'], ['head-pulse.svg', 'Body tension, mental pressure, or emotional fatigue'], ['ic-clock.png', 'How long this has been present weeks, months, or longer']] },
         { label: 'Cognitive', icon: 'head-pulse', title: 'Cognitive Function and Mental Performance',
           q: 'How does your mind feel when you are working or concentrating, across different types of tasks?',
           lead: 'You can describe whatever feels most true for you. For example:',
-          items: ['Easy focus or difficulty getting started', 'Staying focused briefly or sustaining focus for long periods', 'Creative flow versus blocked or forced thinking', 'Clear and sharp focus that fades over time', 'Scattered, overloaded, or racing thoughts', 'Deep focus followed by mental fatigue or crashes', 'Feeling mentally present versus frequently distracted'] },
+          items: [['ic-play.png', 'Easy focus or difficulty getting started'], ['ic-clock.png', 'Staying focused briefly or sustaining focus for long periods'], ['ic-wave.png', 'Creative flow versus blocked or forced thinking'], ['ic-eye.png', 'Clear and sharp focus that fades over time'], ['speaking-head.svg', 'Scattered, overloaded, or racing thoughts'], ['drop-gauge.svg', 'Deep focus followed by mental fatigue or crashes'], ['ic-phone.png', 'Feeling mentally present versus frequently distracted']] },
         { label: 'Physical', icon: 'lightning', title: 'Physical Energy Regulation',
           q: 'How does your physical energy typically move throughout the day? Is it mostly sustained, or does it fluctuate at certain times?',
           lead: 'You can describe whatever stands out. For example:',
-          items: ['Morning energy versus slow or heavy starts', 'Midday drops, afternoon slumps, or evening rebounds', 'Steady energy or noticeable peaks and crashes', 'Wired but tired, physically fatigued with a busy mind', 'Energy changes linked to work, stress, meals, or rest', 'Times of day when energy feels strongest or weakest'] },
+          items: [['ic-runner.png', 'Morning energy versus slow or heavy starts'], ['ic-chart.png', 'Midday drops, afternoon slumps, or evening rebounds'], ['ic-wave.png', 'Steady energy or noticeable peaks and crashes'], ['head-pulse.svg', 'Wired but tired, physically fatigued with a busy mind'], ['drop-gauge.svg', 'Energy changes linked to work, stress, meals, or rest'], ['ic-clock.png', 'Times of day when energy feels strongest or weakest']] },
         { label: 'Intention', icon: 'gears-hand', title: 'Intention',
           q: 'Right now, what would you most like to shift, support, or improve in your inner experience or daily life?',
           text: 'There is no right or wrong answer. You can speak about anything that feels relevant to you at this moment. This might relate to how you feel, how you think, how you move through your days, or how you relate to yourself and your environment. You can be specific or general. Simply describe it in your own words.' }
@@ -553,7 +553,7 @@
         el.q.textContent = s.q;
         el.guide.innerHTML = '<p class="assess-guide-head">Guidance for the user</p>' +
           (s.items
-            ? '<p>' + esc(s.lead) + '</p><ul>' + s.items.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') + '</ul>'
+            ? '<p>' + esc(s.lead) + '</p><ul>' + s.items.map(function (it) { return '<li><span class="ag-ico" aria-hidden="true"><img src="assets/icons/' + it[0] + '" alt="" width="22" height="22"></span><span>' + esc(it[1]) + '</span></li>'; }).join('') + '</ul>'
             : '<p>' + esc(s.text) + '</p>');
         renderAnswer();
       }
