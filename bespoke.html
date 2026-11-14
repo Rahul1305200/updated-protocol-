@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css?v=240">
-  <link rel="stylesheet" href="journey.css?v=72">
+  <link rel="stylesheet" href="journey.css?v=73">
 </head>
 <body class="dash-page bespoke-page">
   <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true">
@@ -463,11 +463,11 @@
        or typed text. Answers are held in memory only. */
     (function () {
       var STEPS = [
-        { label: 'Baseline 1', icon: 'speaking-head', title: 'Baseline 1 · Spontaneous Calibration',
+        { label: 'Baseline 1 of 2', icon: 'speaking-head', title: 'Spontaneous Calibration',
           q: 'Before we begin, please briefly introduce yourself. Tell us your role, how long you\'ve been with your organization, and what a typical week looks like.',
-          text: 'A relaxed, natural intro. This simply lets us hear your everyday speaking voice.' },
+          text: 'A relaxed, natural intro — this simply lets us hear your everyday speaking voice.' },
         /* The three set sentences, as in the ACE workflow (intake walkthrough, 13 Nov 2026). */
-        { label: 'Baseline 2', icon: 'document', title: 'Baseline 2 · Structured Calibration',
+        { label: 'Baseline 2 of 2', icon: 'document', title: 'Structured Calibration',
           q: 'Please read the following three sentences aloud in your normal speaking voice:',
           read: ['The operational efficiency of an enterprise depends on clear communication and consistent structural standards.', 'Daily schedules are balanced to accommodate changing environmental factors across different organizational departments.', 'Maintaining a stable baseline allows a leadership team to navigate unexpected shifts smoothly.'],
           text: 'Read at a comfortable, even pace.' },
@@ -559,11 +559,13 @@
         el.title.textContent = s.title;
         $('assessIcon').src = 'assets/icons/' + s.icon + '.svg';
         el.q.textContent = s.q;
-        /* Baseline 2: the sentences to read sit right under the instruction, above the mic */
+        /* Baseline 2: the sentences sit in their own card between the question and the mic (as in the walkthrough) */
         var read = $('assessRead');
-        if (!read) { read = document.createElement('ol'); read.id = 'assessRead'; read.className = 'assess-read'; el.q.insertAdjacentElement('afterend', read); }
+        if (!read) { read = document.createElement('div'); read.id = 'assessRead'; read.className = 'assess-read'; document.querySelector('#assessPane .assess-head').insertAdjacentElement('afterend', read); }
         read.hidden = !s.read;
-        read.innerHTML = s.read ? s.read.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') : '';
+        read.innerHTML = s.read ? '<p class="assess-read-head">Read these three sentences</p><p class="assess-read-sub">' + esc(s.text) + '</p><ol>' +
+          s.read.map(function (t, n) { return '<li><span class="assess-read-num" aria-hidden="true">' + (n + 1) + '</span><span>' + esc(t) + '</span></li>'; }).join('') + '</ol>' : '';
+        el.guide.hidden = !!s.read;
         el.guide.innerHTML = '<p class="assess-guide-head">Guidance for the user</p>' +
           (s.items
             ? '<p>' + esc(s.lead) + '</p><ul>' + s.items.map(function (it) { return '<li><span class="ag-ico" aria-hidden="true"><img src="assets/icons/' + it[0] + '" alt="" width="22" height="22"></span><span>' + esc(it[1]) + '</span></li>'; }).join('') + '</ul>'
@@ -572,7 +574,7 @@
       }
 
       /* One-line promise per step: the person always knows what is left. */
-      var PROMISES = ['About 14 min left', 'About 13 min left', 'About 10 min left', 'About 8 min left', 'About 6 min left', 'About 4 min left', 'Last question · about 2 min left'];
+      var PROMISES = ['Before the questions', 'Before the questions', 'About 10 min left', 'About 8 min left', 'About 6 min left', 'About 4 min left', 'Last question · about 2 min left'];
       var reduced = function () { return window.matchMedia('(prefers-reduced-motion: reduce)').matches; };
       var EASE = 'cubic-bezier(0.22, 0.61, 0.36, 1)';
 
