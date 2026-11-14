@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css?v=240">
-  <link rel="stylesheet" href="journey.css?v=68">
+  <link rel="stylesheet" href="journey.css?v=72">
 </head>
 <body class="dash-page bespoke-page">
   <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true">
@@ -159,7 +159,7 @@
             <span>Welcome to Your</span>
             <em>Wellness Journey</em>
           </h1>
-          <p class="bespoke-sub">Let’s begin by understanding your unique patterns and creating a personalized wellness profile just for you. We'll ask 5 questions.</p>
+          <p class="bespoke-sub">Let’s begin by understanding your unique patterns and creating a personalized wellness profile just for you. We'll start with 2 short voice baselines, then ask 5 questions. It takes about 14 minutes.</p>
         </div>
             <div class="bespoke-aside" id="nativeAside">
           <p class="bespoke-aside-title">Use Your Native Language</p>
@@ -196,7 +196,7 @@
                 </button>
               </form>
             </div>
-        <!-- Assessment: five questions, one answer each, recorded, uploaded or typed -->
+        <!-- Assessment: two voice baselines, then five questions, one recording each -->
         <div class="bespoke-card bespoke-card--assess" id="assessCard" hidden>
 
           <div class="assess-pane" id="assessPane">
@@ -214,7 +214,7 @@
               </div>
 
               <div class="assess-answer">
-                <p class="assess-label">Record your response or upload audio.</p>
+                <p class="assess-label">Record your response.</p>
 
                 <div class="assess-wave" id="assessWave" aria-hidden="true"></div>
 
@@ -231,9 +231,9 @@
 
                 <audio class="assess-audio" id="assessAudio" controls hidden></audio>
 
-                <p class="assess-or" aria-hidden="true"><span>or</span></p>
+                <p class="assess-or" aria-hidden="true" hidden><span>or</span></p>
 
-                <div class="assess-options">
+                <div class="assess-options" hidden>
                   <div class="assess-drop" id="assessDrop">
                     <span class="assess-opt-ico" aria-hidden="true"><img src="assets/icons/file-tray.svg" alt="" width="24" height="24"></span>
                     <label class="assess-file">
@@ -291,7 +291,7 @@
               <div class="thanks-item">
                 <span class="thanks-ico" aria-hidden="true"><img src="assets/icons/clock-24.svg" alt="" width="30" height="30"></span>
                 <h3>Delivery</h3>
-                <p>Your personalized insights will be sent to your email within 24 hours.</p>
+                <p>Your personalized insights will be sent to your email within 15 minutes.</p>
               </div>
             </div>
             <p class="thanks-note"><strong>Note:</strong> To ensure this analysis reaches you, please check your <strong>Spam</strong> or <strong>Promotions</strong> folder if you have not received your notification within this timeframe.</p>
@@ -458,11 +458,19 @@
       window.addEventListener('resize', function () { if (window.matchMedia('(min-width: 901px)').matches) setOpen(false); });
     })();
 
-    /* Assessment flow: details form -> 5 questions -> done.
+    /* Assessment flow: details form -> 2 baselines -> 5 questions -> done.
        Each question takes one answer: a live recording, an uploaded audio file,
        or typed text. Answers are held in memory only. */
     (function () {
       var STEPS = [
+        { label: 'Baseline 1', icon: 'speaking-head', title: 'Baseline 1 · Spontaneous Calibration',
+          q: 'Before we begin, please briefly introduce yourself. Tell us your role, how long you\'ve been with your organization, and what a typical week looks like.',
+          text: 'A relaxed, natural intro. This simply lets us hear your everyday speaking voice.' },
+        /* The three set sentences, as in the ACE workflow (intake walkthrough, 13 Nov 2026). */
+        { label: 'Baseline 2', icon: 'document', title: 'Baseline 2 · Structured Calibration',
+          q: 'Please read the following three sentences aloud in your normal speaking voice:',
+          read: ['The operational efficiency of an enterprise depends on clear communication and consistent structural standards.', 'Daily schedules are balanced to accommodate changing environmental factors across different organizational departments.', 'Maintaining a stable baseline allows a leadership team to navigate unexpected shifts smoothly.'],
+          text: 'Read at a comfortable, even pace.' },
         { label: 'Sleep', icon: 'moon', title: 'Sleep and Recovery Profile',
           q: 'Looking at the past few months, and especially the past few weeks, how would you describe your sleep overall?',
           lead: 'You can describe whatever comes to mind. For example:',
@@ -511,7 +519,7 @@
       function showError(msg) { el.error.textContent = msg || ''; el.error.hidden = !msg; }
       function hasAnswer(i) { var a = answers[i]; return !!a && (a.kind === 'text' ? a.text.trim().length > 0 : true); }
 
-      /* Progress: one thin bar and a label; step 1 of 6 is "About you", then the five questions. */
+      /* Progress: one thin bar and a label; "About you", then the two baselines, then the five questions. */
       var LABELS = ['About you'].concat(STEPS.map(function (s) { return s.label; }));
       function renderStepper() {
         var k = atDetails ? 0 : current + 1;
@@ -551,6 +559,11 @@
         el.title.textContent = s.title;
         $('assessIcon').src = 'assets/icons/' + s.icon + '.svg';
         el.q.textContent = s.q;
+        /* Baseline 2: the sentences to read sit right under the instruction, above the mic */
+        var read = $('assessRead');
+        if (!read) { read = document.createElement('ol'); read.id = 'assessRead'; read.className = 'assess-read'; el.q.insertAdjacentElement('afterend', read); }
+        read.hidden = !s.read;
+        read.innerHTML = s.read ? s.read.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') : '';
         el.guide.innerHTML = '<p class="assess-guide-head">Guidance for the user</p>' +
           (s.items
             ? '<p>' + esc(s.lead) + '</p><ul>' + s.items.map(function (it) { return '<li><span class="ag-ico" aria-hidden="true"><img src="assets/icons/' + it[0] + '" alt="" width="22" height="22"></span><span>' + esc(it[1]) + '</span></li>'; }).join('') + '</ul>'
@@ -559,13 +572,13 @@
       }
 
       /* One-line promise per step: the person always knows what is left. */
-      var PROMISES = ['About 10 min left', 'About 8 min left', 'About 6 min left', 'About 4 min left', 'Last question · about 2 min left'];
+      var PROMISES = ['About 14 min left', 'About 13 min left', 'About 10 min left', 'About 8 min left', 'About 6 min left', 'About 4 min left', 'Last question · about 2 min left'];
       var reduced = function () { return window.matchMedia('(prefers-reduced-motion: reduce)').matches; };
       var EASE = 'cubic-bezier(0.22, 0.61, 0.36, 1)';
 
       function renderTime(animate) {
         var t = $('assessTime');
-        t.textContent = atDetails ? 'About 12 min' : PROMISES[current];
+        t.textContent = atDetails ? 'About 14 min' : PROMISES[current];
         if (animate && !reduced() && t.animate) {
           t.animate([{ opacity: 0, transform: 'translateY(6px)' }, { opacity: 1, transform: 'none' }], { duration: 320, easing: EASE });
         }

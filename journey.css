@@ -2218,3 +2218,127 @@ body.bespoke-page .bespoke-stage .assess-guide li:last-child:nth-child(odd) { gr
   body.bespoke-page .bespoke-stage .assess-side .assess-guide { padding: 20px 16px 18px; }
   body.bespoke-page .bespoke-stage .assess-guide li { min-height: 48px; }
 }
+
+/* 37. Voice only: the upload / type options stay in the markup but are switched off */
+.bespoke-stage .assess-or[hidden], .bespoke-stage .assess-options[hidden] { display: none !important; }
+
+/* 38. Baseline 2: the sentences to read, under the instruction */
+.assess-read { margin: 16px 0 0; padding: 4px 0 4px 20px; border-left: 3px solid #199a91; list-style: none; }
+.assess-read[hidden] { display: none; }
+.assess-read li { margin: 0 0 10px; font-family: var(--font); font-size: 19px; line-height: 29px; font-weight: 500; color: #0a0a0a; }
+.assess-read li:last-child { margin-bottom: 0; }
+@media (max-width: 560px) { .assess-read li { font-size: 17px; line-height: 26px; } }
+
+/* =========================================================================
+   39. Match the youmind.org design system (YOUMIND-SITE-DESIGN-SYSTEM.md)
+   Inter 400/500 everywhere, ink #031728, flat cards with #f2f2f2 rings,
+   gradient pill CTA (54px, 38px white circle), ring-only secondary button,
+   eyebrows 12px +0.08em, icon discs in the 8% brand gradient, 2px teal focus.
+   ========================================================================= */
+body.bespoke-page { --font: Inter, Arial, sans-serif; font-family: Inter, Arial, sans-serif; color: #031728; }
+body.bespoke-page input, body.bespoke-page textarea, body.bespoke-page button { font-family: Inter, Arial, sans-serif; }
+body.bespoke-page :focus-visible { outline: 2px solid #199a91; outline-offset: 3px; }
+
+/* cards: flat, defined by a hairline ring */
+body.bespoke-page .bespoke-stage #emailCard,
+body.bespoke-page .bespoke-stage #assessCard {
+  background: #fff; border-color: transparent; border-radius: 28px;
+  box-shadow: inset 0 0 0 1px #f2f2f2;
+}
+body.bespoke-page .bespoke-stage.is-morph { background: #fff; box-shadow: inset 0 0 0 1px #f2f2f2; }
+
+/* progress */
+body.bespoke-page .stage-progress .prog-label { font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; }
+body.bespoke-page .stage-progress .assess-time { font-size: 14px; font-weight: 400; color: #8d99a6; }
+body.bespoke-page .prog-track { background: #f2f2f2; }
+body.bespoke-page .prog-fill { background: linear-gradient(90deg, #199a91 0%, #3fd9cf 100%); }
+
+/* headings and text */
+body.bespoke-page .bespoke-card h2.assess-title,
+body.bespoke-page .assess-title { font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; }
+body.bespoke-page .assess-question { color: #0a0a0a; font-weight: 500; }
+body.bespoke-page .bespoke-stage .assess-guide .assess-guide-head { font-size: 16px; line-height: 24px; font-weight: 500; color: #021019; }
+body.bespoke-page .bespoke-stage .assess-guide p { font-size: 16px; line-height: 25.6px; color: #565656; }
+body.bespoke-page .bespoke-stage .assess-mic { font-size: 14px; line-height: 21px; color: #565656; }
+body.bespoke-page .bespoke-stage .assess-answer > .assess-label:first-child { font-size: 16px; line-height: 24px; color: #031728; }
+body.bespoke-page .bespoke-stage .assess-record { font-size: 16px; font-weight: 500; color: #031728; }
+body.bespoke-page .bespoke-form .bespoke-field label { font-size: 14px; font-weight: 500; color: #021019; }
+body.bespoke-page .bespoke-form .bespoke-field label span { color: #8d99a6; font-weight: 400; }
+
+/* icon tiles: 8% brand gradient disc, no border */
+body.bespoke-page .bespoke-card-head .bespoke-card-icon,
+body.bespoke-page .assess-icon,
+body.bespoke-page .privacy-ico,
+body.bespoke-page .thanks-ico,
+body.bespoke-page .bespoke-stage .assess-guide .ag-ico {
+  background: linear-gradient(180deg, rgba(25, 154, 145, 0.08) 0%, rgba(8, 39, 37, 0.08) 100%);
+  border: 0; box-shadow: none;
+}
+
+/* answer panel and guidance: rows at radius 20 with the hairline ring */
+body.bespoke-page .bespoke-stage .assess-answer {
+  border: 0; border-radius: 20px;
+  background: linear-gradient(180deg, #e7f8f7 0%, #ffffff 100%);
+  box-shadow: inset 0 0 0 1px #f2f2f2;
+}
+body.bespoke-page .bespoke-stage .assess-side .assess-guide { background: #fff; border-radius: 20px; box-shadow: inset 0 0 0 1px #f2f2f2; }
+body.bespoke-page .bespoke-stage .assess-guide li {
+  border: 0; border-radius: 16px; background: rgba(0, 0, 0, 0.03);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.02);
+  font-size: 14px; line-height: 21px; color: #031728;
+}
+body.bespoke-page .assess-record-orb { box-shadow: 0 0 0 10px rgba(25, 154, 145, 0.1); }
+body.bespoke-page .assess-read { border-left-color: #199a91; }
+body.bespoke-page .assess-read li { font-weight: 500; color: #0a0a0a; }
+
+/* inputs */
+body.bespoke-page .bespoke-form input {
+  height: 54px; border: 0; border-radius: 16px; background: rgba(0, 0, 0, 0.03);
+  box-shadow: inset 0 0 0 1px rgba(15, 15, 15, 0.1);
+  font-size: 16px; color: #031728;
+}
+body.bespoke-page .bespoke-form input::placeholder { color: #8d99a6; }
+body.bespoke-page .bespoke-form input:hover { background: rgba(0, 0, 0, 0.04); }
+body.bespoke-page .bespoke-form input:focus { background: #fff; box-shadow: inset 0 0 0 1px #199a91; outline: 2px solid #199a91; outline-offset: 3px; }
+
+/* primary CTA: the signature gradient pill */
+body.bespoke-page .btn-explore,
+body.bespoke-page .bespoke-stage .assess-answer .assess-actions .btn-explore {
+  height: 54px; min-height: 54px; gap: 12px; padding: 8px 8px 8px 20px; border-radius: 100px;
+  background: linear-gradient(180deg, #199a91 0%, #082725 100%);
+  color: #fff; font-family: Inter, Arial, sans-serif; font-size: 18px; line-height: 1.4; font-weight: 500; letter-spacing: -0.36px;
+  box-shadow: none; transform: none;
+}
+body.bespoke-page .btn-explore .btn-explore-icon { width: 38px; height: 38px; flex: 0 0 38px; border-radius: 100px; background: #fff; color: #1c1c1c; }
+
+/* secondary CTA (Back): light fill with a ring, no lift */
+body.bespoke-page .bespoke-stage .assess-answer .assess-actions .assess-back {
+  height: 54px; min-height: 54px; border: 0; border-radius: 100px;
+  background: rgba(0, 0, 0, 0.04); box-shadow: inset 0 0 0 1px rgba(15, 15, 15, 0.1);
+  color: #031728; font-size: 18px; line-height: 1.4; font-weight: 500; letter-spacing: -0.36px;
+}
+body.bespoke-page .bespoke-stage .assess-answer .assess-actions .assess-back:hover { background: rgba(0, 0, 0, 0.06); color: #031728; box-shadow: inset 0 0 0 1px rgba(15, 15, 15, 0.16); }
+
+/* privacy popup: drawer-style backdrop, large-overlay card */
+body.bespoke-page .privacy-bg { background: rgba(2, 16, 25, 0.22); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); }
+body.bespoke-page .privacy-card { border-radius: 24px; box-shadow: 0 24px 60px rgba(0, 0, 0, 0.12); }
+body.bespoke-page .privacy-card h2 { font-size: 24px; line-height: 33.6px; font-weight: 500; letter-spacing: 0; color: #0a0a0a; }
+body.bespoke-page .privacy-card p { font-family: Inter, Arial, sans-serif; font-size: 16px; line-height: 25.6px; color: #565656; }
+body.bespoke-page .privacy-card .privacy-sent { background: rgba(0, 0, 0, 0.03); box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.02); color: #031728; }
+body.bespoke-page .privacy-sent strong { font-weight: 500; color: #021019; }
+body.bespoke-page .privacy-edit { font-size: 16px; font-weight: 400; color: #031728; text-decoration: none; box-shadow: inset 0 -1px 0 rgba(3, 23, 40, 0.2); padding: 8px 0; border-radius: 0; }
+body.bespoke-page .privacy-edit:hover { color: #14877f; }
+
+/* thank-you */
+body.bespoke-page .thanks-card { box-shadow: inset 0 0 0 1px #f2f2f2; border: 0; }
+body.bespoke-page .thanks-item { box-shadow: inset 0 0 0 1px #f2f2f2; border: 0; border-radius: 20px; }
+
+@media (max-width: 767px) {
+  body.bespoke-page .btn-explore,
+  body.bespoke-page .bespoke-stage .assess-answer .assess-actions .btn-explore,
+  body.bespoke-page .bespoke-stage .assess-answer .assess-actions .assess-back { height: 48px; min-height: 48px; font-size: 16px; padding: 6px 8px 6px 18px; }
+  body.bespoke-page .bespoke-stage .assess-answer .assess-actions .assess-back { padding: 0 18px; }
+  body.bespoke-page .btn-explore .btn-explore-icon { width: 34px; height: 34px; flex-basis: 34px; }
+}
+body.bespoke-page .bespoke-stage .assess-answer .assess-actions .btn-explore { min-width: 144px; justify-content: space-between; }
+body.bespoke-page .bespoke-stage .assess-side .assess-guide { border: 0; }
