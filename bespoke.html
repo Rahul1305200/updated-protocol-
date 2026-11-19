@@ -225,7 +225,7 @@
 
                 <div class="assess-mic">
                   <span class="assess-mic-ico" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="9" y="3" width="6" height="11" rx="3" stroke="currentColor" stroke-width="1.7"/><path d="M5.5 11.5a6.5 6.5 0 0013 0M12 18v3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>
-                  <span>Please make sure your microphone is <strong>enabled</strong> if not then <button type="button" class="assess-link" id="micHelpToggle">click here</button> for instructions</span>
+                  <span><span id="micLead">Please make sure your microphone is <strong>enabled</strong> if not then </span><button type="button" class="assess-link" id="micHelpToggle">click here</button><span id="micTail"> for instructions</span></span>
                 </div>
                 <p class="assess-mic-help" id="micHelp" hidden>Click the lock icon at the left of your browser’s address bar, set Microphone to Allow, then reload this page.</p>
 
@@ -463,14 +463,15 @@
        or typed text. Answers are held in memory only. */
     (function () {
       var STEPS = [
-        { label: 'Baseline 1 of 2', icon: 'speaking-head', title: 'Spontaneous Calibration',
-          q: 'Before we begin, please briefly introduce yourself. Tell us your role, how long you\'ve been with your organization, and what a typical week looks like.',
-          text: 'A relaxed, natural intro — this simply lets us hear your everyday speaking voice.' },
-        /* The three set sentences, as in the ACE workflow (intake walkthrough, 13 Nov 2026). */
-        { label: 'Baseline 2 of 2', icon: 'document', title: 'Structured Calibration',
-          q: 'Please read the following three sentences aloud in your normal speaking voice:',
-          read: ['The operational efficiency of an enterprise depends on clear communication and consistent structural standards.', 'Daily schedules are balanced to accommodate changing environmental factors across different organizational departments.', 'Maintaining a stable baseline allows a leadership team to navigate unexpected shifts smoothly.'],
-          text: 'Read at a comfortable, even pace.' },
+        /* The two baselines use the wording for individuals (Keith, 15 Nov 2026); the organisational check-in keeps its own. */
+        { label: 'Baseline 1 of 2', icon: 'speaking-head', title: 'Your everyday voice', baseline: true,
+          q: 'Before we begin, tell us a little about an ordinary day. For example, what a usual morning looks like for you, or what you had for breakfast today.',
+          guideHead: 'A tip',
+          text: 'There is no right answer. This simply lets us hear your everyday speaking voice. You don\'t need to give your name or any health details here.' },
+        { label: 'Baseline 2 of 2', icon: 'document', title: 'Reading aloud', baseline: true,
+          q: 'Please read these three sentences aloud in your normal speaking voice.',
+          read: ['The morning light comes through the window and slowly fills the room.', 'A short walk to the corner shop takes about ten minutes each way.', 'Rain is expected later in the week, with clear skies by Saturday.'],
+          text: 'Take your time, at a comfortable, even pace.' },
         { label: 'Sleep', icon: 'moon', title: 'Sleep and Recovery Profile',
           q: 'Looking at the past few months, and especially the past few weeks, how would you describe your sleep overall?',
           lead: 'You can describe whatever comes to mind. For example:',
@@ -566,7 +567,10 @@
         read.innerHTML = s.read ? '<p class="assess-read-head">Read these three sentences</p><p class="assess-read-sub">' + esc(s.text) + '</p><ol>' +
           s.read.map(function (t, n) { return '<li><span class="assess-read-num" aria-hidden="true">' + (n + 1) + '</span><span>' + esc(t) + '</span></li>'; }).join('') + '</ol>' : '';
         el.guide.hidden = !!s.read;
-        el.guide.innerHTML = '<p class="assess-guide-head">Guidance for the user</p>' +
+        /* Microphone line: the baselines use the new wording; questions 1 to 5 keep theirs. */
+        $('micLead').innerHTML = s.baseline ? 'Please make sure your microphone is on. If it isn’t, ' : 'Please make sure your microphone is <strong>enabled</strong> if not then ';
+        $('micTail').textContent = s.baseline ? ' for instructions.' : ' for instructions';
+        el.guide.innerHTML = '<p class="assess-guide-head">' + esc(s.guideHead || 'Guidance for the user') + '</p>' +
           (s.items
             ? '<p>' + esc(s.lead) + '</p><ul>' + s.items.map(function (it) { return '<li><span class="ag-ico" aria-hidden="true"><img src="assets/icons/' + it[0] + '" alt="" width="22" height="22"></span><span>' + esc(it[1]) + '</span></li>'; }).join('') + '</ul>'
             : '<p>' + esc(s.text) + '</p>');
